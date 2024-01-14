@@ -1,4 +1,5 @@
 import { ChairmansMessage } from '@/components/chairmans-message';
+import { LatestInformation } from '@/components/latest-information';
 import { Noticeboard } from '@/components/noticeboard';
 
 function HomePage() {
@@ -10,6 +11,10 @@ function HomePage() {
         autem.
       </section>
       <section className="col-span-full space-y-4 md:col-span-5">
+        <div className="grid grid-cols-2 gap-2.5">
+          <LatestInformation />
+          <LatestInformation />
+        </div>
         <ChairmansMessage />
         <Noticeboard />
       </section>
