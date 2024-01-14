@@ -1,3 +1,6 @@
+import Technology from "@/component/Technology";
+import Testimonial from "@/component/Testimonial";
+
 function HomePage() {
   return (
     <main className="grid grid-cols-12 gap-4">
