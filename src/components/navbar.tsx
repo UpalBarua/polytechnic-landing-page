@@ -9,7 +9,7 @@ function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="border-b py-2.5 fixed w-full left-0 top-0 bg-white shadow-sm">
+    <header className="border-b py-2.5 fixed w-full left-0 top-0 bg-white shadow-sm z-10">
       <div className="container flex justify-between items-center max-w-6xl md:justify-start">
         <Link href="/" className="flex items-center mr-8 space-x-2">
           <FaSchool className="text-xl" />
