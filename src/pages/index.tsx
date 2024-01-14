@@ -1,19 +1,20 @@
 import { ChairmansMessage } from '@/components/chairmans-message';
-import { LatestInformation } from '@/components/latest-information';
+import { LatestUpdate } from '@/components/latest-update';
 import { Noticeboard } from '@/components/noticeboard';
+import { UpcomingEvents } from '@/components/upcoming-events';
 
 function HomePage() {
   return (
-    <main className="grid grid-cols-12 gap-8 md:gap-4">
+    <main className="grid grid-cols-12 gap-8 md:gap-2">
       <section className="col-span-full p-5 bg-red-200 md:col-span-7">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat
         accusantium illum recusandae eaque, asperiores et odio fugit earum
         autem.
       </section>
-      <section className="col-span-full space-y-4 md:col-span-5">
-        <div className="grid grid-cols-2 gap-2.5">
-          <LatestInformation />
-          <LatestInformation />
+      <section className="col-span-full space-y-8 lg:space-y-2 md:col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-2">
+          <LatestUpdate />
+          <UpcomingEvents />
         </div>
         <ChairmansMessage />
         <Noticeboard />
