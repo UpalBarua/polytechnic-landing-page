@@ -2,13 +2,14 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaSchool } from 'react-icons/fa';
+import MobileNav from './mobile-nav';
 
 function Navbar() {
   const pathname = usePathname();
 
   return (
     <header className="border-b py-2.5 fixed w-full left-0 top-0 bg-white shadow-sm">
-      <div className="container flex items-center max-w-6xl">
+      <div className="container flex justify-between items-center max-w-6xl md:justify-start">
         <Link href="/" className="flex items-center mr-8 space-x-2">
           <FaSchool className="text-xl" />
           <span className="hidden font-medium capitalize sm:inline-block">
@@ -32,6 +33,7 @@ function Navbar() {
               </Link>
             ))}
         </nav>
+        <MobileNav />
       </div>
     </header>
   );
