@@ -1,34 +1,34 @@
 export const navLinks = [
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "পাঠ্যক্রম",
   },
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "ভর্তি প্রক্রিয়া",
   },
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "প্রশাসনিক কার্যক্রম",
   },
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "টেকনোলজি সমূহ",
   },
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "সুবিধা",
   },
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "গ্যালারি",
   },
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "আমাদের ভবন",
   },
   {
-    href: '/',
-    label: 'Option',
+    href: "/",
+    label: "যোগাযোগ",
   },
 ] as const;
