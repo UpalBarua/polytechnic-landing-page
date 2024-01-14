@@ -6,7 +6,7 @@ type RootLayoutProps = {
 
 function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div className="container pt-28 max-w-6xl">
+    <div className="container pt-12 max-w-6xl md:pt-16">
       <Navbar />
       {children}
     </div>

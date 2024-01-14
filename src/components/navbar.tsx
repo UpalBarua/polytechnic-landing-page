@@ -1,3 +1,4 @@
+import { navLinks } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -17,21 +18,19 @@ function Navbar() {
           </span>
         </Link>
         <nav className="hidden gap-x-6 items-center text-sm md:flex">
-          {Array(8)
-            .fill('')
-            .map((_, i) => (
-              <Link
-                key={i}
-                href={`${i}`}
-                className={cn(
-                  'transition-colors hover:text-foreground/80',
-                  pathname?.startsWith('/docs/components')
-                    ? 'text-foreground'
-                    : 'text-foreground/60'
-                )}>
-                {`Option ${i + 1}`}
-              </Link>
-            ))}
+          {navLinks.map(({ href, label }, i) => (
+            <Link
+              key={i}
+              href={href}
+              className={cn(
+                'transition-colors hover:text-foreground/80',
+                pathname?.startsWith('/docs/components')
+                  ? 'text-foreground'
+                  : 'text-foreground/60'
+              )}>
+              {label}
+            </Link>
+          ))}
         </nav>
         <MobileNav />
       </div>

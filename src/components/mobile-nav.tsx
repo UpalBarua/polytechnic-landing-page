@@ -1,10 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { navLinks } from '@/config';
 import { cn } from '@/lib/utils';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 import { RiMenu2Line } from 'react-icons/ri';
 
 function MobileNav() {
@@ -24,17 +25,15 @@ function MobileNav() {
         <h4 className="font-medium">Options</h4>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="flex flex-col space-y-4">
-            {Array(8)
-              .fill('')
-              .map((_, i) => (
-                <MobileLink
-                  key={i}
-                  href={`$/{i}`}
-                  onOpenChange={setOpen}
-                  className="text-muted-foreground">
-                  {`option${i}`}
-                </MobileLink>
-              ))}
+            {navLinks.map(({ label, href }, i) => (
+              <MobileLink
+                key={i}
+                href={href}
+                onOpenChange={setOpen}
+                className="text-muted-foreground">
+                {label}
+              </MobileLink>
+            ))}
           </div>
         </ScrollArea>
       </SheetContent>
