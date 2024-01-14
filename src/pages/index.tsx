@@ -1,4 +1,5 @@
 import { ChairmansMessage } from '@/components/chairmans-message';
+import { Noticeboard } from '@/components/noticeboard';
 
 function HomePage() {
   return (
@@ -8,8 +9,9 @@ function HomePage() {
         accusantium illum recusandae eaque, asperiores et odio fugit earum
         autem.
       </section>
-      <section className="col-span-full md:col-span-5">
+      <section className="col-span-full space-y-4 md:col-span-5">
         <ChairmansMessage />
+        <Noticeboard />
       </section>
     </main>
   );

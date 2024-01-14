@@ -18,7 +18,7 @@ export function ChairmansMessage() {
         width={140}
         quality={90}
       />
-      <div className="flex gap-x-6 items-center">
+      <div className="flex gap-x-6 items-end">
         <h2 className="text-2xl font-medium tracking-tight">
           Message From Chairman
         </h2>
