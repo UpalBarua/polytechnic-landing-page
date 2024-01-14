@@ -1,7 +1,11 @@
+import Technology from "@/component/Technology";
+import Testimonial from "@/component/Testimonial";
+
 function HomePage() {
   return (
     <div>
-      <h1>Polytechnic Landing Page</h1>
+      <Technology></Technology>
+      <Testimonial></Testimonial>
     </div>
   );
 }
