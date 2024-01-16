@@ -1,4 +1,4 @@
-import Navbar from '@/components/navbar';
+import { Navbar } from '@/components/navbar';
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -6,7 +6,7 @@ type RootLayoutProps = {
 
 function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div className="container pt-12 max-w-6xl md:pt-16">
+    <div className="container pt-12 max-w-6xl md:pt-36">
       <Navbar />
       {children}
     </div>
