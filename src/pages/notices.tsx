@@ -3,9 +3,9 @@ import { FaRegClock } from 'react-icons/fa';
 import { buttonVariants } from '@/components/ui/button';
 import { FaChevronRight } from 'react-icons/fa';
 
-export function Noticeboard() {
+function Notices() {
   return (
-    <div className="mx-auto space-y-2 max-w-sm rounded-md sm:border sm:shadow sm:max-w-full sm:p-6">
+    <main className="max-w-3xl container">
       <h2 className="text-2xl font-bold tracking-tight">নোটিশবোর্ড</h2>
       <div className="divide-y pb-2">
         {Array(4)
@@ -14,15 +14,7 @@ export function Noticeboard() {
             <Notice key={i} />
           ))}
       </div>
-      <Link
-        href="/notices"
-        className={buttonVariants({
-          variant: 'default',
-        })}>
-        <span>সকল নোটিশ</span>
-        <FaChevronRight className="text-sm" />
-      </Link>
-    </div>
+    </main>
   );
 }
 
@@ -40,3 +32,5 @@ function Notice() {
     </Link>
   );
 }
+
+export default Notices;

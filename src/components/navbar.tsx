@@ -15,20 +15,22 @@ import MobileNav from './mobile-nav';
 
 export function Navbar() {
   return (
-    <header className="border-b py-4 fixed w-full left-0 top-0 bg-white shadow z-10">
-      <div className="container flex gap-y-4 flex-col items-center justify-center max-w-6xl">
-        <Link href="/" className="flex items-center mr-8 space-x-3">
-          <FaSchool className="text-4xl text-primary" />
-          <span className="hidden text-2xl font-bold capitalize sm:inline-block">
+    <header className="border-b fixed w-full left-0 top-0 shadow z-10 bg-primary text-background">
+      <div className="container py-4 flex max-w-6xl">
+        <Link href="/" className="flex items-center space-x-3">
+          <FaSchool className="text-3xl" />
+          <span className="hidden text-xl font-bold capitalize sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
+      </div>
+      <div className="flex items-center py-2 bg-background justify-center">
         <nav className="hidden gap-x-2 items-center text-sm md:flex">
           {navLinks.map((link) => (
             <NavItem key={link.route} {...link} />
           ))}
         </nav>
-        <MobileNav />
+        {/* <MobileNav /> */}
       </div>
     </header>
   );
