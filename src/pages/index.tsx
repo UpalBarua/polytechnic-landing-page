@@ -1,4 +1,4 @@
-import Hero from '@/components/Hero';
+import { Slider } from '@/components/slider';
 import { ChairmansMessage } from '@/components/chairmans-message';
 import { Departments } from '@/components/departments';
 import { LatestUpdate } from '@/components/latest-update';
@@ -8,8 +8,8 @@ import { UpcomingEvents } from '@/components/upcoming-events';
 function HomePage() {
   return (
     <main className="grid grid-cols-12 gap-8 md:gap-2">
-      <section className="col-span-full md:col-span-7">
-        <Hero />
+      <section className="col-span-full space-y-2 md:col-span-7">
+        <Slider />
         <Departments />
       </section>
       <section className="col-span-full space-y-8 lg:space-y-2 md:col-span-5">
