@@ -1,11 +1,10 @@
+import Marquee from 'react-fast-marquee';
+
 export function LatestUpdate() {
   return (
-    <div className="space-y-1 bg-primary text-background rounded-md sm:border sm:shadow-sm p-4">
-      <h2 className="text-lg font-medium tracking-tight">Latest Update</h2>
-      <p className="lg:text-sm leading-relaxed text-background/80">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum dolores
-        dolorem minima itaque quibusdam reprehenderit repellendus, debitis.
-      </p>
-    </div>
+    <Marquee className="bg-primary text-white text-xl shadow py-2">
+      অংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত ইউক্যালিপটাস
+      অংশাবতার হালহদিশ পিতৃতর্পণ টকানো
+    </Marquee>
   );
 }

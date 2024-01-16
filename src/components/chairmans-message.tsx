@@ -21,7 +21,7 @@ export function ChairmansMessage() {
         <FaQuoteRight className="text-5xl text-primary/25" />
       </div>
       <p className="leading-relaxed text-foreground/80">
-        {chairmansMessage.message.slice(0, 500) + '...'}
+        {chairmansMessage.message.slice(0, 250) + '...'}
         <Link
           href="/chairmans-message"
           className="font-bold underline underline-offset-2">
