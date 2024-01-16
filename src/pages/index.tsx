@@ -10,15 +10,15 @@ function HomePage() {
     <main className="grid grid-cols-12 gap-8 md:gap-2">
       <section className="col-span-full space-y-2 md:col-span-7">
         <Slider />
+        <LatestUpdate />
         <Departments />
       </section>
       <section className="col-span-full space-y-8 lg:space-y-2 md:col-span-5">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-2">
-          <LatestUpdate />
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-2">
           <UpcomingEvents />
-        </div>
-        <ChairmansMessage />
+        </div> */}
         <Noticeboard />
+        <ChairmansMessage />
       </section>
     </main>
   );
