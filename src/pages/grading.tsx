@@ -12,88 +12,104 @@ import {
 
 const grade = [
   {
+    grade: "A+",
+    mark: "৮০ থেকে উপরে",
+    point: "8.00",
+  },
+  {
     grade: "A",
-    mark: "80-100",
-    point: "4.00",
+    mark: "৭৫ থেকে ৭৯",
+    point: "৩.৭৫",
+  },
+  {
+    grade: "A-",
+    mark: "৭০ থেকে ৭৪",
+    point: "৩.৫০",
   },
   {
     grade: "B+",
-    mark: "75.00-79.00",
-    point: "3.50",
+    mark: "৬৫ থেকে ৬৯",
+    point: "৩.২৫",
   },
   {
     grade: "B",
-    mark: "70.00-74.00",
-    point: "3.00",
+    mark: "৬০ থেকে ৬৪",
+    point: "৩.০০",
+  },
+  {
+    grade: "B-",
+    mark: "৫৫ থেকে ৫৯",
+    point: "২.৭৫",
   },
   {
     grade: "C+",
-    mark: "65.00-69.00",
-    point: "2.50",
+    mark: "৫০ থেকে ৫৪",
+    point: "২.৫০",
   },
   {
     grade: "C",
-    mark: "60.00.-64.00",
-    point: "2.00",
-  },
-  {
-    grade: "D+",
-    mark: "55.00-59.00",
-    point: "1.50",
+    mark: "৪৫ থেকে ৪৯",
+    point: "২.২৫",
   },
   {
     grade: "D",
-    mark: "50.00-54.00",
-    point: "1.00",
+    mark: "৪০ থেকে 8৯",
+    point: "২.০০",
   },
   {
     grade: "F",
-    mark: "0-40.00",
+    mark: "৪০ এর নীচে",
     point: "0.00",
   },
 ];
 
 const gradeDes = [
   {
-    grade: "A",
-    description: "Excellent",
+    grade: "১ম পর্ব",
+    description: "৫%",
   },
   {
-    grade: "B+",
-    description: "Very Good",
+    grade: "২য় পর্ব",
+    description: "১০%",
   },
   {
-    grade: "B",
-    description: "Good",
+    grade: "৩য় পর্ব",
+    description: "১৫%",
   },
   {
-    grade: "C+",
-    description: "Average",
+    grade: "৪র্থ পর্ব",
+    description: "২০%",
   },
   {
-    grade: "C",
-    description: "Fair",
+    grade: "৫ম পর্ব",
+    description: "২৫%",
   },
   {
-    grade: "D+",
-    description: "Satisfactory",
+    grade: "৬ষ্ঠ পর্ব",
+    description: "২০%",
   },
   {
-    grade: "D",
-    description: "well pass",
+    grade: "৭ম পর্ব",
+    description: "২৫%",
   },
   {
-    grade: "F",
-    description: "Fail",
+    grade: "৮ম পর্ব",
+    description: "১৫%",
   },
 ];
 
 const Grading = () => {
   return (
     <section className="mt-8">
-      <h1 className="text-center pb-8 text-3xl text-blue-500 font-bold">
-        Our Grading system
+      <h1 className="text-center pb-4 text-3xl text-blue-500 font-bold">
+        গ্রেডিং সিস্টেম
       </h1>
+      <p className="w-full lg:w-1/2 mx-auto pb-6">
+        প্রতি সেমিস্টারে একজন শিক্ষার্থী প্রাপ্ত নম্বরের ভিত্তিতে লেটার গ্রেড
+        এবং তার বিপরীতে গ্রেড পয়েন্ট (GP) অর্জন করবে। নিম্ন বর্ণিত নিয়মে প্রাপ্ত
+        নম্বরের ভিত্তিতে লেটার গ্রেড এবং তার বিপরীতে গ্রেড পয়েন্ট প্রদান করা
+        হবে।
+      </p>
 
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="w-[470px] mx-auto border-2">
@@ -101,10 +117,14 @@ const Grading = () => {
             <TableHeader>
               <TableRow>
                 <TableHead className="w-[100px] text-black font-bold">
-                  Grade
+                  প্রাপ্ত নম্বর
                 </TableHead>
-                <TableHead className="text-black font-bold">Mark</TableHead>
-                <TableHead className="text-black font-bold">Point</TableHead>
+                <TableHead className="text-black font-bold">
+                  লেটার গ্রেড
+                </TableHead>
+                <TableHead className="text-black font-bold">
+                  গ্রেড পয়েন্ট (GP)
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -128,11 +148,10 @@ const Grading = () => {
               <TableRow>
                 <TableHead className="w-[100px] text-black font-bold">
                   {" "}
-                  Us Grade
                 </TableHead>
 
                 <TableHead className="text-black font-bold">
-                  Grade Description
+                  পর্ব ভিত্তিক GPA এর গুরুত্বঃ
                 </TableHead>
               </TableRow>
             </TableHeader>
