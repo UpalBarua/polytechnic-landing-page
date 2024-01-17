@@ -5,26 +5,24 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import type { NavLink } from '@/config';
 import { navLinks } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaChevronDown, FaChevronRight, FaSchool } from 'react-icons/fa';
-import MobileNav from './mobile-nav';
 
 export function Navbar() {
   return (
-    <header className="border-b fixed w-full left-0 top-0 shadow z-10 bg-primary text-background">
-      <div className="container py-4 flex max-w-6xl">
+    <header className="fixed top-0 left-0 z-10 w-full border-b shadow bg-primary text-background">
+      <div className="container flex py-4 max-w-7xl">
         <Link href="/" className="flex items-center space-x-3">
           <FaSchool className="text-3xl" />
-          <span className="hidden text-xl font-bold text-foreground capitalize sm:inline-block">
+          <span className="hidden text-xl font-bold capitalize text-foreground sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
       </div>
-      <div className="flex items-center py-2 bg-background/60 justify-center">
+      <div className="flex justify-center items-center py-2 bg-background/60">
         <nav className="hidden gap-x-2 items-center text-sm md:flex">
           {navLinks.map((link) => (
             <NavItem key={link.route} {...link} />
@@ -36,10 +34,12 @@ export function Navbar() {
   );
 }
 
-function NavItem({ route, label, subRoutes }: NavLink) {
+type NavItemProps = (typeof navLinks)[number];
+
+function NavItem({ route, label, subRoutes }: NavItemProps) {
   const pathname = usePathname();
 
-  return subRoutes ? (
+  return subRoutes.length > 0 ? (
     <DropdownMenu key={route} modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
