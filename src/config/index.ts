@@ -1,4 +1,22 @@
-export const navLinks = [
+import { FaDharmachakra, FaTree } from 'react-icons/fa';
+import { FcElectronics } from 'react-icons/fc';
+import { GrVirtualMachine } from 'react-icons/gr';
+import { IoHome } from 'react-icons/io5';
+import { RiComputerFill } from 'react-icons/ri';
+import { GraticuleProps } from 'react-simple-maps';
+import { FaCar } from 'react-icons/fa';
+import { FaComputer } from 'react-icons/fa6';
+import { IoLogoElectron } from 'react-icons/io5';
+export type NavLink = {
+  route: string;
+  label: string;
+  subRoutes?: {
+    route: string;
+    label: string;
+  }[];
+};
+
+export const navLinks: NavLink[] = [
   {
     route: '/curriculum',
     label: 'পাঠ্যক্রম',
@@ -95,3 +113,86 @@ export const principleMessage = {
     'লাখো শহীদের রক্তে ভেজা স্বাধীন এদেশ, বাংলাদেশ। পৃথিবীর মানচিত্রে ছোট্ট একটি দেশ, হাজারো ঐতিহ্যে ঘেরা প্রাকৃতিক সৌন্দর্যেভরা। নাতিশীতোষ্ণ জলবায়ু, সম্পদ সীমিত। বিশ্বের সর্বাধিক ঘনবসতিপূর্ণ এদেশ। ৪০% মানুষ দারিদ্র্য সীমার নীচে বসবাস করে এবং প্রায় ৪৫% লোক বেকার। নির্মম বেকারত্বের অভিশাপে ভূগছে এদেশের মানুষ, এদেশের যুব সমাজ। বেকার সে নিজের কাছে অপরাধী, সে পরিবারের দুঃখ, পরিবারের কান্না, দেশের বোঝা। বেকার জীবনের গ্লানি বড় বেদনাদায়ক, বড় দূর্বিসহ। ফলে বাড়ছে অস্থিরতা, সংঘটিত হচ্ছে নানা অপরাধ। দিন দিন মানুষ অসহায় হয়ে পড়ছে। উন্নত দেশ যেমন জাপানে বেকারত্বের হার ৫% , যুক্তরাজ্যে ৭%, যুক্তরাষ্ট্রে ৯% আর বাংলাদেশে বেকারত্বের হার প্রায় ৪৫%। সরকারি চাকুরী সীমিত। ইচ্ছা থাকা সত্ত্বেও, শিক্ষা থাকা সত্ত্বেও, শিক্ষিত যুব সমাজ খুঁজে পাচ্ছেনা কাজ। ফলে জীবনে নেমে এসেছে হতাশা ও ক্ষোভ। জাতির এ ক্রান্তিলগ্নে ও সংকট মুহুর্তে পথহারা ছাত্র সমাজের উজ্জ্বল ভবিষ্যৎ রচনার লক্ষ্যে তথা ভবিষ্যতে কর্মসংস্থান তৈরীর লক্ষ্যে যে প্রতিষ্ঠানটি হাল ধরেছে সেটি হল আর্ন্তজাতিক মান, প্রযুক্তিগত জ্ঞান ও দক্ষতা সম্পন্ন একটি অনন্য প্রতিষ্ঠান সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট চট্টগ্রাম। সর্বাগ্রে একটি কথা স্মরন রাখার মত যে, কখনোই কারিগরি স্বল্প ধারনা নিয়ে দক্ষতা ছাড়া কাজ খুঁজে পাওয়া যায় না। কর্মসংস্থানের ব্যবস্থা। হয়না, বেকার সমস্যা দূরীভূত হবেনা। এজন্য অবশ্যই আপনাকে কারিগরি জ্ঞানে, হাতে-কলমে পূর্ণ দক্ষতা অর্জন করতে হবে। সামণ্ডন নাহার হারুন পলিটেকনিক ইনস্টিটিউট, চট্টগ্রাম হাতে কলমে আপনার সন্তানকে সুদক্ষ করে গড়ে তোলে। সুতরাং নিঃসন্দেহে বলা চলে এ প্রতিষ্ঠানটি আপনার সন্তানের জন্য আধার ঘরের প্রদীপ, বটবৃক্ষের ছায়ার মত। আর দেরী নয়, আর কোন হতাশা নয়, আপনার সন্তানকে সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট, চট্টগ্রাম-এ ভর্তি করিয়ে বেকারত্বের অভিশাপ থেকে মুক্তি দিন। দেশ গড়ার সুযোগ দিন। ',
   last_message: 'জয়বাংলা - বাংলাদেশ চিরজীবী হোক।',
 } as const;
+
+export const allTechonology = [
+  {
+    id: '1',
+    name: 'ইলেকট্রিক্যাল',
+    first_image:
+      'https://plus.unsplash.com/premium_photo-1683134033173-f43b86168498?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    second_image:
+      'https://images.unsplash.com/photo-1596496181848-3091d4878b24?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    third_image:
+      'https://images.unsplash.com/photo-1580983230712-f7d0f878bcc4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description:
+      'আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে।বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে।বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে কোনও কোর্স সফলভাবে সম্পন্ন করার পরে, শিক্ষার্থীদের জন্য নিয়োগ সহায়তাও সরবরাহ করা হয়। কোর্সগুলি ইলেক্ট্রনিক্স এবং টেলিযোগাযোগ প্রকৌশল বিষয়ে দক্ষতার সুযোগ করে দেয়। এই বিস্তৃত প্রশিক্ষণ কোর্সের সাহায্যে শিক্ষার্থীরা বিভিন্ন প্রকৌশল চাকরিতে দক্ষ হতে পারে বা শিল্পের জন্য তাদের নিজস্ব ব্যবসা শুরু করতে পারে।',
+    icons: '<IoLogoElectron/>',
+    department_head: 'হাবিব আহমেদ',
+    head_image:
+      'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    id: '2',
+    name: 'মেকানিক্যাল ',
+    first_image:
+      'https://plus.unsplash.com/premium_photo-1661964103133-3f66d9a1f517?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    second_image:
+      'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    third_image:
+      'https://plus.unsplash.com/premium_photo-1661962937643-fa0785592d3d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description:
+      'আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে।বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে।বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে কোনও কোর্স সফলভাবে সম্পন্ন করার পরে, শিক্ষার্থীদের জন্য নিয়োগ সহায়তাও সরবরাহ করা হয়। কোর্সগুলি ইলেক্ট্রনিক্স এবং টেলিযোগাযোগ প্রকৌশল বিষয়ে দক্ষতার সুযোগ করে দেয়। এই বিস্তৃত প্রশিক্ষণ কোর্সের সাহায্যে শিক্ষার্থীরা বিভিন্ন প্রকৌশল চাকরিতে দক্ষ হতে পারে বা শিল্পের জন্য তাদের নিজস্ব ব্যবসা শুরু করতে পারে।',
+    icons: '<GrVirtualMachine/>',
+    department_head: 'হাবিব আহমেদ',
+    head_image:
+      'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    id: '3',
+    name: 'কম্পিউটার',
+    first_image:
+      'https://images.unsplash.com/photo-1594182878770-c05ece34b1f2?q=80&w=1500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    second_image:
+      'https://images.unsplash.com/photo-1581092795442-d153057d8e0d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    third_image:
+      'https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description:
+      'আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে।বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে।বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে কোনও কোর্স সফলভাবে সম্পন্ন করার পরে, শিক্ষার্থীদের জন্য নিয়োগ সহায়তাও সরবরাহ করা হয়। কোর্সগুলি ইলেক্ট্রনিক্স এবং টেলিযোগাযোগ প্রকৌশল বিষয়ে দক্ষতার সুযোগ করে দেয়। এই বিস্তৃত প্রশিক্ষণ কোর্সের সাহায্যে শিক্ষার্থীরা বিভিন্ন প্রকৌশল চাকরিতে দক্ষ হতে পারে বা শিল্পের জন্য তাদের নিজস্ব ব্যবসা শুরু করতে পারে।',
+    icons: '<FaComputer />',
+    department_head: 'হাবিব আহমেদ',
+    head_image:
+      'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    id: '4',
+    name: 'অটোমোবাইল',
+    first_image:
+      'https://plus.unsplash.com/premium_photo-1664300814537-5d461ae59964?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    second_image:
+      'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    third_image:
+      'https://images.unsplash.com/photo-1632733711679-529326f6db12?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description:
+      'আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে।বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে।বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে কোনও কোর্স সফলভাবে সম্পন্ন করার পরে, শিক্ষার্থীদের জন্য নিয়োগ সহায়তাও সরবরাহ করা হয়। কোর্সগুলি ইলেক্ট্রনিক্স এবং টেলিযোগাযোগ প্রকৌশল বিষয়ে দক্ষতার সুযোগ করে দেয়। এই বিস্তৃত প্রশিক্ষণ কোর্সের সাহায্যে শিক্ষার্থীরা বিভিন্ন প্রকৌশল চাকরিতে দক্ষ হতে পারে বা শিল্পের জন্য তাদের নিজস্ব ব্যবসা শুরু করতে পারে।',
+    icons: '<FaCar/>',
+    department_head: 'হাবিব আহমেদ',
+    head_image:
+      'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    id: '5',
+    name: 'সিভিল',
+    first_image:
+      'https://plus.unsplash.com/premium_photo-1682126784671-741bbbc4a531?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    second_image:
+      'https://plus.unsplash.com/premium_photo-1681690579274-7f99f9f230d6?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    third_image:
+      'https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?q=80&w=1492&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description:
+      'আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে।বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে।বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে কোনও কোর্স সফলভাবে সম্পন্ন করার পরে, শিক্ষার্থীদের জন্য নিয়োগ সহায়তাও সরবরাহ করা হয়। কোর্সগুলি ইলেক্ট্রনিক্স এবং টেলিযোগাযোগ প্রকৌশল বিষয়ে দক্ষতার সুযোগ করে দেয়। এই বিস্তৃত প্রশিক্ষণ কোর্সের সাহায্যে শিক্ষার্থীরা বিভিন্ন প্রকৌশল চাকরিতে দক্ষ হতে পারে বা শিল্পের জন্য তাদের নিজস্ব ব্যবসা শুরু করতে পারে।',
+    icons: '<IoHome/>',
+    department_head: 'হাবিব আহমেদ',
+    head_image:
+      'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+];
