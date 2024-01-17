@@ -1,7 +1,5 @@
 import CountUp from 'react-countup';
-import { PiStudent } from 'react-icons/pi';
-import { PiChalkboardTeacher } from 'react-icons/pi';
-import { PiBuildings } from 'react-icons/pi';
+import { PiBuildings, PiChalkboardTeacher, PiStudent } from 'react-icons/pi';
 
 const milestones = [
   {
@@ -21,7 +19,9 @@ const milestones = [
   },
 ] as const;
 
-const Milestones = () => {
+type MilestoneProps = (typeof milestones)[number];
+
+export function Milestones() {
   return (
     <section className="my-10 text-background/90 bg-[url('/slider0.jpg')] bg-center bg-cover">
       <div className="backdrop-brightness-[0.35] space-y-14 py-28">
@@ -35,27 +35,31 @@ const Milestones = () => {
             উন্নয়ন ও উৎপাদনশীলতা বৃদ্ধিতে কারিগরি ও বৃত্তিমূলক শিক্ষার ভূমিকা
           </p>
         </div>
-        <div className="flex gap-24 justify-center">
-          {milestones.map(({ Icon, count, title }, i) => (
-            <div className="flex gap-x-5 items-center" key={i}>
-              <div className="flex justify-center items-center w-24 text-6xl text-white rounded-full shadow bg-primary aspect-square">
-                {Icon}
-              </div>
-              <div className="space-y-1">
-                <CountUp
-                  className="text-5xl font-bold tracking-tight"
-                  start={0}
-                  end={count}
-                  duration={3}
-                />
-                <h4 className="text-lg">{title}</h4>
-              </div>
-            </div>
+        <ul className="flex gap-24 justify-center">
+          {milestones.map((milestone) => (
+            <Milestone key={milestone.title} {...milestone} />
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
-};
+}
 
-export default Milestones;
+function Milestone({ Icon, count, title }: MilestoneProps) {
+  return (
+    <li className="flex gap-x-5 items-center">
+      <div className="flex justify-center items-center w-24 text-6xl text-white rounded-full shadow bg-primary aspect-square">
+        {Icon}
+      </div>
+      <div className="space-y-1">
+        <CountUp
+          className="text-5xl font-bold tracking-tight"
+          start={0}
+          end={count}
+          duration={3}
+        />
+        <h4 className="text-lg">{title}</h4>
+      </div>
+    </li>
+  );
+}

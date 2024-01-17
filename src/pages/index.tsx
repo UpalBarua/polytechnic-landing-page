@@ -1,7 +1,7 @@
 import { ChairmansMessage } from '@/components/chairmans-message';
 import { Departments } from '@/components/departments';
 import { LatestUpdate } from '@/components/latest-update';
-import Milestones from '@/components/milestones';
+import { Milestones } from '@/components/milestones';
 import { Noticeboard } from '@/components/noticeboard';
 import { Slider } from '@/components/slider';
 

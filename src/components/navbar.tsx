@@ -5,13 +5,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import type { NavLink } from '@/config';
 import { navLinks } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaChevronDown, FaChevronRight, FaSchool } from 'react-icons/fa';
-import MobileNav from './mobile-nav';
 
 export function Navbar() {
   return (
@@ -36,10 +34,12 @@ export function Navbar() {
   );
 }
 
-function NavItem({ route, label, subRoutes }: NavLink) {
+type NavItemProps = (typeof navLinks)[number];
+
+function NavItem({ route, label, subRoutes }: NavItemProps) {
   const pathname = usePathname();
 
-  return subRoutes ? (
+  return subRoutes.length > 0 ? (
     <DropdownMenu key={route} modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
