@@ -23,7 +23,7 @@ export function Slider() {
           .map((_, i) => (
             <CarouselItem key={i} className="relative w-full h-[26rem]">
               <Image
-                className="object-center object-cover"
+                className="object-center object-cover rounded"
                 src={`/slider${i}.jpg`}
                 alt="slider image"
                 fill

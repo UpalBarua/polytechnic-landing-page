@@ -5,7 +5,7 @@ import { chairmansMessage } from '@/config';
 
 export function ChairmansMessage() {
   return (
-    <div className="mx-auto space-y-3 max-w-sm rounded-md sm:border sm:shadow-sm sm:max-w-full sm:p-6">
+    <div className="mx-auto space-y-3 max-w-sm rounded-md sm:border sm:shadow-sm sm:max-w-full sm:p-6 bg-background/60">
       <Image
         className="object-cover object-center rounded-full border aspect-square"
         src={chairmansMessage.picture}

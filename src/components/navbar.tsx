@@ -19,12 +19,12 @@ export function Navbar() {
       <div className="container py-4 flex max-w-6xl">
         <Link href="/" className="flex items-center space-x-3">
           <FaSchool className="text-3xl" />
-          <span className="hidden text-xl font-bold capitalize sm:inline-block">
+          <span className="hidden text-xl font-bold text-foreground capitalize sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
       </div>
-      <div className="flex items-center py-2 bg-background justify-center">
+      <div className="flex items-center py-2 bg-background/60 justify-center">
         <nav className="hidden gap-x-2 items-center text-sm md:flex">
           {navLinks.map((link) => (
             <NavItem key={link.route} {...link} />

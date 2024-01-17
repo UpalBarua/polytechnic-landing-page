@@ -5,7 +5,7 @@ import { FaChevronRight } from 'react-icons/fa';
 
 export function Noticeboard() {
   return (
-    <div className="mx-auto space-y-2 max-w-sm rounded-md sm:border sm:shadow sm:max-w-full sm:p-6">
+    <div className="mx-auto bg-background/60 space-y-2 max-w-sm rounded-md sm:border sm:shadow sm:max-w-full sm:p-6">
       <h2 className="text-2xl font-bold tracking-tight">নোটিশবোর্ড</h2>
       <div className="divide-y pb-2">
         {Array(4)
