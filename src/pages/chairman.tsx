@@ -1,5 +1,5 @@
-import { chairmansMessage } from '@/config';
-import Image from 'next/image';
+import { chairmansMessage } from "@/config";
+import Image from "next/image";
 
 function Chairman() {
   return (
@@ -16,9 +16,11 @@ function Chairman() {
         <h3 className="text-2xl font-bold">{chairmansMessage.name}</h3>
         <span className="text-lg font-medium">{chairmansMessage.position}</span>
       </div>
+      <span className="text-lg font-medium">{chairmansMessage.institute}</span>
       <p className="leading-relaxed text-foreground/80">
         {chairmansMessage.message}
       </p>
+      <p className="pt-2">{chairmansMessage?.last_message}</p>
     </main>
   );
 }
