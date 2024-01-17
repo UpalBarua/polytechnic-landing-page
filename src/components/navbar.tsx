@@ -9,12 +9,18 @@ import { navLinks } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FaChevronDown, FaChevronRight, FaSchool } from 'react-icons/fa';
+import {
+  FaChevronDown,
+  FaChevronRight,
+  FaPhoneAlt,
+  FaSchool,
+} from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 export function Navbar() {
   return (
     <header className="fixed top-0 left-0 z-10 w-full border-b shadow bg-primary text-background">
-      <div className="container flex py-4 max-w-7xl">
+      <div className="container flex justify-between items-center py-4 max-w-7xl">
         <Link href="/" className="flex items-center space-x-3">
           <div className="flex justify-center items-center w-8 rounded-full shadow aspect-square bg-background/60 text-background">
             <FaSchool className="text-xl" />
@@ -23,6 +29,16 @@ export function Navbar() {
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
+        <div className="text-sm text-foreground/80">
+          <div className="flex gap-x-1 items-center">
+            <MdEmail className="text-foreground/60" />
+            <span>snhpi@snphi.com</span>
+          </div>
+          <div className="flex gap-x-1 items-center">
+            <FaPhoneAlt className="text-foreground/60" />
+            <span>01234567890</span>
+          </div>
+        </div>
       </div>
       <div className="flex justify-center items-center py-2 bg-background/100">
         <nav className="hidden gap-x-2 items-center text-sm md:flex">
