@@ -1,11 +1,12 @@
-import { ChairmansMessage } from '@/components/chairmans-message';
-import { Technologies } from '@/components/technologies';
-import { LatestUpdate } from '@/components/latest-update';
-import { Milestones } from '@/components/milestones';
-import { Noticeboard } from '@/components/noticeboard';
-import { Slider } from '@/components/slider';
-import Gallery from '@/components/gallery';
-import Benefit from '@/components/benefits';
+import { ChairmansMessage } from "@/components/chairmans-message";
+import { Technologies } from "@/components/technologies";
+import { LatestUpdate } from "@/components/latest-update";
+import { Milestones } from "@/components/milestones";
+import { Noticeboard } from "@/components/noticeboard";
+import { Slider } from "@/components/slider";
+import Gallery from "@/components/gallery";
+import Benefit from "@/components/benefits";
+import Footer from "@/components/footer";
 
 function HomePage() {
   return (
@@ -27,6 +28,7 @@ function HomePage() {
       <Milestones />
       <Gallery />
       <Benefit />
+      <Footer></Footer>
     </main>
   );
 }

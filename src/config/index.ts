@@ -51,14 +51,9 @@ export const navLinks = [
     subRoutes: [],
   },
   {
-    route: '/',
+    route: '/gallery',
     label: 'গ্যালারি',
-    subRoutes: [
-      { route: '/admission-eligibility', label: 'ভর্তির যোগ্যতা' },
-      { route: '/admission-policies', label: 'ভর্তির নীতিমালা' },
-      { route: '/application-process', label: 'আবেদন প্রক্রিয়া' },
-      { route: '/tuition-fees-and-others', label: 'টিউশন ফি ও অন্যান্য' },
-    ],
+    subRoutes: [],
   },
   {
     route: '/our-world',
