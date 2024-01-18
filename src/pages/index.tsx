@@ -1,9 +1,11 @@
-import { ChairmansMessage } from '@/components/chairmans-message';
-import { Departments } from '@/components/departments';
-import { LatestUpdate } from '@/components/latest-update';
-import { Milestones } from '@/components/milestones';
-import { Noticeboard } from '@/components/noticeboard';
-import { Slider } from '@/components/slider';
+import Benefit from "@/components/benefits";
+import { ChairmansMessage } from "@/components/chairmans-message";
+import { Departments } from "@/components/departments";
+import Gallery from "@/components/gallery";
+import { LatestUpdate } from "@/components/latest-update";
+import { Milestones } from "@/components/milestones";
+import { Noticeboard } from "@/components/noticeboard";
+import { Slider } from "@/components/slider";
 
 function HomePage() {
   return (
@@ -23,6 +25,8 @@ function HomePage() {
         </div>
       </section>
       <Milestones />
+      <Gallery></Gallery>
+      <Benefit></Benefit>
     </main>
   );
 }
