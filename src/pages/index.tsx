@@ -4,6 +4,8 @@ import { LatestUpdate } from '@/components/latest-update';
 import { Milestones } from '@/components/milestones';
 import { Noticeboard } from '@/components/noticeboard';
 import { Slider } from '@/components/slider';
+import Gallery from '@/components/gallery';
+import Benefit from '@/components/benefits';
 
 function HomePage() {
   return (
@@ -23,6 +25,8 @@ function HomePage() {
         </div>
       </section>
       <Milestones />
+      <Gallery />
+      <Benefit />
     </main>
   );
 }

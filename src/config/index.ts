@@ -62,7 +62,7 @@ export const navLinks = [
   },
   {
     route: '/our-world',
-    label: 'আমাদের ভবন',
+    label: 'আমাদের ভূবন',
     subRoutes: [
       { route: '/application-process', label: 'আমাদের সম্পর্কে' },
       { route: '/chairman', label: 'চেয়ারম্যানের বাণী' },
