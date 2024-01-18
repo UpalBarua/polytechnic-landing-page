@@ -14,13 +14,13 @@ export function Technologies() {
   );
 }
 
-type TechnologyProps = (typeof technologies)[number];
+export type TechnologyProps = (typeof technologies)[number];
 
-function Technology({ Icon, name, description }: TechnologyProps) {
+function Technology({ id, Icon, name, description }: TechnologyProps) {
   return (
     <Link
-      className="border bg-background/60 rounded-md shadow p-6 group hover:bg-primary transition-colors duration-200 hover:text-background hover:border-primary space-y-1"
-      href="/">
+      href={`/technologies/${id}`}
+      className="border bg-background/60 rounded-md shadow p-6 group hover:bg-primary transition-colors duration-200 hover:text-background hover:border-primary space-y-1">
       <Icon className="text-5xl text-primary transition-colors duration-200 group-hover:text-background mb-2" />
       <h4 className="font-bold">{name} টেকনোলজি</h4>
       <p className="text-sm text-foreground/80 group-hover:text-background transition-colors duration-200">
