@@ -1,9 +1,38 @@
-import Image from "next/image";
-import React from "react";
+import { technologies } from '@/config';
+import Image from 'next/image';
 
-const Technology = () => {
+export function getStaticPaths() {
+  const paths = technologies.map(({ id }) => ({
+    params: {
+      technologyId: id,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+export function getStaticProps({
+  params,
+}: {
+  params: { technologyId: string };
+}) {
+  const technology = technologies.find(({ id }) => id === params.technologyId);
+
+  return {
+    props: {
+      technology: { ...technology, Icon: '' },
+    },
+  };
+}
+
+export default function Technology({ technology }) {
+  console.log(technology);
+
   return (
-    <section className="pt-14">
+    <section className="pt-56 container">
       <div className="flex flex-col lg:flex-row gap-6">
         <div className=" flex-1">
           <h1 className="text-3xl font-bold pb-2">Our Computer Department</h1>
@@ -31,12 +60,9 @@ const Technology = () => {
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             height={500}
             width={500}
-            alt=""
-          ></Image>
+            alt=""></Image>
         </div>
       </div>
     </section>
   );
-};
-
-export default Technology;
+}
