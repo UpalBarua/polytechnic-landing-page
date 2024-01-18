@@ -1,11 +1,11 @@
-import Benefit from "@/components/benefits";
-import { ChairmansMessage } from "@/components/chairmans-message";
-import { Departments } from "@/components/departments";
-import Gallery from "@/components/gallery";
-import { LatestUpdate } from "@/components/latest-update";
-import { Milestones } from "@/components/milestones";
-import { Noticeboard } from "@/components/noticeboard";
-import { Slider } from "@/components/slider";
+import { ChairmansMessage } from '@/components/chairmans-message';
+import { Technologies } from '@/components/technologies';
+import { LatestUpdate } from '@/components/latest-update';
+import { Milestones } from '@/components/milestones';
+import { Noticeboard } from '@/components/noticeboard';
+import { Slider } from '@/components/slider';
+import Gallery from '@/components/gallery';
+import Benefit from '@/components/benefits';
 
 function HomePage() {
   return (
@@ -14,7 +14,7 @@ function HomePage() {
         <div className="col-span-full space-y-4 md:col-span-8">
           <Slider />
           <LatestUpdate />
-          <Departments />
+          <Technologies />
         </div>
         <div className="col-span-full space-y-8 lg:space-y-4 md:col-span-4">
           {/* <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-2">
@@ -25,8 +25,8 @@ function HomePage() {
         </div>
       </section>
       <Milestones />
-      <Gallery></Gallery>
-      <Benefit></Benefit>
+      <Gallery />
+      <Benefit />
     </main>
   );
 }

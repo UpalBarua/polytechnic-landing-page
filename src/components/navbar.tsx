@@ -20,7 +20,7 @@ import { MdEmail } from 'react-icons/md';
 export function Navbar() {
   return (
     <header className="fixed top-0 left-0 z-10 w-full border-b shadow bg-primary text-background">
-      <div className="container flex justify-between items-center py-4 max-w-7xl">
+      <div className="container flex justify-between items-center py-4 max-w-7xl border-b">
         <Link href="/" className="flex items-center space-x-3">
           <div className="flex justify-center items-center w-8 rounded-full shadow aspect-square bg-background/60 text-background">
             <FaSchool className="text-xl" />
