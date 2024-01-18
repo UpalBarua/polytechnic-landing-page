@@ -33,14 +33,30 @@
   }
 
   body {
-    background: linear-gradient(
+    /* background: linear-gradient(
       130deg,
-      rgba(244, 211, 94, 0.125) 20%,
-      rgba(238, 150, 75, 0.125) 40%,
-      rgba(249, 87, 56, 0.125) 80%
+      rgba(244, 211, 94, 0.175) 25%,
+      rgba(238, 150, 75, 0.175) 50%,
+      rgba(249, 87, 56, 0.175) 75%
+    ); */
+
+    background-image: linear-gradient(
+      to left top,
+      hsla(20, 76%, 60%, 0.1875),
+      hsla(20, 78%, 61%, 0.1875),
+      hsla(20, 80%, 62%, 0.1875),
+      hsla(20, 82%, 63%, 0.1875),
+      hsla(20, 84%, 64%, 0.1875),
+      hsla(20, 86%, 65%, 0.1875),
+      hsla(20, 88%, 66%, 0.1875),
+      hsla(20, 90%, 67%, 0.1875),
+      hsla(20, 92%, 68%, 0.1875),
+      hsla(20, 94%, 69%, 0.1875),
+      hsla(20, 96%, 70%, 0.1875),
+      hsla(20, 98%, 71%, 0.1875)
     );
 
-    @apply bg-background text-foreground/90 !min-w-full;
+    @apply bg-background bg-cover bg-center text-foreground/90 !min-w-full;
   }
 }
 
