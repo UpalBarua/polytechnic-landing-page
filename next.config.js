@@ -4,11 +4,15 @@ const nextConfig = {
     // domains: ['images.unsplash.com'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
       },
     ],
+  },
+  webpack: (config) => {
+    config.resolve.alias.canvas = false;
+    return config;
   },
 
   reactStrictMode: true,
