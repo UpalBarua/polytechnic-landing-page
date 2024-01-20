@@ -1,20 +1,20 @@
-import Benefit from '@/components/benefits';
-import { ChairmansMessage } from '@/components/chairmans-message';
-import Footer from '@/components/footer';
-import Gallery from '@/components/gallery';
-import { LatestUpdate } from '@/components/latest-update';
-import { Milestones } from '@/components/milestones';
-import { Noticeboard } from '@/components/noticeboard';
-import { Slider } from '@/components/slider';
-import { Technologies } from '@/components/technologies';
-import { NoticeForm } from '@/components/notice-form';
+import Benefit from "@/components/benefits";
+import { ChairmansMessage } from "@/components/chairmans-message";
+import Footer from "@/components/footer";
+import Gallery from "@/components/gallery";
+import { LatestUpdate } from "@/components/latest-update";
+import { Milestones } from "@/components/milestones";
+import { Noticeboard } from "@/components/noticeboard";
+import { Slider } from "@/components/slider";
+import { Technologies } from "@/components/technologies";
+import { NoticeForm } from "@/components/notice-form";
 
 function HomePage() {
   return (
     <main>
       <section className="container grid grid-cols-12 gap-8 pt-32 max-w-7xl md:gap-4">
         <div className="col-span-full space-y-4 md:col-span-8">
-          <NoticeForm />
+          {/* <NoticeForm /> */}
           <Slider />
           <LatestUpdate />
           <Technologies />
@@ -23,7 +23,7 @@ function HomePage() {
           {/* <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-2">
           <UpcomingEvents />
         </div> */}
-          <Noticeboard />
+          {/* <Noticeboard /> */}
           <ChairmansMessage />
         </div>
       </section>

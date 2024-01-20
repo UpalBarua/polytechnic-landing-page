@@ -1,7 +1,7 @@
-import { buttonVariants } from '@/components/ui/button';
-import Link from 'next/link';
-import { FaChevronRight } from 'react-icons/fa';
-import { Separator } from './ui/separator';
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
+import { Separator } from "./ui/separator";
 
 export function Noticeboard() {
   return (
@@ -10,7 +10,7 @@ export function Noticeboard() {
       <Separator />
       <div className="pb-2 divide-y">
         {Array(4)
-          .fill('')
+          .fill("")
           .map((_, i) => (
             <Notice key={i} />
           ))}
@@ -18,8 +18,9 @@ export function Noticeboard() {
       <Link
         href="/notices"
         className={buttonVariants({
-          variant: 'default',
-        })}>
+          variant: "default",
+        })}
+      >
         <span>সকল নোটিশ</span>
         <FaChevronRight className="text-sm" />
       </Link>
