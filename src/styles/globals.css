@@ -10,7 +10,7 @@
     --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
-    --primary: 28 95% 55%;
+    --primary: 28 80% 50%;
     --primary-foreground: 26 83.3% 14.1%;
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
@@ -33,30 +33,13 @@
   }
 
   body {
-    /* background: linear-gradient(
-      130deg,
-      rgba(244, 211, 94, 0.175) 25%,
-      rgba(238, 150, 75, 0.175) 50%,
-      rgba(249, 87, 56, 0.175) 75%
-    ); */
-
-    background-image: linear-gradient(
-      to left top,
-      hsla(20, 76%, 60%, 0.1875),
-      hsla(20, 78%, 61%, 0.1875),
-      hsla(20, 80%, 62%, 0.1875),
-      hsla(20, 82%, 63%, 0.1875),
-      hsla(20, 84%, 64%, 0.1875),
-      hsla(20, 86%, 65%, 0.1875),
-      hsla(20, 88%, 66%, 0.1875),
-      hsla(20, 90%, 67%, 0.1875),
-      hsla(20, 92%, 68%, 0.1875),
-      hsla(20, 94%, 69%, 0.1875),
-      hsla(20, 96%, 70%, 0.1875),
-      hsla(20, 98%, 71%, 0.1875)
+    background: rgb(219, 157, 87);
+    background: radial-gradient(
+      circle,
+      rgba(219, 157, 87, 0.15) 65%,
+      rgba(215, 127, 51, 0.25) 75%
     );
-
-    @apply bg-background bg-cover bg-center text-foreground/90 !min-w-full;
+    @apply bg-cover bg-top text-foreground/90 !min-w-full;
   }
 }
 

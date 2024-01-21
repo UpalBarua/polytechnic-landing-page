@@ -1,14 +1,13 @@
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { navLinks } from '@/config';
-import { cn } from '@/lib/utils';
-import Link, { LinkProps } from 'next/link';
-import { useRouter } from 'next/navigation';
+import { navLinks, type NavLink } from '@/config';
+import Link from 'next/link';
+import * as React from 'react';
 import { useState } from 'react';
 import { RiMenu2Line } from 'react-icons/ri';
 
-function MobileNav() {
+export function MobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -16,23 +15,16 @@ function MobileNav() {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="p-0 w-auto h-auto text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden">
-          <RiMenu2Line className="text-xl" />
+          className="p-0 w-auto h-auto text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-background/80 md:hidden">
+          <RiMenu2Line className="text-2xl" />
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="pr-0">
-        <h4 className="font-medium">Options</h4>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+      <SheetContent side="right">
+        <ScrollArea className="my-8 h-[calc(100vh-4rem)]">
           <div className="flex flex-col space-y-4">
-            {navLinks.map(({ label, href }, i) => (
-              <MobileLink
-                key={i}
-                href={href}
-                onOpenChange={setOpen}
-                className="text-muted-foreground">
-                {label}
-              </MobileLink>
+            {navLinks.map((link) => (
+              <MobileNavItem key={link.route} {...link} />
             ))}
           </div>
         </ScrollArea>
@@ -41,32 +33,25 @@ function MobileNav() {
   );
 }
 
-interface MobileLinkProps extends LinkProps {
-  onOpenChange?: (open: boolean) => void;
-  children: React.ReactNode;
-  className?: string;
-}
-
-function MobileLink({
-  href,
-  onOpenChange,
-  className,
-  children,
-  ...props
-}: MobileLinkProps) {
-  const router = useRouter();
-  return (
+function MobileNavItem({ route, label, subRoutes }: NavLink) {
+  return subRoutes.length > 0 ? (
+    <React.Fragment>
+      <h4 className="font-bold">{label}</h4>
+      {subRoutes.map(({ route, label }) => (
+        <Link
+          key={route}
+          href={route}
+          className="ps-2 text-foreground/60 hover:text-foreground/80">
+          {label}
+        </Link>
+      ))}
+    </React.Fragment>
+  ) : (
     <Link
-      href={href}
-      onClick={() => {
-        router.push(href.toString());
-        onOpenChange?.(false);
-      }}
-      className={cn(className)}
-      {...props}>
-      {children}
+      key={route}
+      href={route}
+      className="text-foreground/60 hover:text-foreground/80">
+      <span>{label}</span>
     </Link>
   );
 }
-
-export default MobileNav;
