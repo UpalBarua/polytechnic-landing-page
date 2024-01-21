@@ -14,7 +14,6 @@ function HomePage() {
     <main>
       <section className="container grid grid-cols-12 gap-8 pt-32 max-w-7xl md:gap-4">
         <div className="col-span-full space-y-4 md:col-span-8">
-          <NoticeForm />
           <Slider />
           <LatestUpdate />
           <Technologies />

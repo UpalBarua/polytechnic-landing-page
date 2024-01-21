@@ -8,14 +8,16 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { Textarea } from './ui/textarea';
-import { uploadFile } from '@/lib/upload-file';
 import { db } from '@/firebase/firebase.config';
+import { uploadFile } from '@/lib/upload-file';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { addDoc, collection } from 'firebase/firestore';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { CgSpinnerTwo } from 'react-icons/cg';
+import * as z from 'zod';
+import { Textarea } from './ui/textarea';
+import { toast } from 'sonner';
 
 const formSchema = z.object({
   title: z.string(),
@@ -42,18 +44,15 @@ export function NoticeForm() {
   }: z.infer<typeof formSchema>) => {
     try {
       setIsSubmitting(true);
-
       const pdfLink = await uploadFile(pdfFile);
-
-      const response = await addDoc(collection(db, 'notices'), {
+      await addDoc(collection(db, 'notices'), {
         title,
         description,
         pdfLink,
+        publishedOn: Date.now(),
       });
 
-      console.log({
-        response,
-      });
+      toast('Notice added successfully');
     } catch (error) {
       console.log(error);
     } finally {
@@ -63,7 +62,7 @@ export function NoticeForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="title"
@@ -84,7 +83,11 @@ export function NoticeForm() {
             <FormItem>
               <FormLabel>Title</FormLabel>
               <FormControl>
-                <Textarea placeholder="description" {...field} />
+                <Textarea
+                  placeholder="description"
+                  className="resize-none"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -110,7 +113,11 @@ export function NoticeForm() {
           )}
         />
         <Button type="submit" disabled={isSubmitting}>
-          Submit
+          {isSubmitting ? (
+            <CgSpinnerTwo className="text-2xl animate-spin" />
+          ) : (
+            'Submit'
+          )}
         </Button>
       </form>
     </Form>
