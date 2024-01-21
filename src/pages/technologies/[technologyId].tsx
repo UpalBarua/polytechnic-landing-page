@@ -30,8 +30,6 @@ export function getStaticProps({
 }
 
 export default function Technology({ technology }) {
-  console.log(technology);
-
   const { id, name, picture, cheifInstructor, icon, description, images } =
     technology;
 
