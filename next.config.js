@@ -2,11 +2,12 @@
 const nextConfig = {
   images: {
     // domains: ['images.unsplash.com'],
+    domains: ["plus.unsplash.com"],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
       },
     ],
   },

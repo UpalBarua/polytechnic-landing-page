@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -6,16 +6,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { Textarea } from './ui/textarea';
-import { uploadFile } from '@/lib/upload-file';
-import { db } from '@/firebase/firebase.config';
-import { addDoc, collection } from 'firebase/firestore';
-import { useState } from 'react';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { Textarea } from "./ui/textarea";
+import { uploadFile } from "@/lib/upload-file";
+import { db } from "@/firebase/firebase.config";
+import { addDoc, collection } from "firebase/firestore";
+import { useState } from "react";
 
 const formSchema = z.object({
   title: z.string(),
@@ -29,9 +29,9 @@ export function NoticeForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: '',
-      description: '',
-      pdfFile: new File([], ''),
+      title: "",
+      description: "",
+      pdfFile: new File([], ""),
     },
   });
 
@@ -45,7 +45,7 @@ export function NoticeForm() {
 
       const pdfLink = await uploadFile(pdfFile);
 
-      const response = await addDoc(collection(db, 'notices'), {
+      const response = await addDoc(collection(db, "notices"), {
         title,
         description,
         pdfLink,

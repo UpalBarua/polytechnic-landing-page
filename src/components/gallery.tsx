@@ -2,10 +2,11 @@ import Image from "next/image";
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { Button } from "./ui/button";
 
 const Gallery = () => {
   return (
-    <section>
+    <section className="mb-14">
       <h1 className="text-center text-2xl font-bold">
         আমাদের স্মৃতিচারণ মুহূর্ত
       </h1>
@@ -63,59 +64,13 @@ const Gallery = () => {
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
-              <PhotoView src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1532&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                <Image
-                  fill
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1532&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  className="object-center object-cover"
-                />
-              </PhotoView>
-            </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
-              <PhotoView src="https://images.unsplash.com/photo-1530099486328-e021101a494a?q=80&w=1547&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                <Image
-                  fill
-                  src="https://images.unsplash.com/photo-1530099486328-e021101a494a?q=80&w=1547&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  className="object-center object-cover"
-                />
-              </PhotoView>
-            </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
-              <PhotoView src="https://images.unsplash.com/photo-1545696968-1a5245650b36?q=80&w=1432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                <Image
-                  fill
-                  src="https://images.unsplash.com/photo-1545696968-1a5245650b36?q=80&w=1432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  className="object-center object-cover"
-                />
-              </PhotoView>
-            </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-center object-cover">
-              <PhotoView src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                <Image
-                  fill
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  className="object-center object-cover"
-                />
-              </PhotoView>
-            </div>
-            <div className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square relative object-cover object-center">
-              <PhotoView src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                <Image
-                  fill
-                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                  className="object-center object-cover"
-                />
-              </PhotoView>
-            </div>
           </div>
         </div>
       </PhotoProvider>
+
+      <div className="flex justify-center">
+        <Button className="font-bold text-[18px] ">Our All Memory</Button>
+      </div>
     </section>
   );
 };
