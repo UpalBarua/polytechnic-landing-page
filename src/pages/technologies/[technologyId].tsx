@@ -1,5 +1,6 @@
-import { technologies } from '@/config';
-import Image from 'next/image';
+import { technologies } from "@/config";
+import { MdOutlineTopic } from "react-icons/md";
+import Image from "next/image";
 
 export function getStaticPaths() {
   const paths = technologies.map(({ id }) => ({
@@ -23,7 +24,7 @@ export function getStaticProps({
 
   return {
     props: {
-      technology: { ...technology, Icon: '' },
+      technology: { ...technology, Icon: "" },
     },
   };
 }
@@ -31,36 +32,62 @@ export function getStaticProps({
 export default function Technology({ technology }) {
   console.log(technology);
 
+  const { id, name, picture, cheifInstructor, icon, description, images } =
+    technology;
+
   return (
-    <section className="pt-56 container">
-      <div className="flex flex-col lg:flex-row gap-6">
+    <section className="pt-56 container pb-32">
+      <div className="flex flex-col ml-4 lg:ml-12 lg:flex-row gap-14">
         <div className=" flex-1">
-          <h1 className="text-3xl font-bold pb-2">Our Computer Department</h1>
-          <p>
-            Computing jobs are among the highest paid today, and computer
-            science professionals report high job satisfaction. Most computer
-            scientists hold at least a bachelors degree in computer science or a
-            related field. Principal areas of study and careers within computer
-            science include artificial intelligence, computer systems and
-            networks, security, database systems, human-computer interaction,
-            vision and graphics, numerical analysis, programming languages,
-            software engineering, bioinformatics, and theory of What does the
-            future of computer science look like? Theres no end in sight!
-            Computing has permeated our lives and its influence just keeps
-            growing—from the apps on our phones to any device with a computer
-            processor, computing is here to stay. Future opportunities in
-            computing are without boundaries. Across virtually every industry,
-            computer science professionals are engaged in programming, systems
-            analysis, database administration, network architecture, software
-            development, research, and more.
-          </p>
+          <div className="flex gap-4 text-3xl font-bold pb-8 ">
+            <MdOutlineTopic></MdOutlineTopic>
+            <h1 className="text-primary">{name} টেকনোলজি</h1>
+          </div>
+          <hr></hr>
+          <p className="text-[18px]  tracking-wide">{description}</p>
         </div>
+
         <div className="flex-1">
           <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            height={500}
-            width={500}
-            alt=""></Image>
+            src={images[0]}
+            height={550}
+            width={550}
+            alt=""
+            className="rounded-md"
+          ></Image>
+
+          <div className="flex gap-4 pt-4">
+            <Image
+              src={images[1]}
+              height={270}
+              width={265}
+              alt=""
+              className="rounded-md"
+            ></Image>
+            <Image
+              src={images[2]}
+              height={270}
+              width={265}
+              alt=""
+              className="rounded-md"
+            ></Image>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="pt-10 pl-4 lg:pl-14 ">
+          <div>
+            <Image
+              alt=""
+              height={150}
+              width={150}
+              src={cheifInstructor?.picture}
+              className=" rounded-full object-cover object-center"
+            />
+            <h1 className="pt-4 text-[24px] font-bold">
+              ডিপার্টমেন্ট প্রধান : {cheifInstructor?.name}
+            </h1>
+          </div>
         </div>
       </div>
     </section>
