@@ -15,9 +15,9 @@ import { addDoc, collection } from 'firebase/firestore';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CgSpinnerTwo } from 'react-icons/cg';
+import { toast } from 'sonner';
 import * as z from 'zod';
 import { Textarea } from './ui/textarea';
-import { toast } from 'sonner';
 
 const formSchema = z.object({
   title: z.string(),
@@ -52,9 +52,11 @@ export function NoticeForm() {
         publishedOn: Date.now(),
       });
 
+      form.reset();
       toast('Notice added successfully');
     } catch (error) {
       console.log(error);
+      toast('Notice adding failed');
     } finally {
       setIsSubmitting(false);
     }
