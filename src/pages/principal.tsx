@@ -1,9 +1,9 @@
-import { chairmansMessage } from '@/config';
-import Image from 'next/image';
+import { chairmansMessage } from "@/config";
+import Image from "next/image";
 
 function Principal() {
   return (
-    <main className="container space-y-4 max-w-3xl pb-28">
+    <main className="container  space-y-4 max-w-3xl pb-28">
       <Image
         className="object-cover object-center shadow rounded-full border aspect-square"
         src={chairmansMessage.picture}

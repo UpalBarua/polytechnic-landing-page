@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Chairman() {
   return (
-    <main className="container space-y-4 max-w-3xl pb-28">
+    <main className="container  mt-44 space-y-4 max-w-3xl pb-28">
       <Image
         className="object-cover object-center shadow rounded-full border aspect-square"
         src={chairmansMessage.picture}
