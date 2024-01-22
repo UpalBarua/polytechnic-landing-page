@@ -1,62 +1,39 @@
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { navLinks } from '@/config';
+import { navLinks, type NavLink } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import {
-  FaChevronDown,
-  FaChevronRight,
-  FaPhoneAlt,
-  FaSchool,
-} from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { MobileNav } from './mobile-nav';
+import { Logo } from './ui/logo';
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 z-10 w-full border-b shadow bg-primary text-background">
-      <div className="container flex justify-between items-center py-4 max-w-7xl border-b">
-        <Link href="/" className="flex items-center space-x-3">
-          <div className="flex justify-center items-center w-8 rounded-full shadow aspect-square bg-background/60 text-background">
-            <FaSchool className="text-xl" />
-          </div>
-          <span className="hidden text-xl font-bold capitalize text-foreground sm:inline-block">
+    <header className="fixed top-0 left-0 z-10 w-full border-b shadow">
+      <div className="container flex justify-between items-center py-2 max-w-7xl bg-primary">
+        <Link href="/" className="flex gap-x-2 items-center">
+          <Logo />
+          <span className="hidden text-2xl italic font-medium capitalize text-background sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
-        <div className="text-sm text-foreground/80">
-          <div className="flex gap-x-1 items-center">
-            <MdEmail className="text-foreground/60" />
-            <span>snhpi@snphi.com</span>
-          </div>
-          <div className="flex gap-x-1 items-center">
-            <FaPhoneAlt className="text-foreground/60" />
-            <span>01234567890</span>
-          </div>
-        </div>
+        <MobileNav />
       </div>
-      <div className="flex justify-center items-center py-2 bg-background/100">
-        <nav className="hidden gap-x-2 items-center text-sm md:flex">
-          {navLinks.map((link) => (
-            <NavItem key={link.route} {...link} />
-          ))}
-        </nav>
-        {/* <MobileNav /> */}
-      </div>
+      <nav className="container hidden gap-x-2 justify-center items-center py-1 max-w-7xl text-sm bg-background/95 lg:flex">
+        {navLinks.map((link) => (
+          <NavItem key={link.route} {...link} />
+        ))}
+      </nav>
     </header>
   );
 }
 
-type NavItemProps = (typeof navLinks)[number];
-
-function NavItem({ route, label, subRoutes }: NavItemProps) {
-  const pathname = usePathname();
-
+function NavItem({ route, label, subRoutes }: NavLink) {
   return subRoutes.length > 0 ? (
     <DropdownMenu key={route} modal={false}>
       <DropdownMenuTrigger asChild>
@@ -64,10 +41,7 @@ function NavItem({ route, label, subRoutes }: NavItemProps) {
           variant="link"
           size="sm"
           className={cn(
-            'text-base hover:text-foreground/80',
-            pathname?.startsWith('/docs/components')
-              ? 'text-foreground'
-              : 'text-foreground/60'
+            'text-base text-foreground/60 hover:text-foreground/80'
           )}>
           <span>{label}</span>
           <FaChevronDown className="text-xs text-foreground/40" />
@@ -75,41 +49,32 @@ function NavItem({ route, label, subRoutes }: NavItemProps) {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         {subRoutes.map(({ route, label }) => (
-          <DropdownMenuItem key={route}>
-            <Button
-              variant="link"
-              size="sm"
-              className={cn(
-                'text-base hover:text-foreground/80',
-                pathname?.startsWith('/docs/components')
-                  ? 'text-foreground'
-                  : 'text-foreground/60'
-              )}
-              asChild>
-              <Link href={route}>
-                <span>{label}</span>
-                <FaChevronRight className="text-xs text-foreground/40" />
-              </Link>
-            </Button>
+          <DropdownMenuItem key={route} className="p-1 focus:bg-primary/20">
+            <Link
+              href={route}
+              className={buttonVariants({
+                variant: 'link',
+                size: 'sm',
+                className:
+                  '!text-base !text-foreground/60 hover:!text-foreground/80',
+              })}>
+              <span>{label}</span>
+              <FaChevronRight className="text-xs text-foreground/40" />
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
   ) : (
-    <Button
-      variant="link"
-      size="sm"
-      className={cn(
-        'text-base hover:text-foreground/80',
-        pathname?.startsWith('/docs/components')
-          ? 'text-foreground'
-          : 'text-foreground/60'
-      )}
-      asChild>
-      <Link href={route}>
-        <span>{label}</span>
-        <FaChevronRight className="text-xs text-foreground/40" />
-      </Link>
-    </Button>
+    <Link
+      href={route}
+      className={buttonVariants({
+        variant: 'link',
+        size: 'sm',
+        className: '!text-base !text-foreground/60 hover:!text-foreground/80',
+      })}>
+      <span>{label}</span>
+      <FaChevronRight className="text-xs text-foreground/40" />
+    </Link>
   );
 }

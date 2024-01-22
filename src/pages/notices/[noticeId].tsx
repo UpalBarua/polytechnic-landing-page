@@ -1,6 +1,8 @@
-import { Noticeboard } from '@/components/noticeboard';
 import { buttonVariants } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { getCurrentDateTimestamp } from '@/lib/get-current-date-timestamp';
+import { getAllNotices, getNoticeById } from '@/lib/services';
+import { TNotice } from '@/types';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
@@ -9,37 +11,73 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-export default function NoticeDetails() {
+export const getStaticPaths = async () => {
+  try {
+    const notices = await getAllNotices();
+
+    const paths = notices.map(({ id }) => ({
+      params: {
+        noticeId: id,
+      },
+    }));
+
+    return {
+      paths,
+      fallback: true,
+    };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      paths: [],
+      fallback: true,
+    };
+  }
+};
+
+export const getStaticProps = async ({ params: { noticeId } }) => {
+  try {
+    const notice = await getNoticeById(noticeId);
+
+    return {
+      props: notice,
+    };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      props: {},
+    };
+  }
+};
+
+export default function NoticeDetails({
+  description,
+  pdfLink,
+  publishedOn,
+  title,
+}: TNotice) {
   return (
     <main className="pt-32 container md:gap-4 max-w-7xl grid grid-cols-12">
       <section className="col-span-8 space-y-4">
-        <h2 className="text-2xl font-bold tracking-tight">
-          অংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত হালহদিশ
-        </h2>
-        <span className="text-foreground/60">Published on 20 January 2024</span>
+        <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
+        <span className="text-foreground/60">
+          Published on {getCurrentDateTimestamp(publishedOn)}
+        </span>
         <Separator />
         <p className="leading-relaxed text-foreground/80">
-          অংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত হালহদিশ
-          অংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত হালহদিশ
-          অংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত হালহদিশ
-          অংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত
-          হালহদিশঅংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত
-          হালহদিশঅংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত
-          হালহদিশ অংশ অংশভাক আঁইশ ইঁচড়েপাকা ঈক্ষণ ঈদৃক অংশভাগী জওয়ান অংশাঙ্কিত
-          হালহদিশ
+          {description.length ? description : null}
         </p>
         <div className="flex items-center justify-center">
-          <Document file="/notice.pdf" className="max-w-max">
+          <Document file={pdfLink} className="max-w-max">
             <Page pageNumber={1} renderTextLayer={false} />
           </Document>
         </div>
-        <a href="/notice.pdf" className={buttonVariants()} download>
+        {/* <a href={pdfLink} className={buttonVariants()} download>
           download
-        </a>
+        </a> */}
       </section>
-      <section className="col-span-4">
-        <Noticeboard />
-      </section>
+      <section className="col-span-4">{/* <RecentNotices /> */}</section>
     </main>
   );
 }

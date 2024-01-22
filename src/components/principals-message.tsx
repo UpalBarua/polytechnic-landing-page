@@ -1,35 +1,28 @@
-import { chairmansMessage } from '@/config';
+import { principleMessage } from '@/config';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaQuoteRight } from 'react-icons/fa';
 
 export function PrincipalsMessage() {
   return (
-    <div className="flex gap-x-4 items-center py-12">
-      <Image
-        className="object-cover object-center rounded-full border aspect-square"
-        src={chairmansMessage.picture}
-        alt="chairman"
-        height={160}
-        width={160}
-        quality={90}
-      />
-      <div className="space-y-4">
-        <div className="flex gap-x-6 items-end">
-          <h2 className="text-2xl font-bold tracking-tight">
-            চেয়ারম্যানের বাণী
-          </h2>
-          <FaQuoteRight className="text-5xl text-primary/25" />
-        </div>
-        <p className="leading-relaxed text-foreground/80">
-          {chairmansMessage.message.slice(0, 220) + '...'}
-          <Link
-            href="/chairmans-message"
-            className="font-bold underline underline-offset-2">
-            আরো পড়ুন
-          </Link>
-        </p>
+    <div className="flex flex-col gap-y-2 justify-center items-center p-4 mx-auto max-w-sm text-center rounded-md md:text-start md:items-start md:border md:shadow-sm md:max-w-full md:p-6 md:bg-background/80">
+      <div className="relative mb-4 w-48 md:w-full aspect-square">
+        <Image
+          className="object-cover object-center rounded-md"
+          src={principleMessage.picture}
+          alt="chairman"
+          quality={90}
+          fill
+        />
       </div>
+      <h2 className="text-2xl font-medium tracking-tight">অধ্যক্ষের বাণী</h2>
+      <p className="leading-relaxed text-foreground/60">
+        {principleMessage.message.slice(0, 260) + '...'}
+        <Link
+          href="/principals-message"
+          className="font-medium underline underline-offset-2">
+          আরো পড়ুন
+        </Link>
+      </p>
     </div>
   );
 }
