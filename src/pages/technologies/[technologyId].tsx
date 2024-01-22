@@ -1,6 +1,8 @@
 import { technologies } from "@/config";
 import { MdOutlineTopic } from "react-icons/md";
 import Image from "next/image";
+import { FaAngellist } from "react-icons/fa6";
+import { FaBookReader } from "react-icons/fa";
 
 export function getStaticPaths() {
   const paths = technologies.map(({ id }) => ({
@@ -29,65 +31,226 @@ export function getStaticProps({
   };
 }
 
+const outliens = {
+  "Semester-1": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+  "Semester-2": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+  "Semester-3": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+  "Semester-4": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+  "Semester-5": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+  "Semester-6": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+  "Semester-7": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+  "Semester-8": [
+    "Bangla - 1",
+    "English - 1",
+    "Mathematics - 1",
+    "Physics - 1",
+    "Engineering Drawing",
+    "Basic Electricity",
+    "Basic Workshop practice",
+  ],
+};
+
 export default function Technology({ technology }) {
   const { id, name, picture, cheifInstructor, icon, description, images } =
     technology;
 
   return (
-    <section className="pt-56 container pb-32">
-      <div className="flex flex-col ml-4 lg:ml-12 lg:flex-row gap-14">
-        <div className=" flex-1">
-          <div className="flex gap-4 text-3xl font-bold pb-8 ">
-            <MdOutlineTopic></MdOutlineTopic>
-            <h1 className="text-primary">{name} টেকনোলজি</h1>
-          </div>
-          <hr></hr>
+    <section className="mt-24  max-w-7xl mx-auto">
+      <div
+        style={{
+          backgroundImage: `url(${images[0]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          width: "100%",
+          height: "400px",
+        }}
+      ></div>
+      {/* details div */}
+      <div className="flex flex-col ml-6 lg:ml-28 lg:flex-row gap-24   ">
+        <div className="flex-1 mt-14">
+          <h1 className="text-primary text-4xl pb-3 font-bold ">
+            {name} টেকনোলজি
+          </h1>
           <p className="text-[18px]  tracking-wide">{description}</p>
-        </div>
-
-        <div className="flex-1">
-          <Image
-            src={images[0]}
-            height={550}
-            width={550}
+          {/* <Image
             alt=""
-            className="rounded-md"
-          ></Image>
-
-          <div className="flex gap-4 pt-4">
-            <Image
-              src={images[1]}
-              height={270}
-              width={265}
-              alt=""
-              className="rounded-md"
-            ></Image>
-            <Image
-              src={images[2]}
-              height={270}
-              width={265}
-              alt=""
-              className="rounded-md"
-            ></Image>
-          </div>
+            height={150}
+            width={150}
+            src={cheifInstructor?.picture}
+            className=" rounded-full object-cover object-center"
+          />
+          <h1 className="pt-4 text-[24px] font-bold">
+            ডিপার্টমেন্ট প্রধান : {cheifInstructor?.name}
+          </h1> */}
         </div>
-      </div>
-      <div>
-        <div className="pt-10 pl-4 lg:pl-14 ">
-          <div>
-            <Image
-              alt=""
-              height={150}
-              width={150}
-              src={cheifInstructor?.picture}
-              className=" rounded-full object-cover object-center"
-            />
-            <h1 className="pt-4 text-[24px] font-bold">
-              ডিপার্টমেন্ট প্রধান : {cheifInstructor?.name}
+        <div className="flex-1 mt-14">
+          <div className="bg-orange-400 rounded-md max-w-[320px] p-6">
+            <h1 className="text-2xl font-bold text-center">
+              Department Overview
             </h1>
+            <hr className="border-t-2 border-black-500"></hr>
+            <div className="flex gap-10 text-[20px] font-semibold pt-4">
+              <h1>Total Student</h1>
+              <h1>500</h1>
+            </div>
+            <div className="flex gap-10 text-[20px] font-semibold pt-4">
+              <h1>Total Student</h1>
+              <h1>500</h1>
+            </div>
+            <div className="flex gap-10 text-[20px] font-semibold pt-4">
+              <h1>Total Student</h1>
+              <h1>500</h1>
+            </div>
+            <div className="flex gap-10 text-[20px] font-semibold pt-4">
+              <h1>Total Student</h1>
+              <h1>500</h1>
+            </div>
+            <div className="flex gap-10 text-[20px] font-semibold pt-4">
+              <h1>Total Student</h1>
+              <h1>500</h1>
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <div className="bg-orange-400 rounded-md max-w-[320px] p-6">
+              <h1 className="text-2xl font-bold text-center">
+                Department Overview
+              </h1>
+              <hr className="border-t-2 border-black-500"></hr>
+              <div className="flex gap-10 text-[20px] font-semibold pt-4">
+                <h1>Total Student</h1>
+                <h1>500</h1>
+              </div>
+              <div className="flex gap-10 text-[20px] font-semibold pt-4">
+                <h1>Total Student</h1>
+                <h1>500</h1>
+              </div>
+              <div className="flex gap-10 text-[20px] font-semibold pt-4">
+                <h1>Total Student</h1>
+                <h1>500</h1>
+              </div>
+              <div className="flex gap-10 text-[20px] font-semibold pt-4">
+                <h1>Total Student</h1>
+                <h1>500</h1>
+              </div>
+              <div className="flex gap-10 text-[20px] font-semibold pt-4">
+                <h1>Total Student</h1>
+                <h1>500</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* lav facilities and principle section */}
+
+      {/* <div className="flex pt-14 justify-evenly  ">
+        <div>
+          <div className="flex gap-3 text-[24px] items-center">
+            <FaAngellist></FaAngellist>
+            <h1>Circuit Lab</h1>
+          </div>
+          <div className="flex gap-3 text-[24px] items-center">
+            <FaAngellist></FaAngellist>
+            <h1>Circuit Lab</h1>
+          </div>
+          <div className="flex gap-3 text-[24px] items-center">
+            <FaAngellist></FaAngellist>
+            <h1>Circuit Lab</h1>
+          </div>
+          <div className="flex gap-3 text-[24px] items-center">
+            <FaAngellist></FaAngellist>
+            <h1>Circuit Lab</h1>
+          </div>
+          <div className="flex gap-3 text-[24px] items-center">
+            <FaAngellist></FaAngellist>
+            <h1>Circuit Lab</h1>
+          </div>
+          <div className="flex gap-3 text-[24px] items-center">
+            <FaAngellist></FaAngellist>
+            <h1>Circuit Lab</h1>
+          </div>
+        </div>
+      </div> */}
+
+      {/* course outline */}
+
+      <section className="pt-8">
+        <h1 className="text-2xl font-bold text-center pb-8 text-orange-400">
+          কোর্স আউটলাইন
+        </h1>
+
+        <div className="grid justify-center grid-cols-1 gap-4 lg:grid-cols-4">
+          {Object.keys(outliens).map((outline) => (
+            <div className="bg-orange-50 p-4" key={outline}>
+              <h2 className="font-bold pb-1">{outline}</h2>
+              {outliens[outline].map((val) => (
+                <div className="flex gap-2 items-center" key={val?.id}>
+                  <FaBookReader></FaBookReader>
+                  <p>{val}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* tuition fee section */}
     </section>
   );
 }

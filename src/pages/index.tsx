@@ -1,15 +1,17 @@
-import Benefit from '@/components/benefits';
-import { ChairmansMessage } from '@/components/chairmans-message';
-import Footer from '@/components/footer';
-import Gallery from '@/components/gallery';
-import { LatestUpdate } from '@/components/latest-update';
-import { Milestones } from '@/components/milestones';
-import { PrincipalsMessage } from '@/components/principals-message';
-import { RecentNotices } from '@/components/recent-notices';
-import { Slider } from '@/components/slider';
-import { Technologies } from '@/components/technologies';
-import { getAllNotices } from '@/lib/services';
-import { TNotice } from '@/types';
+import ExtraSection from "@/components/ExtraSection";
+import Testimonial from "@/components/Testimonial";
+import Benefit from "@/components/benefits";
+import { ChairmansMessage } from "@/components/chairmans-message";
+import Footer from "@/components/footer";
+import Gallery from "@/components/gallery";
+import { LatestUpdate } from "@/components/latest-update";
+import { Milestones } from "@/components/milestones";
+import { PrincipalsMessage } from "@/components/principals-message";
+import { RecentNotices } from "@/components/recent-notices";
+import { Slider } from "@/components/slider";
+import { Technologies } from "@/components/technologies";
+import { getAllNotices } from "@/lib/services";
+import { TNotice } from "@/types";
 
 export const getStaticProps = async () => {
   try {
@@ -43,6 +45,7 @@ export default function HomePage({ notices }: HomePageProps) {
           <Slider />
           <LatestUpdate />
           <Technologies />
+          <ExtraSection></ExtraSection>
         </div>
         <div className="col-span-full space-y-8 lg:space-y-4 md:col-span-4">
           <RecentNotices notices={notices} />
@@ -50,6 +53,7 @@ export default function HomePage({ notices }: HomePageProps) {
           <PrincipalsMessage />
         </div>
       </section>
+      <Testimonial></Testimonial>
       {/* <Milestones />
       <Gallery />
       <Benefit />
