@@ -11,8 +11,11 @@ export const navLinks = [
     route: '/curriculum',
     label: 'পাঠ্যক্রম',
     subRoutes: [
-      { route: '/teacher', label: 'টিচার লিস্ট' },
       { route: '/course-structure', label: 'কোর্স অবকাঠামো' },
+      { route: '/routine', label: 'রুটিন' },
+      { route: '/syllabus', label: 'সিলেবাস' },
+      { route: '/teacher', label: 'ইন্টারনাল রেজাল্ট' },
+
       { route: '/grading', label: 'গ্রেডিং সিস্টেম' },
     ],
   },
@@ -20,17 +23,11 @@ export const navLinks = [
     route: '/admission-process',
     label: 'ভর্তি প্রক্রিয়া',
     subRoutes: [
-      { route: '/admission-eligibility', label: 'ভর্তির যোগ্যতা' },
+      { route: '/admission-eligibility', label: 'সার্কুলার' },
       { route: '/admission-policies', label: 'ভর্তির নীতিমালা' },
-      { route: '/application-process', label: 'আবেদন প্রক্রিয়া' },
+      { route: '/application-process', label: 'অনলাইন এপ্লাই' },
       { route: '/tuition-fees-and-others', label: 'টিউশন ফি ও অন্যান্য' },
-    ],
-  },
-  {
-    route: '/administrative-activities',
-    label: 'প্রশাসনিক কার্যক্রম',
-    subRoutes: [
-      { route: '/administrative-committee', label: 'প্রশাসনিক কমিটি' },
+      { route: '/tuition-fees-and-others', label: 'স্কলারশিপ' },
     ],
   },
 
@@ -55,6 +52,11 @@ export const navLinks = [
     label: 'গ্যালারি',
     subRoutes: [],
   },
+  // {
+  //   route: "/academic",
+  //   label: "একাডেমিক",
+  //   subRoutes: [],
+  // },
   {
     route: '/our-world',
     label: 'আমাদের ভূবন',
@@ -62,10 +64,16 @@ export const navLinks = [
       { route: '/about-us', label: 'আমাদের সম্পর্কে' },
       { route: '/chairman', label: 'চেয়ারম্যানের বাণী' },
       { route: '/principle', label: 'অধ্যক্ষের কথা' },
+      { route: '/administrative-committee', label: 'প্রশাসনিক কমিটি' },
 
       { route: '/tuition-fees-and-others', label: 'আমাদের লক্ষ্য' },
       { route: '/tuition-fees-and-others', label: ' প্রজেক্ট সমূহ' },
     ],
+  },
+  {
+    route: '/placement-sell',
+    label: 'প্লেসমেন্ট সেল',
+    subRoutes: [],
   },
   {
     route: '/contact-us',
