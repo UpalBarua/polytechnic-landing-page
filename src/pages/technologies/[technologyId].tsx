@@ -34,10 +34,10 @@ export default function Technology({ technology }) {
     technology;
 
   return (
-    <section className="pt-56 container pb-32">
-      <div className="flex flex-col ml-4 lg:ml-12 lg:flex-row gap-14">
-        <div className=" flex-1">
-          <div className="flex gap-4 text-3xl font-bold pb-8 ">
+    <section className="container pt-56 pb-32">
+      <div className="flex flex-col gap-14 ml-4 lg:ml-12 lg:flex-row">
+        <div className="flex-1 ">
+          <div className="flex gap-4 pb-8 text-3xl font-bold ">
             <MdOutlineTopic></MdOutlineTopic>
             <h1 className="text-primary">{name} টেকনোলজি</h1>
           </div>
@@ -80,7 +80,7 @@ export default function Technology({ technology }) {
               height={150}
               width={150}
               src={cheifInstructor?.picture}
-              className=" rounded-full object-cover object-center"
+              className="object-cover object-center rounded-full "
             />
             <h1 className="pt-4 text-[24px] font-bold">
               ডিপার্টমেন্ট প্রধান : {cheifInstructor?.name}

@@ -54,27 +54,27 @@ const Benefit = () => {
   ];
   return (
     // <section className="w-full lg:w-[1200px] mx-auto">
-    //   <h1 className="text-2xl font-bold text-center pb-6">
+    //   <h1 className="pb-6 text-2xl font-bold text-center">
     //     আমাদের সুবিধা সমূহ
     //   </h1>
-    //   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    //   <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
     //     {allBenefits?.map((benefit) => (
     //       <div key={benefit?.id} benefit={benefit}>
     //         <div className="shadow  rounded-md bg-background/50 p-10 lg:p-12">
     //           <div className="flex justify-center pb-4">
-    //             <h1 className=" text-5xl ">{benefit?.icons}</h1>
+    //             <h1 className="text-5xl ">{benefit?.icons}</h1>
     //           </div>
     //           <h1 className="text-[20px] text-primary font-bold pb-2 text-center">
     //             {benefit?.name}
     //           </h1>
-    //           <p className=" text-gray-600 text-center">{benefit?.content}</p>
+    //           <p className="text-center text-gray-600 ">{benefit?.content}</p>
     //         </div>
     //       </div>
     //     ))}
     //   </div>
     // </section>
     <section>
-      <div className="flex flex-col ml-4 gap-8 lg:ml-8 lg:flex-row">
+      <div className="flex flex-col gap-8 ml-4 lg:ml-8 lg:flex-row">
         <div className="flex-1">
           <h1 className="font-bold ">কেন আমাদের বেচে নিবেন?</h1>
           <h1 className="pb-8 text-3xl font-bold">
@@ -85,8 +85,8 @@ const Benefit = () => {
           <div>
             {allBenefits?.map((benefit) => (
               <div key={benefit?.id} benefit={benefit}>
-                <div className="flex gap-3  shadow-md shadow-orange-300 border-orange-400 rounded-md p-4 mb-3  ">
-                  <div className="text-4xl bg-orange-500 rounded-full p-4">
+                <div className="flex gap-3 p-4 mb-3 rounded-md border-orange-400 shadow-md  shadow-orange-300">
+                  <div className="p-4 text-4xl bg-orange-500 rounded-full">
                     {benefit?.icons}
                   </div>
                   <div>

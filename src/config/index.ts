@@ -5,6 +5,12 @@ import {
   MdLocationCity,
   MdOutlineSettings,
 } from 'react-icons/md';
+import {
+  PiBuildings,
+  PiChalkboardTeacher,
+  PiStudent,
+  PiUser,
+} from 'react-icons/pi';
 
 export const navLinks = [
   {
@@ -214,3 +220,26 @@ export const technologies = [
     },
   },
 ];
+
+export const milestones = [
+  {
+    Icon: PiUser,
+    title: 'জন প্রাক্তন শিক্ষার্থী',
+    count: 1067,
+  },
+  {
+    Icon: PiStudent,
+    title: 'জন শিক্ষার্থী',
+    count: 567,
+  },
+  {
+    Icon: PiChalkboardTeacher,
+    title: 'জন শিক্ষক',
+    count: 50,
+  },
+  {
+    Icon: PiBuildings,
+    title: 'টি ডিপার্টমেন্ট',
+    count: 6,
+  },
+] as const;

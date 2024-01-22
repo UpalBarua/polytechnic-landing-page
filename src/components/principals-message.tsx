@@ -1,6 +1,7 @@
 import { principleMessage } from '@/config';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Heading } from './ui/heading';
 
 export function PrincipalsMessage() {
   return (
@@ -14,7 +15,7 @@ export function PrincipalsMessage() {
           fill
         />
       </div>
-      <h2 className="text-2xl font-medium tracking-tight">অধ্যক্ষের বাণী</h2>
+      <Heading className="pb-0 lg:pb-0">অধ্যক্ষের বাণী</Heading>
       <p className="leading-relaxed text-foreground/60">
         {principleMessage.message.slice(0, 260) + '...'}
         <Link

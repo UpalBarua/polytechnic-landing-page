@@ -1,7 +1,4 @@
-import Benefit from '@/components/benefits';
 import { ChairmansMessage } from '@/components/chairmans-message';
-import Footer from '@/components/footer';
-import Gallery from '@/components/gallery';
 import { LatestUpdate } from '@/components/latest-update';
 import { Milestones } from '@/components/milestones';
 import { PrincipalsMessage } from '@/components/principals-message';
@@ -13,7 +10,7 @@ import { TNotice } from '@/types';
 
 export const getStaticProps = async () => {
   try {
-    const notices = await getAllNotices();
+    const notices = (await getAllNotices()).slice(0, 5);
 
     return {
       props: {
@@ -38,20 +35,20 @@ type HomePageProps = {
 export default function HomePage({ notices }: HomePageProps) {
   return (
     <main>
-      <section className="container pt-16 max-w-7xl lg:pt-28 md:grid md:grid-cols-12 md:gap-4">
-        <div className="col-span-full space-y-4 md:col-span-8">
+      <section className="container grid grid-cols-1 pt-16 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-4">
+        <div className="col-span-full md:col-span-8">
           <Slider />
           <LatestUpdate />
           <Technologies />
         </div>
-        <div className="col-span-full space-y-8 lg:space-y-4 md:col-span-4">
+        <div className="col-span-full space-y-6 md:space-y-4 md:col-span-4">
           <RecentNotices notices={notices} />
           <ChairmansMessage />
           <PrincipalsMessage />
         </div>
       </section>
-      {/* <Milestones />
-      <Gallery />
+      <Milestones />
+      {/* <Gallery />
       <Benefit />
       <Footer /> */}
     </main>

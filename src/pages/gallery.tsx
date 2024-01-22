@@ -5,111 +5,111 @@ import "react-photo-view/dist/react-photo-view.css";
 
 const Gallery = () => {
   return (
-    <section className=" mt-36">
-      <h1 className="text-center text-2xl font-bold">
+    <section className="mt-36 ">
+      <h1 className="text-2xl font-bold text-center">
         আমাদের স্মৃতিচারণ মুহূর্ত
       </h1>
 
       <PhotoProvider>
         <div className="py-6 dark:bg-gray-800 dark:text-gray-50">
           <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-            <div className="w-full relative h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square">
+            <div className="relative col-span-2 row-span-2 w-full h-full rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full relative object-cover object-center h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full relative object-cover object-center rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1532&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1532&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1530099486328-e021101a494a?q=80&w=1547&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1530099486328-e021101a494a?q=80&w=1547&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-cover object-center">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1545696968-1a5245650b36?q=80&w=1432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1545696968-1a5245650b36?q=80&w=1432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square relative object-center object-cover">
+            <div className="object-cover object-center relative w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>
-            <div className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square relative object-cover object-center">
+            <div className="object-cover object-center relative col-span-2 row-span-2 w-full h-full rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square">
               <PhotoView src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 <Image
                   fill
                   src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
-                  className="object-center object-cover"
+                  className="object-cover object-center"
                 />
               </PhotoView>
             </div>

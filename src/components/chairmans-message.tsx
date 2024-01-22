@@ -1,6 +1,7 @@
 import { chairmansMessage } from '@/config';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Heading } from './ui/heading';
 
 export function ChairmansMessage() {
   return (
@@ -14,9 +15,7 @@ export function ChairmansMessage() {
           fill
         />
       </div>
-      <h2 className="text-2xl font-medium tracking-tight">
-        চেয়ারম্যান মহোদয়ের বাণী
-      </h2>
+      <Heading className="pb-0 lg:pb-0">চেয়ারম্যান মহোদয়ের বাণী</Heading>
       <p className="leading-relaxed text-foreground/60">
         {chairmansMessage.message.slice(0, 260) + '...'}
         <Link

@@ -3,6 +3,7 @@ import { TNotice } from '@/types';
 import Link from 'next/link';
 import { FaChevronRight } from 'react-icons/fa';
 import { Notice } from './notice';
+import { Heading } from './ui/heading';
 import { Separator } from './ui/separator';
 
 type RecentNoticesProps = {
@@ -11,22 +12,26 @@ type RecentNoticesProps = {
 
 export function RecentNotices({ notices }: RecentNoticesProps) {
   return (
-    <div className="mx-auto space-y-2 max-w-sm rounded-md bg-background/80 sm:border sm:shadow sm:max-w-full sm:p-6">
-      <h2 className="text-2xl font-medium tracking-tight">সাম্প্রতিক নোটিশ</h2>
-      <Separator />
+    <div className="p-4 mx-auto mt-14 space-y-2 max-w-lg rounded-md md:bg-background/80 md:border md:shadow md:p-6 md:mt-0">
+      <Heading className="pb-0 md:pb-0">সাম্প্রতিক নোটিশ</Heading>
+      <Separator className="hidden md:block" />
       <div className="pb-2 divide-y">
         {notices.map((notice) => (
           <Notice key={notice.id} {...notice} />
         ))}
       </div>
-      <Link
-        href="/notices"
-        className={buttonVariants({
-          variant: 'default',
-        })}>
-        <span>সকল নোটিশ</span>
-        <FaChevronRight className="text-sm" />
-      </Link>
+      <div className="flex justify-center items-center">
+        <Link
+          href="/notices"
+          className={buttonVariants({
+            variant: 'link',
+            size: 'sm',
+            className: '!text-base',
+          })}>
+          <span>সকল নোটিশ</span>
+          <FaChevronRight className="text-xs" />
+        </Link>
+      </div>
     </div>
   );
 }

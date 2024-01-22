@@ -101,7 +101,7 @@ const gradeDes = [
 const Grading = () => {
   return (
     <section className="mt-8">
-      <h1 className="text-center pb-4 text-3xl text-blue-500 font-bold">
+      <h1 className="pb-4 text-3xl font-bold text-center text-blue-500">
         গ্রেডিং সিস্টেম
       </h1>
       <p className="w-full lg:w-1/2 mx-auto pb-6">
@@ -111,7 +111,7 @@ const Grading = () => {
         হবে।
       </p>
 
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col gap-8 lg:flex-row">
         <div className="w-[470px] mx-auto border-2">
           <Table>
             <TableHeader>
@@ -119,10 +119,10 @@ const Grading = () => {
                 <TableHead className="w-[100px] text-black font-bold">
                   প্রাপ্ত নম্বর
                 </TableHead>
-                <TableHead className="text-black font-bold">
+                <TableHead className="font-bold text-black">
                   লেটার গ্রেড
                 </TableHead>
-                <TableHead className="text-black font-bold">
+                <TableHead className="font-bold text-black">
                   গ্রেড পয়েন্ট (GP)
                 </TableHead>
               </TableRow>
@@ -150,7 +150,7 @@ const Grading = () => {
                   {" "}
                 </TableHead>
 
-                <TableHead className="text-black font-bold">
+                <TableHead className="font-bold text-black">
                   পর্ব ভিত্তিক GPA এর গুরুত্বঃ
                 </TableHead>
               </TableRow>

@@ -58,7 +58,7 @@ export default function NoticeDetails({
   title,
 }: TNotice) {
   return (
-    <main className="pt-32 container md:gap-4 max-w-7xl grid grid-cols-12">
+    <main className="container grid grid-cols-12 pt-32 max-w-7xl md:gap-4">
       <section className="col-span-8 space-y-4">
         <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
         <span className="text-foreground/60">
@@ -68,7 +68,7 @@ export default function NoticeDetails({
         <p className="leading-relaxed text-foreground/80">
           {description.length ? description : null}
         </p>
-        <div className="flex items-center justify-center">
+        <div className="flex justify-center items-center">
           <Document file={pdfLink} className="max-w-max">
             <Page pageNumber={1} renderTextLayer={false} />
           </Document>

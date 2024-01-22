@@ -35,13 +35,13 @@ const Testimonial = () => {
   ];
   return (
     <section className="mt-14 w-full lg:w-[1200px] mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 ">
         {allTestimonial?.map((testimonial) => (
           <div key={testimonial.id} className="shadow-md shadow-green-500">
-            <div className="w-full max-w-md px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+            <div className="py-4 px-8 mt-16 w-full max-w-md bg-white rounded-lg shadow-lg dark:bg-gray-800">
               <div className="flex justify-center -mt-16 md:justify-end">
                 <img
-                  className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
+                  className="object-cover w-20 h-20 rounded-full border-2 border-blue-500 dark:border-blue-400"
                   alt="Testimonial avatar"
                   src={testimonial?.image}
                 />
