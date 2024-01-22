@@ -1,5 +1,6 @@
 import { buttonVariants } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { getCurrentDateTimestamp } from '@/lib/get-current-date-timestamp';
 import { getAllNotices, getNoticeById } from '@/lib/services';
 import { TNotice } from '@/types';
 import { Document, Page, pdfjs } from 'react-pdf';
@@ -60,7 +61,9 @@ export default function NoticeDetails({
     <main className="pt-32 container md:gap-4 max-w-7xl grid grid-cols-12">
       <section className="col-span-8 space-y-4">
         <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
-        <span className="text-foreground/60">Published on {publishedOn}</span>
+        <span className="text-foreground/60">
+          Published on {getCurrentDateTimestamp(publishedOn)}
+        </span>
         <Separator />
         <p className="leading-relaxed text-foreground/80">
           {description.length ? description : null}

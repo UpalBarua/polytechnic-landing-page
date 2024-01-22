@@ -1,4 +1,4 @@
-export const getCurrentDateTimestamp = () => {
+export const getCurrentDateTimestamp = (timeStamp: number) => {
   const options: Intl.DateTimeFormatOptions = {
     day: 'numeric',
     month: 'short',
@@ -6,7 +6,7 @@ export const getCurrentDateTimestamp = () => {
   };
 
   const formattedDate = new Intl.DateTimeFormat('en-US', options).format(
-    new Date()
+    new Date(timeStamp)
   );
 
   const [month, day, year] = formattedDate.split(' ');
