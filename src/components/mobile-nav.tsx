@@ -15,7 +15,7 @@ export function MobileNav() {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="p-0 w-auto h-auto text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-background/80 md:hidden">
+          className="p-0 w-auto h-auto text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-background/80 lg:hidden">
           <RiMenu2Line className="text-2xl" />
           <span className="sr-only">Toggle Menu</span>
         </Button>

@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { db } from '@/firebase/firebase.config';
-import { getCurrentDateTimestamp } from '@/lib/get-current-date-timestamp';
 import { uploadFile } from '@/lib/upload-file';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addDoc, collection } from 'firebase/firestore';
@@ -50,7 +49,7 @@ export function NoticeForm() {
         title,
         description,
         pdfLink,
-        publishedOn: getCurrentDateTimestamp(),
+        publishedOn: Date.now(),
       });
 
       form.reset();

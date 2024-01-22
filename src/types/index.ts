@@ -3,5 +3,5 @@ export type TNotice = {
   title: string;
   description: string;
   pdfLink: string;
-  publishedOn: string;
+  publishedOn: number;
 };

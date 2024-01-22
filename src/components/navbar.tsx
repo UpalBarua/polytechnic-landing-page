@@ -15,16 +15,16 @@ import { Logo } from './ui/logo';
 export function Navbar() {
   return (
     <header className="fixed top-0 left-0 z-10 w-full border-b shadow">
-      <div className="container flex justify-between items-center bg-primary py-2 max-w-7xl">
-        <Link href="/" className="flex items-center gap-x-2">
+      <div className="container flex justify-between items-center py-2 max-w-7xl bg-primary">
+        <Link href="/" className="flex gap-x-2 items-center">
           <Logo />
-          <span className="hidden text-2xl font-medium capitalize italic text-background sm:inline-block">
+          <span className="hidden text-2xl italic font-medium capitalize text-background sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
         <MobileNav />
       </div>
-      <nav className="hidden gap-x-2 justify-center items-center py-1 bg-background/95 text-sm lg:flex">
+      <nav className="container hidden gap-x-2 justify-center items-center py-1 max-w-7xl text-sm bg-background/95 lg:flex">
         {navLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}

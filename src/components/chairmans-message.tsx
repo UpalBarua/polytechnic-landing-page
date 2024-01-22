@@ -1,30 +1,27 @@
-import Image from 'next/image';
-import { FaQuoteRight } from 'react-icons/fa';
-import Link from 'next/link';
 import { chairmansMessage } from '@/config';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export function ChairmansMessage() {
   return (
-    <div className="mx-auto space-y-3 max-w-sm rounded-md sm:border sm:shadow-sm sm:max-w-full sm:p-6 bg-background/60">
-      <Image
-        className="object-cover object-center rounded-full border aspect-square"
-        src={chairmansMessage.picture}
-        alt="chairman"
-        height={150}
-        width={150}
-        quality={90}
-      />
-      <div className="flex gap-x-6 items-end">
-        <h2 className="text-2xl font-bold tracking-tight">
-          চেয়ারম্যানের বাণী
-        </h2>
-        <FaQuoteRight className="text-5xl text-primary/25" />
+    <div className="flex flex-col gap-y-2 justify-center items-center p-4 mx-auto max-w-sm text-center rounded-md md:text-start md:items-start md:border md:shadow-sm md:max-w-full md:p-6 md:bg-background/80">
+      <div className="relative mb-4 w-48 md:w-full aspect-square">
+        <Image
+          className="object-cover object-center rounded-md"
+          src={chairmansMessage.picture}
+          alt="chairman"
+          quality={90}
+          fill
+        />
       </div>
-      <p className="leading-relaxed text-foreground/80">
-        {chairmansMessage.message.slice(0, 250) + '...'}
+      <h2 className="text-2xl font-medium tracking-tight">
+        চেয়ারম্যান মহোদয়ের বাণী
+      </h2>
+      <p className="leading-relaxed text-foreground/60">
+        {chairmansMessage.message.slice(0, 260) + '...'}
         <Link
           href="/chairmans-message"
-          className="font-bold underline underline-offset-2">
+          className="font-medium underline underline-offset-2">
           আরো পড়ুন
         </Link>
       </p>

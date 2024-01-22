@@ -11,8 +11,8 @@ type RecentNoticesProps = {
 
 export function RecentNotices({ notices }: RecentNoticesProps) {
   return (
-    <div className="mx-auto space-y-2 max-w-sm rounded-md bg-background/60 sm:border sm:shadow sm:max-w-full sm:p-6">
-      <h2 className="text-2xl font-bold tracking-tight">নোটিশবোর্ড</h2>
+    <div className="mx-auto space-y-2 max-w-sm rounded-md bg-background/80 sm:border sm:shadow sm:max-w-full sm:p-6">
+      <h2 className="text-2xl font-medium tracking-tight">সাম্প্রতিক নোটিশ</h2>
       <Separator />
       <div className="pb-2 divide-y">
         {notices.map((notice) => (
