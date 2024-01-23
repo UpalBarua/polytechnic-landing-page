@@ -1,72 +1,97 @@
-import React from "react";
+import React from 'react';
+import Marquee from 'react-fast-marquee';
 
 const Testimonial = () => {
   const allTestimonial = [
     {
       id: 1,
-      name: "Asim roy",
-      batch: "Computer Technology",
-      back: "#FFA9E7",
+      name: 'আশিক মাহমুদ',
+      position: 'অভিভাবক',
+      back: '#FFA9E7',
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBbOTGGFzdWOAb6R1S5vujgZ4zHoQs16CD4yN3vq6U5g&s",
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBbOTGGFzdWOAb6R1S5vujgZ4zHoQs16CD4yN3vq6U5g&s',
       review:
-        "This institute is great for of all .Instructor is very helpful.There explanation is to good.After finishing we are so satisfied . ",
+        'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ',
     },
     {
       id: 2,
-      name: "Jisan ahmed",
-      batch: "Civil Technology",
-      back: "#BB999C",
+      name: 'আশিক মাহমুদ',
+      position: 'অভিভাবক',
+      back: '#BB999C',
       image:
-        "https://img.freepik.com/premium-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg",
+        'https://img.freepik.com/premium-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg',
       review:
-        "This institute is great for of all .Instructor is very helpful.There explanation is to good.After finishing we are so satisfied . ",
+        'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
     },
     {
       id: 3,
-      name: "Samir mahmud",
-      batch: "Architecture Technology",
-      back: "#E88D67",
+      name: 'আশিক মাহমুদ',
+      position: 'প্রাক্তন ছাত্র',
+      back: '#E88D67',
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14d9qYL7-1n4oCFQpMPRumEFfPuaGdOPFp3xp_BUb0n_YfXqm2-0tzolDWD4eQW2KUgU&usqp=CAU",
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14d9qYL7-1n4oCFQpMPRumEFfPuaGdOPFp3xp_BUb0n_YfXqm2-0tzolDWD4eQW2KUgU&usqp=CAU',
       review:
-        "This institute is great for of all .Instructor is very helpful.There explanation is to good.After finishing we are so satisfied . ",
+        'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+    },
+    {
+      id: 4,
+      name: 'আশিক মাহমুদ',
+      position: 'অভিভাবক',
+      back: '#E88D67',
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14d9qYL7-1n4oCFQpMPRumEFfPuaGdOPFp3xp_BUb0n_YfXqm2-0tzolDWD4eQW2KUgU&usqp=CAU',
+      review:
+        'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+    },
+    {
+      id: 5,
+      name: 'আশিক মাহমুদ',
+      position: 'প্রাক্তন ছাত্র',
+      back: '#E88D67',
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14d9qYL7-1n4oCFQpMPRumEFfPuaGdOPFp3xp_BUb0n_YfXqm2-0tzolDWD4eQW2KUgU&usqp=CAU',
+      review:
+        'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+    },
+    {
+      id: 6,
+      name: 'আশিক মাহমুদ',
+      position: 'প্রাক্তন ছাত্র',
+      back: '#E88D67',
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14d9qYL7-1n4oCFQpMPRumEFfPuaGdOPFp3xp_BUb0n_YfXqm2-0tzolDWD4eQW2KUgU&usqp=CAU',
+      review:
+        'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ',
     },
   ];
   return (
-    <section className="mt-14 w-full lg:w-[1200px] mx-auto">
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 ">
-        {allTestimonial?.map((testimonial) => (
-          <div key={testimonial.id} className="shadow-md shadow-green-500">
-            <div className="py-4 px-8 mt-16 w-full max-w-md bg-white rounded-lg shadow-lg dark:bg-gray-800">
-              <div className="flex justify-center -mt-16 md:justify-end">
-                <img
-                  className="object-cover w-20 h-20 rounded-full border-2 border-blue-500 dark:border-blue-400"
-                  alt="Testimonial avatar"
-                  src={testimonial?.image}
-                />
-              </div>
-
-              <h2 className="mt-2 text-xl font-semibold text-gray-800 dark:text-white md:mt-0">
-                {testimonial?.batch}
-              </h2>
-
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
-                {testimonial?.review}
-              </p>
-
-              <div className="flex justify-start mt-2">
-                <a
-                  href="#"
-                  className="text-lg font-medium text-blue-600 dark:text-blue-300"
-                  role="link"
-                >
-                  {testimonial?.name}
-                </a>
+    <section>
+      <h1 className="pt-6 pb-6 text-2xl font-bold text-center text-orange-500">
+        আমাদের প্রাক্তন ছাত্র এবং দের মতামত
+      </h1>
+      <div>
+        <Marquee>
+          {allTestimonial?.map((testimonial) => (
+            <div key={testimonial?.id} testimonial={testimonial}>
+              <div className="flex flex-col mx-2 my-4 max-w-sm shadow-lg">
+                <div className="px-4 py-8 rounded-t-lg sm:px-8 md:px-12">
+                  <p className="relative px-6 py-1 text-lg italic text-center">
+                    {testimonial?.review}
+                  </p>
+                </div>
+                <div className="flex flex-col justify-center items-center p-8 rounded-b-lg">
+                  <img
+                    src={testimonial?.image}
+                    alt=""
+                    className="-mt-16 mb-2 w-16 h-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-700"
+                  />
+                  <p className="text-xl font-semibold">{testimonial?.name}</p>
+                  <p className="text-sm uppercase">{testimonial?.position}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Marquee>
       </div>
     </section>
   );

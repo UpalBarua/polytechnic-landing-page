@@ -1,5 +1,5 @@
-import Benefit from '@/components/facilities';
 import { ChairmansMessage } from '@/components/chairmans-message';
+import { Facilities } from '@/components/facilities';
 import Footer from '@/components/footer';
 import { LatestUpdate } from '@/components/latest-update';
 import { Milestones } from '@/components/milestones';
@@ -10,7 +10,6 @@ import { Slider } from '@/components/slider';
 import { Technologies } from '@/components/technologies';
 import { getAllNotices } from '@/lib/services';
 import { TNotice } from '@/types';
-import { Facilities } from '@/components/facilities';
 
 export const getStaticProps = async () => {
   try {

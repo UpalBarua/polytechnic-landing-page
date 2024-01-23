@@ -25,7 +25,7 @@ export const navLinks = [
       { route: '/course-structure', label: 'কোর্স অবকাঠামো' },
       { route: '/routine', label: 'রুটিন' },
       { route: '/syllabus', label: 'সিলেবাস' },
-      { route: '/teacher', label: 'ইন্টারনাল রেজাল্ট' },
+      { route: '/teacher', label: 'শিক্ষক মন্ডলী' },
 
       { route: '/grading', label: 'গ্রেডিং সিস্টেম' },
     ],
@@ -34,9 +34,22 @@ export const navLinks = [
     route: '/admission-process',
     label: 'ভর্তি প্রক্রিয়া',
     subRoutes: [
-      { route: '/admission-eligibility', label: 'সার্কুলার' },
-      { route: '/admission-policies', label: 'ভর্তির নীতিমালা' },
-      { route: '/application-process', label: 'অনলাইন এপ্লাই' },
+      {
+        route:
+          'http://btebadmission.gov.bd/website/Link/AdmissionNitimala2023.pdf',
+        label: 'সার্কুলার',
+      },
+      {
+        route:
+          'http://btebadmission.gov.bd/website/Link/AdmissionNitimala2023.pdf',
+        label: 'ভর্তির নীতিমালা',
+      },
+
+      {
+        route:
+          'http://app1.btebadmission.gov.bd:7080/BTEB_WEB/application/applicantRegistration.action',
+        label: 'অনলাইন এপ্লাই',
+      },
       { route: '/tuition-fees-and-others', label: 'টিউশন ফি ও অন্যান্য' },
       { route: '/tuition-fees-and-others', label: 'স্কলারশিপ' },
     ],
