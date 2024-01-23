@@ -5,7 +5,7 @@ import { Heading } from './ui/heading';
 export function Technologies() {
   return (
     <section className='bg-[url("/technologies-bg.jpg")] bg-center bg-cover'>
-      <div className="space-y-4 backdrop-brightness-[0.25] py-20 container">
+      <div className="space-y-4 backdrop-brightness-[0.25] py-14 md:py-20 container">
         <Heading className="md:text-center text-background/90">
           টেকনোলজি সমূহ
         </Heading>

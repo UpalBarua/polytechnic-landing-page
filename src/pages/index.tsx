@@ -13,7 +13,7 @@ import { TNotice } from '@/types';
 
 export const getStaticProps = async () => {
   try {
-    const notices = (await getAllNotices()).slice(0, 4);
+    const notices = (await getAllNotices()).slice(0, 3);
 
     return {
       props: {
@@ -38,8 +38,8 @@ type HomePageProps = {
 export default function HomePage({ notices }: HomePageProps) {
   return (
     <main>
-      <section className="container grid grid-cols-1 pt-16 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-4">
-        <div className="col-span-full md:col-span-8">
+      <section className="container grid grid-cols-1 pt-16 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-3 pb-6">
+        <div className="col-span-full md:col-span-8 space-y-2 flex flex-col">
           <Slider />
           <LatestUpdate />
         </div>
@@ -55,7 +55,7 @@ export default function HomePage({ notices }: HomePageProps) {
       <Facilities />
       <Milestones />
       <RecentPictures />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }

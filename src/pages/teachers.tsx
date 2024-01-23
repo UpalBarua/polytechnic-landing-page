@@ -6,7 +6,7 @@ import { MdLocalPhone } from 'react-icons/md';
 
 export default function Teachers() {
   return (
-    <section className="mt-20 lg:mt-32 container max-w-5xl">
+    <section className="mt-20 sm:mt-24 lg:mt-32 container max-w-5xl">
       <Heading className="md:text-center">আমাদের শিক্ষক মণ্ডলী</Heading>
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 lg:grid-cols-3">
         {teachers.map((teacher) => (

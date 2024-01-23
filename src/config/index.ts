@@ -25,9 +25,8 @@ export const navLinks = [
       { route: '/course-structure', label: 'কোর্স অবকাঠামো' },
       { route: '/routine', label: 'রুটিন' },
       { route: '/syllabus', label: 'সিলেবাস' },
-      { route: '/teacher', label: 'শিক্ষক মন্ডলী' },
-
-      { route: '/grading', label: 'গ্রেডিং সিস্টেম' },
+      { route: '/teachers', label: 'শিক্ষক মন্ডলী' },
+      { route: '/grading-system', label: 'গ্রেডিং সিস্টেম' },
     ],
   },
   {
@@ -379,5 +378,93 @@ export const teachers = [
       'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
     number: '01819453623',
+  },
+] as const;
+
+export const gradingSystem = [
+  {
+    grade: 'A+',
+    marks: '৮০ থেকে উপরে',
+    point: '৪.০০',
+  },
+  {
+    grade: 'A',
+    marks: '৭৫ থেকে ৭৯',
+    point: '৩.৭৫',
+  },
+  {
+    grade: 'A-',
+    marks: '৭০ থেকে ৭৪',
+    point: '৩.৫০',
+  },
+  {
+    grade: 'B+',
+    marks: '৬৫ থেকে ৬৯',
+    point: '৩.২৫',
+  },
+  {
+    grade: 'B',
+    marks: '৬০ থেকে ৬৪',
+    point: '৩.০০',
+  },
+  {
+    grade: 'B-',
+    marks: '৫৫ থেকে ৫৯',
+    point: '২.৭৫',
+  },
+  {
+    grade: 'C+',
+    marks: '৫০ থেকে ৫৪',
+    point: '২.৫০',
+  },
+  {
+    grade: 'C',
+    marks: '৪৫ থেকে ৪৯',
+    point: '২.২৫',
+  },
+  {
+    grade: 'D',
+    marks: '৪০ থেকে 8৯',
+    point: '২.০০',
+  },
+  {
+    grade: 'F',
+    marks: '৪০ এর নীচে',
+    point: '০.০০',
+  },
+] as const;
+
+export const gradePercentage = [
+  {
+    grade: '১ম পর্ব',
+    percentage: '৫%',
+  },
+  {
+    grade: '২য় পর্ব',
+    percentage: '১০%',
+  },
+  {
+    grade: '৩য় পর্ব',
+    percentage: '১৫%',
+  },
+  {
+    grade: '৪র্থ পর্ব',
+    percentage: '২০%',
+  },
+  {
+    grade: '৫ম পর্ব',
+    percentage: '২৫%',
+  },
+  {
+    grade: '৬ষ্ঠ পর্ব',
+    percentage: '২০%',
+  },
+  {
+    grade: '৭ম পর্ব',
+    percentage: '২৫%',
+  },
+  {
+    grade: '৮ম পর্ব',
+    percentage: '১৫%',
   },
 ] as const;
