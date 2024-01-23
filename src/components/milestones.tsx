@@ -9,7 +9,7 @@ export function Milestones() {
     <section className="text-background/90 bg-[url('/slider0.jpg')] bg-center bg-cover mt-14 lg:mt-16">
       <div className="px-4 backdrop-brightness-[0.25] flex flex-col items-start sm:items-center justify-center container py-16 md:py-28">
         <div className="pb-8 lg:pb-10">
-          <Heading className="text-start sm:text-center md:text-center">
+          <Heading className="text-start sm:text-center md:text-center md:text-3xl">
             আমাদের মাইলফলক সমূহ
           </Heading>
           <p className="max-w-lg leading-relaxed sm:mx-auto sm:text-center text-background/60">
@@ -31,12 +31,12 @@ export function Milestones() {
 function Milestone({ Icon, count, title }: MilestoneProps) {
   return (
     <li className="flex gap-4 items-start sm:items-center">
-      <div className="flex justify-center items-center w-14 rounded-full shadow sm:w-16 bg-primary/80 aspect-square">
+      <div className="flex justify-center items-center w-14 rounded-full shadow sm:w-16 bg-primary aspect-square">
         <Icon className="text-4xl" />
       </div>
       <div className="space-y-0">
         <CountUp
-          className="text-3xl font-bold tracking-tight sm:text-4xl"
+          className="text-3xl font-medium tracking-tight sm:text-4xl"
           start={0}
           end={count}
           duration={3}
