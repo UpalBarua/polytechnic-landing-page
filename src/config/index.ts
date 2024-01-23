@@ -107,7 +107,7 @@ export const chairmansMessage = {
 
 export const principleMessage = {
   picture: '/chairman.jpeg',
-  name: '(ইঞ্জিনিয়ার মোঃ আজিজুল হক)',
+  name: 'ইঞ্জিনিয়ার মোঃ আজিজুল হক',
   position: 'অধ্যক্ষ',
   institute: 'বি.এসসি-ইন- টেক্সটাইল ইঞ্জিনিয়ারিং (BUTex) ',
   more_institue: 'এম এন্ড টি, পিকিং ইউনিভার্সিটি (চায়না)।',
@@ -203,7 +203,7 @@ export const technologies = [
     },
   },
   {
-    id: 'civil',
+    id: 'civil2',
     name: 'সিভিল',
     images: [
       'https://plus.unsplash.com/premium_photo-1682126784671-741bbbc4a531?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
