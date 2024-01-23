@@ -78,10 +78,10 @@ const Teacher = () => {
   ];
   return (
     <section className="mt-8 ">
-      <h1 className="font-bold text-3xl text-blue-500 pb-8">
+      <h1 className="pb-8 text-3xl font-bold text-blue-500">
         Our Honorable Teacher:
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+      <div className="grid grid-cols-1 gap-8 mb-8 lg:grid-cols-3">
         {allTeacher?.map((teacher) => (
           <TeacherCard teacher={teacher} key={teacher?.id}></TeacherCard>
         ))}

@@ -1,21 +1,19 @@
-import ExtraSection from "@/components/ExtraSection";
-import Testimonial from "@/components/Testimonial";
-import Benefit from "@/components/benefits";
-import { ChairmansMessage } from "@/components/chairmans-message";
-import Footer from "@/components/footer";
-import Gallery from "@/components/gallery";
-import { LatestUpdate } from "@/components/latest-update";
-import { Milestones } from "@/components/milestones";
-import { PrincipalsMessage } from "@/components/principals-message";
-import { RecentNotices } from "@/components/recent-notices";
-import { Slider } from "@/components/slider";
-import { Technologies } from "@/components/technologies";
-import { getAllNotices } from "@/lib/services";
-import { TNotice } from "@/types";
+import { ChairmansMessage } from '@/components/chairmans-message';
+import { Facilities } from '@/components/facilities';
+import Footer from '@/components/footer';
+import { LatestUpdate } from '@/components/latest-update';
+import { Milestones } from '@/components/milestones';
+import { PrincipalsMessage } from '@/components/principals-message';
+import { RecentNotices } from '@/components/recent-notices';
+import { RecentPictures } from '@/components/recent-pictures';
+import { Slider } from '@/components/slider';
+import { Technologies } from '@/components/technologies';
+import { getAllNotices } from '@/lib/services';
+import { TNotice } from '@/types';
 
 export const getStaticProps = async () => {
   try {
-    const notices = await getAllNotices();
+    const notices = (await getAllNotices()).slice(0, 4);
 
     return {
       props: {
@@ -40,24 +38,24 @@ type HomePageProps = {
 export default function HomePage({ notices }: HomePageProps) {
   return (
     <main>
-      <section className="container pt-16 max-w-7xl lg:pt-28 md:grid md:grid-cols-12 md:gap-4">
-        <div className="col-span-full space-y-4 md:col-span-8">
+      <section className="container grid grid-cols-1 pt-16 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-4">
+        <div className="col-span-full md:col-span-8">
           <Slider />
           <LatestUpdate />
-          <Technologies />
-          <ExtraSection></ExtraSection>
         </div>
-        <div className="col-span-full space-y-8 lg:space-y-4 md:col-span-4">
+        <div className="col-span-full space-y-6 md:space-y-4 md:col-span-4">
           <RecentNotices notices={notices} />
-          <ChairmansMessage />
-          <PrincipalsMessage />
         </div>
       </section>
-      <Testimonial></Testimonial>
-      {/* <Milestones />
-      <Gallery />
-      <Benefit />
-      <Footer /> */}
+      <section className="py-12 space-y-16 md:space-y-28 md:py-24 bg-background/80">
+        <ChairmansMessage />
+        <PrincipalsMessage />
+      </section>
+      <Technologies />
+      <Facilities />
+      <Milestones />
+      <RecentPictures />
+      <Footer />
     </main>
   );
 }

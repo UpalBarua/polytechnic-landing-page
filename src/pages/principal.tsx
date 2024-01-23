@@ -3,9 +3,9 @@ import Image from "next/image";
 
 function Principal() {
   return (
-    <main className="container  space-y-4 max-w-3xl pb-28">
+    <main className="container pb-28 space-y-4 max-w-3xl ">
       <Image
-        className="object-cover object-center shadow rounded-full border aspect-square"
+        className="object-cover object-center rounded-full border shadow aspect-square"
         src={chairmansMessage.picture}
         alt="chairman"
         height={180}

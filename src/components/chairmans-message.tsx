@@ -1,30 +1,39 @@
 import { chairmansMessage } from '@/config';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaQuoteRight } from 'react-icons/fa';
+import { Heading } from './ui/heading';
 
 export function ChairmansMessage() {
+  const { name, picture, message, position } = chairmansMessage;
+
   return (
-    <div className="flex flex-col gap-y-2 justify-center items-center p-4 mx-auto max-w-sm text-center rounded-md md:text-start md:items-start md:border md:shadow-sm md:max-w-full md:p-6 md:bg-background/80">
-      <div className="relative mb-4 w-48 md:w-full aspect-square">
+    <div className="container flex flex-col gap-8 justify-center items-center max-w-5xl text-center md:flex-row md:text-start md:gap-10 lg:gap-16">
+      <div className="relative min-w-56 md:min-w-[22rem] aspect-square">
         <Image
-          className="object-cover object-center rounded-md"
-          src={chairmansMessage.picture}
+          className="object-cover object-center rounded-full border shadow-lg"
+          src={picture}
           alt="chairman"
-          quality={90}
+          quality={95}
           fill
         />
       </div>
-      <h2 className="text-2xl font-medium tracking-tight">
-        চেয়ারম্যান মহোদয়ের বাণী
-      </h2>
-      <p className="leading-relaxed text-foreground/60">
-        {chairmansMessage.message.slice(0, 260) + '...'}
-        <Link
-          href="/chairmans-message"
-          className="font-medium underline underline-offset-2">
-          আরো পড়ুন
-        </Link>
-      </p>
+      <div>
+        <FaQuoteRight className="hidden mb-6 text-6xl lg:block text-primary/20" />
+        <Heading>চেয়ারম্যান মহোদয়ের বাণী</Heading>
+        <p className="px-3 mx-auto leading-relaxed md:px-0 text-foreground/60">
+          {message.slice(0, 550) + '...'}
+          <Link
+            href="/chairmans-message"
+            className="font-medium underline underline-offset-2">
+            আরো পড়ুন
+          </Link>
+        </p>
+        <div className="flex flex-col pt-6">
+          <span className="font-medium">{name}</span>
+          <span className="text-foreground/60">{position}</span>
+        </div>
+      </div>
     </div>
   );
 }

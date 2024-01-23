@@ -8,9 +8,9 @@ import { FaSchool } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <section className="mt-14 mb-8 pt-4 pb-2 bg-orange-200 ">
+    <section className="pt-4 pb-2 mt-14 mb-8 bg-orange-200 ">
       <div className="flex gap-14 pl-4 lg:pl-14">
-        <div className="pl-14 pb-8 flex-1">
+        <div className="flex-1 pb-8 pl-14">
           <div className="flex gap-4 items-center">
             <FaSchool className="text-2xl font-bold "> </FaSchool>
             <h1 className="text-2xl font-bold ">

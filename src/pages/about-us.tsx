@@ -3,8 +3,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <section className="mt-56  ml-6 mr-6 lg:ml-14">
-      <div className="flex flex-col lg:flex-row  justify-center ">
+    <section className="mt-56 mr-6 ml-6  lg:ml-14">
+      <div className="flex flex-col justify-center lg:flex-row ">
         <div className="flex-1">
           <Image
             src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -15,7 +15,7 @@ const AboutUs = () => {
           ></Image>
         </div>
         <div className="flex-1">
-          <h1 className="text-2xl font-bold pb-3">
+          <h1 className="pb-3 text-2xl font-bold">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </h1>
           <p>
@@ -42,8 +42,8 @@ const AboutUs = () => {
       {/* mission vission */}
       <section className=" w-full lg:w-[1100px] mx-auto mt-14">
         <div className="flex flex-col gap-4 lg:flex-row ">
-          <div className="border-2 border-orange-400 p-6 rounded-md">
-            <h1 className="font-bold pb-2">আমাদের মিশন</h1>
+          <div className="p-6 rounded-md border-2 border-orange-400">
+            <h1 className="pb-2 font-bold">আমাদের মিশন</h1>
             <h1>
               উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর
               নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব
@@ -51,8 +51,8 @@ const AboutUs = () => {
               ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে।{" "}
             </h1>
           </div>
-          <div className="border-2 border-orange-400 p-4 rounded-md">
-            <h1 className="font-bold pb-2">আমাদের গোল</h1>
+          <div className="p-4 rounded-md border-2 border-orange-400">
+            <h1 className="pb-2 font-bold">আমাদের গোল</h1>
             <h1>
               উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর
               নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব
@@ -64,7 +64,7 @@ const AboutUs = () => {
       </section>
 
       <section className="w-full mt-14 lg:w-[1100px] mx-auto">
-        <h1 className="font-bold text-2xl pb-2">SNHPI- এর দায়িত্বঃ</h1>
+        <h1 className="pb-2 text-2xl font-bold">SNHPI- এর দায়িত্বঃ</h1>
         <h1 className="pb-2 text-[18px]">
           প্রথমত: বিশ্বমানের জ্ঞান এবং দক্ষতার সাথে নিজেদের সজ্জিত করা।
         </h1>
@@ -86,10 +86,10 @@ const AboutUs = () => {
         </h1>
       </section>
       <section className="w-full mt-14 lg:w-[1100px] mx-auto">
-        <h1 className="font-bold text-2xl pb-4">
+        <h1 className="pb-4 text-2xl font-bold">
           কেন SNHPI ব্যতিক্রমও অনন্য :
         </h1>
-        <div className="flex flex-col lg:flex-row gap-24">
+        <div className="flex flex-col gap-24 lg:flex-row">
           <div className="text-[18px] font-semibold">
             <h1>1. বৃত্তি ও ফ্রি স্টুডেন্টশীপ</h1>
             <h1>2.চট্টগ্রামে এই প্রথম বিশেষ সুবিধা</h1>

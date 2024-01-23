@@ -1,8 +1,8 @@
-import { technologies } from "@/config";
-import { MdOutlineTopic } from "react-icons/md";
-import Image from "next/image";
-import { FaAngellist } from "react-icons/fa6";
-import { FaBookReader } from "react-icons/fa";
+import { technologies } from '@/config';
+import { MdOutlineTopic } from 'react-icons/md';
+import Image from 'next/image';
+import { FaAngellist } from 'react-icons/fa6';
+import { FaBookReader } from 'react-icons/fa';
 
 export function getStaticPaths() {
   const paths = technologies.map(({ id }) => ({
@@ -26,83 +26,83 @@ export function getStaticProps({
 
   return {
     props: {
-      technology: { ...technology, Icon: "" },
+      technology: { ...technology, Icon: '' },
     },
   };
 }
 
 const outliens = {
-  "Semester-1": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-1': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
-  "Semester-2": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-2': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
-  "Semester-3": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-3': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
-  "Semester-4": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-4': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
-  "Semester-5": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-5': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
-  "Semester-6": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-6': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
-  "Semester-7": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-7': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
-  "Semester-8": [
-    "Bangla - 1",
-    "English - 1",
-    "Mathematics - 1",
-    "Physics - 1",
-    "Engineering Drawing",
-    "Basic Electricity",
-    "Basic Workshop practice",
+  'Semester-8': [
+    'Bangla - 1',
+    'English - 1',
+    'Mathematics - 1',
+    'Physics - 1',
+    'Engineering Drawing',
+    'Basic Electricity',
+    'Basic Workshop practice',
   ],
 };
 
@@ -111,20 +111,19 @@ export default function Technology({ technology }) {
     technology;
 
   return (
-    <section className="mt-24  max-w-7xl mx-auto">
+    <section className="mx-auto mt-24 max-w-7xl">
       <div
         style={{
           backgroundImage: `url(${images[0]})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "100%",
-          height: "400px",
-        }}
-      ></div>
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          width: '100%',
+          height: '400px',
+        }}></div>
       {/* details div */}
-      <div className="flex flex-col ml-6 lg:ml-28 lg:flex-row gap-24   ">
+      <div className="flex flex-col gap-24 ml-6 lg:ml-28 lg:flex-row">
         <div className="flex-1 mt-14">
-          <h1 className="text-primary text-4xl pb-3 font-bold ">
+          <h1 className="pb-3 text-4xl font-bold text-primary">
             {name} টেকনোলজি
           </h1>
           <p className="text-[18px]  tracking-wide">{description}</p>
@@ -133,7 +132,7 @@ export default function Technology({ technology }) {
             height={150}
             width={150}
             src={cheifInstructor?.picture}
-            className=" rounded-full object-cover object-center"
+            className="object-cover object-center rounded-full"
           />
           <h1 className="pt-4 text-[24px] font-bold">
             ডিপার্টমেন্ট প্রধান : {cheifInstructor?.name}
@@ -200,7 +199,7 @@ export default function Technology({ technology }) {
 
       {/* lav facilities and principle section */}
 
-      {/* <div className="flex pt-14 justify-evenly  ">
+      {/* <div className="flex justify-evenly pt-14">
         <div>
           <div className="flex gap-3 text-[24px] items-center">
             <FaAngellist></FaAngellist>
@@ -232,14 +231,14 @@ export default function Technology({ technology }) {
       {/* course outline */}
 
       <section className="pt-8">
-        <h1 className="text-2xl font-bold text-center pb-8 text-orange-400">
+        <h1 className="pb-8 text-2xl font-bold text-center text-orange-400">
           কোর্স আউটলাইন
         </h1>
 
-        <div className="grid justify-center grid-cols-1 gap-4 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 justify-center lg:grid-cols-4">
           {Object.keys(outliens).map((outline) => (
-            <div className="bg-orange-50 p-4" key={outline}>
-              <h2 className="font-bold pb-1">{outline}</h2>
+            <div className="p-4 bg-orange-50" key={outline}>
+              <h2 className="pb-1 font-bold">{outline}</h2>
               {outliens[outline].map((val) => (
                 <div className="flex gap-2 items-center" key={val?.id}>
                   <FaBookReader></FaBookReader>

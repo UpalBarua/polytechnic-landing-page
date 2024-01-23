@@ -24,9 +24,9 @@ export const getStaticProps = async () => {
 
 export default function Notices({ notices }: { notices: TNotice[] }) {
   return (
-    <main className="max-w-3xl container pt-36">
+    <main className="container pt-36 max-w-3xl">
       <h2 className="text-2xl font-bold tracking-tight">নোটিশবোর্ড</h2>
-      <div className="divide-y pb-2">
+      <div className="pb-2 divide-y">
         {notices.map((notice) => (
           <Notice key={notice.id} {...notice} />
         ))}

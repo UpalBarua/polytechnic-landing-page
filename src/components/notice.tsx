@@ -11,12 +11,12 @@ export function Notice({ id, title, publishedOn }: NoticeProps) {
   return (
     <Link
       href={`/notices/${id}`}
-      className="flex gap-x-2.5 items-start py-3 group">
-      <div className="flex flex-col items-center justify-center bg-primary rounded text-background px-2 py-1">
-        <span className="font-medium text-sm">{publishedDate}</span>
-        <span className="lowercase text-xs">{publishedMonth}</span>
+      className="flex gap-x-2 items-start py-3 group">
+      <div className="flex flex-col justify-center items-center py-1 px-2 rounded bg-primary text-background">
+        <span className="text-sm font-medium">{publishedDate}</span>
+        <span className="text-xs lowercase">{publishedMonth}</span>
       </div>
-      <h4 className="leading-relaxed text-foreground/60 group-hover:underline">
+      <h4 className="leading-relaxed text-foreground/60 group-hover:underline group-hover:text-foreground/80 transition-colors underline-offset-2">
         {title}
       </h4>
     </Link>

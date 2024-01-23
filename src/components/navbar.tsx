@@ -47,7 +47,7 @@ function NavItem({ route, label, subRoutes }: NavLink) {
           <FaChevronDown className="text-xs text-foreground/40" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="bg-background/95">
         {subRoutes.map(({ route, label }) => (
           <DropdownMenuItem key={route} className="p-1 focus:bg-primary/20">
             <Link
