@@ -1,3 +1,5 @@
+import { FaCaravan, FaPencilRuler } from 'react-icons/fa';
+import { GrMultimedia } from 'react-icons/gr';
 import {
   MdComputer,
   MdDirectionsCar,
@@ -11,6 +13,9 @@ import {
   PiStudent,
   PiUser,
 } from 'react-icons/pi';
+import { RiBuilding4Fill } from 'react-icons/ri';
+import { SiGoogleclassroom } from 'react-icons/si';
+import { TbBuildingBroadcastTower } from 'react-icons/tb';
 
 export const navLinks = [
   {
@@ -243,3 +248,48 @@ export const milestones = [
     count: 6,
   },
 ] as const;
+
+export const facilities = [
+  {
+    id: 1,
+    name: 'মাল্টিমিডিয়া সুবিধা',
+    Icon: GrMultimedia,
+    content:
+      'ইন্ডাস্ট্রি এক্সপার্টদের সাথে নিয়মিত লাইভ ক্লাস, কনসেপচুয়াল ক্লাস আর সাপোর্ট ক্লাসে স্কিল ',
+  },
+  {
+    id: 5,
+    name: 'ইন্টারনেট সুবিধা ',
+    Icon: TbBuildingBroadcastTower,
+    content:
+      'ইন্ডাস্ট্রি এক্সপার্টদের সাথে নিয়মিত লাইভ ক্লাস, কনসেপচুয়াল ক্লাস আর সাপোর্ট ক্লাসে স্কিল ',
+  },
+  {
+    id: 2,
+    name: 'শেখ রাসেল ডিজিটাল ল্যাব',
+    Icon: RiBuilding4Fill,
+    content:
+      'ইন্ডাস্ট্রি এক্সপার্টদের সাথে নিয়মিত লাইভ ক্লাস, কনসেপচুয়াল ক্লাস আর সাপোর্ট ক্লাসে স্কিল ',
+  },
+  {
+    id: 3,
+    name: 'স্পোকেন ইংলিশ ক্লাস',
+    Icon: SiGoogleclassroom,
+    content:
+      'ইন্ডাস্ট্রি এক্সপার্টদের সাথে নিয়মিত লাইভ ক্লাস, কনসেপচুয়াল ক্লাস আর সাপোর্ট ক্লাসে স্কিল ',
+  },
+  {
+    id: 4,
+    name: 'যাতায়াত সুবিধা',
+    Icon: FaCaravan,
+    content:
+      'ইন্ডাস্ট্রি এক্সপার্টদের সাথে নিয়মিত লাইভ ক্লাস, কনসেপচুয়াল ক্লাস আর সাপোর্ট ক্লাসে স্কিল ',
+  },
+  {
+    id: 6,
+    name: 'হাতে কলমে শিক্ষা',
+    Icon: FaPencilRuler,
+    content:
+      'ইন্ডাস্ট্রি এক্সপার্টদের সাথে নিয়মিত লাইভ ক্লাস, কনসেপচুয়াল ক্লাস আর সাপোর্ট ক্লাসে স্কিল ',
+  },
+];

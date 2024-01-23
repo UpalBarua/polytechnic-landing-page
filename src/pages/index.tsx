@@ -1,4 +1,4 @@
-import Benefit from '@/components/benefits';
+import Benefit from '@/components/facilities';
 import { ChairmansMessage } from '@/components/chairmans-message';
 import Footer from '@/components/footer';
 import { LatestUpdate } from '@/components/latest-update';
@@ -10,6 +10,7 @@ import { Slider } from '@/components/slider';
 import { Technologies } from '@/components/technologies';
 import { getAllNotices } from '@/lib/services';
 import { TNotice } from '@/types';
+import { Facilities } from '@/components/facilities';
 
 export const getStaticProps = async () => {
   try {
@@ -52,7 +53,7 @@ export default function HomePage({ notices }: HomePageProps) {
         <PrincipalsMessage />
       </section>
       <Technologies />
-      <Benefit />
+      <Facilities />
       <Milestones />
       <RecentPictures />
       <Footer />

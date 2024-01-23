@@ -9,7 +9,7 @@ export function RecentPictures() {
   return (
     <section className="container pt-14 max-w-5xl lg:pt-16">
       <Heading className="md:text-center">আমাদের স্মৃতিচারণ মুহূর্ত</Heading>
-      <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 md:grid-cols-4">
         {Array(5)
           .fill('')
           .map((_, i) => (
