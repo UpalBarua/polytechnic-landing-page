@@ -8,15 +8,15 @@ export function Facilities() {
       <Heading className="md:text-center">
         আমারা যেসব সুবিধা প্রধান করে থাকি
       </Heading>
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-        <div className="space-y-2">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+        <div className="space-y-3">
           {facilities.map((facility) => (
             <Facility key={facility.id} {...facility} />
           ))}
         </div>
         <div className="hidden relative md:block">
           <Image
-            src="https://images.unsplash.com/flagged/photo-1574110906643-8311b0ce29d3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/slider0.jpg"
             alt=""
             className="object-cover object-center rounded-md"
             fill

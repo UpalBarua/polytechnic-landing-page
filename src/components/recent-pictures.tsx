@@ -4,7 +4,6 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
 import { Heading } from "./ui/heading";
-import { getAllPictures } from "@/lib/services";
 
 export function RecentPictures({ pictures }) {
   console.log(pictures);
@@ -13,7 +12,7 @@ export function RecentPictures({ pictures }) {
       <Heading className="md:text-center">আমাদের স্মৃতিচারণ মুহূর্ত</Heading>
       <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 md:grid-cols-4">
         {}
-        {pictures.map(({ imageUrl }, index) => (
+        {pictures?.map(({ imageUrl }, index) => (
           <PhotoView key={index} src={imageUrl}>
             <Image
               src={imageUrl}

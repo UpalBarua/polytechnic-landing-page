@@ -9,7 +9,7 @@ export function Heading({ children, className }: HeadingProps) {
   return (
     <h2
       className={cn(
-        'pb-2 text-2xl font-medium tracking-tight text-center md:pb-4 md:text-start',
+        'pb-2 text-2xl font-medium tracking-tight text-center sm:pb-4 md:pb-6 md:text-start',
         className
       )}>
       {children}

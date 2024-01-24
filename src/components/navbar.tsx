@@ -14,7 +14,7 @@ import { Logo } from './ui/logo';
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 z-10 w-full border-b shadow">
+    <header className="bg-primary fixed top-0 left-0 z-10 w-full border-b shadow">
       <div className="container flex justify-between items-center py-2 max-w-7xl bg-primary">
         <Link href="/" className="flex gap-x-2 items-center">
           <Logo />
@@ -24,7 +24,7 @@ export function Navbar() {
         </Link>
         <MobileNav />
       </div>
-      <nav className="container hidden gap-x-2 justify-center items-center py-1 max-w-7xl text-sm bg-background/95 lg:flex">
+      <nav className="w-full hidden gap-x-2 justify-center items-center py-1 text-sm bg-background/95 lg:flex">
         {navLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}
