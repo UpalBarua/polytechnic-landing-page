@@ -56,6 +56,7 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
       <Technologies />
       <Facilities />
       <Milestones />
+
       <RecentPictures pictures={pictures} />
       {/* <Footer /> */}
     </main>

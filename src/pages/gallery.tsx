@@ -1,16 +1,48 @@
+import { getAllPictures } from "@/lib/services";
 import Image from "next/image";
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
-const Gallery = () => {
+export const getStaticProps = async () => {
+  try {
+    const pictures = await getAllPictures();
+    console.log(pictures);
+
+    // const notices = (await getAllNotices()).slice(0, 3);
+
+    return {
+      props: {
+        pictures: pictures,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const Gallery = ({ pictures }) => {
+  console.log(pictures);
   return (
-    <section className="mt-36 ">
-      <h1 className="text-2xl font-bold text-center">
+    <section className="mt-36 ml-4 mr-4 ">
+      <h1 className="text-2xl pb-8 font-bold text-center">
         আমাদের স্মৃতিচারণ মুহূর্ত
       </h1>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {pictures?.map((picture) => (
+          <div key={picture?.id}>
+            {" "}
+            <Image
+              src={picture?.imageUrl}
+              alt=""
+              height={500}
+              width={500}
+            ></Image>
+          </div>
+        ))}
+      </div>
 
-      <PhotoProvider>
+      {/* <PhotoProvider>
         <div className="py-6 dark:bg-gray-800 dark:text-gray-50">
           <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
             <div className="relative col-span-2 row-span-2 w-full h-full rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square">
@@ -115,7 +147,7 @@ const Gallery = () => {
             </div>
           </div>
         </div>
-      </PhotoProvider>
+      </PhotoProvider> */}
     </section>
   );
 };
