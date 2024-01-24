@@ -25,9 +25,8 @@ export const navLinks = [
       { route: '/course-structure', label: 'কোর্স অবকাঠামো' },
       { route: '/routine', label: 'রুটিন' },
       { route: '/syllabus', label: 'সিলেবাস' },
-      { route: '/teacher', label: 'শিক্ষক মন্ডলী' },
-
-      { route: '/grading', label: 'গ্রেডিং সিস্টেম' },
+      { route: '/teachers', label: 'শিক্ষক মন্ডলী' },
+      { route: '/grading-system', label: 'গ্রেডিং সিস্টেম' },
     ],
   },
   {
@@ -59,11 +58,11 @@ export const navLinks = [
     route: '/technologies',
     label: 'টেকনোলজি সমূহ',
     subRoutes: [
-      { route: '/admission-eligibility', label: 'ইলেকট্রিক্যাল টেকনোলজি' },
-      { route: '/admission-policies', label: ' মেকানিক্যাল টেকনোলজি' },
-      { route: '/application-process', label: '   কম্পিউটার টেকনোলজি' },
-      { route: '/tuition-fees-and-others', label: ' অটোমোবাইল টেকনোলজি ' },
-      { route: '/tuition-fees-and-others', label: ' সিভিল টেকনোলজি ' },
+      { route: '/technologies/electrical', label: 'ইলেকট্রিক্যাল টেকনোলজি' },
+      { route: '/technologies/mechanical', label: ' মেকানিক্যাল টেকনোলজি' },
+      { route: '/technologies/computer', label: '   কম্পিউটার টেকনোলজি' },
+      { route: '/technologies/automobile', label: ' অটোমোবাইল টেকনোলজি ' },
+      { route: '/technologies/civil', label: ' সিভিল টেকনোলজি ' },
     ],
   },
   {
@@ -305,4 +304,167 @@ export const facilities = [
     content:
       'ইন্ডাস্ট্রি এক্সপার্টদের সাথে নিয়মিত লাইভ ক্লাস, কনসেপচুয়াল ক্লাস আর সাপোর্ট ক্লাসে স্কিল ',
   },
-];
+] as const;
+
+export const teachers = [
+  {
+    id: 1,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 2,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1581455527083-9d62f3f5ae01?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 3,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 4,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 5,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1585807515950-bc46d934c28b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 6,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1567515004624-219c11d31f2e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 7,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?q=80&w=1399&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 8,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1583195763986-0231686dcd43?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+  {
+    id: 9,
+    name: 'Asim Roy',
+    image:
+      'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    number: '01819453623',
+  },
+] as const;
+
+export const gradingSystem = [
+  {
+    grade: 'A+',
+    marks: '৮০ থেকে উপরে',
+    point: '৪.০০',
+  },
+  {
+    grade: 'A',
+    marks: '৭৫ থেকে ৭৯',
+    point: '৩.৭৫',
+  },
+  {
+    grade: 'A-',
+    marks: '৭০ থেকে ৭৪',
+    point: '৩.৫০',
+  },
+  {
+    grade: 'B+',
+    marks: '৬৫ থেকে ৬৯',
+    point: '৩.২৫',
+  },
+  {
+    grade: 'B',
+    marks: '৬০ থেকে ৬৪',
+    point: '৩.০০',
+  },
+  {
+    grade: 'B-',
+    marks: '৫৫ থেকে ৫৯',
+    point: '২.৭৫',
+  },
+  {
+    grade: 'C+',
+    marks: '৫০ থেকে ৫৪',
+    point: '২.৫০',
+  },
+  {
+    grade: 'C',
+    marks: '৪৫ থেকে ৪৯',
+    point: '২.২৫',
+  },
+  {
+    grade: 'D',
+    marks: '৪০ থেকে 8৯',
+    point: '২.০০',
+  },
+  {
+    grade: 'F',
+    marks: '৪০ এর নীচে',
+    point: '০.০০',
+  },
+] as const;
+
+export const gradePercentage = [
+  {
+    grade: '১ম পর্ব',
+    percentage: '৫%',
+  },
+  {
+    grade: '২য় পর্ব',
+    percentage: '১০%',
+  },
+  {
+    grade: '৩য় পর্ব',
+    percentage: '১৫%',
+  },
+  {
+    grade: '৪র্থ পর্ব',
+    percentage: '২০%',
+  },
+  {
+    grade: '৫ম পর্ব',
+    percentage: '২৫%',
+  },
+  {
+    grade: '৬ষ্ঠ পর্ব',
+    percentage: '২০%',
+  },
+  {
+    grade: '৭ম পর্ব',
+    percentage: '২৫%',
+  },
+  {
+    grade: '৮ম পর্ব',
+    percentage: '১৫%',
+  },
+] as const;

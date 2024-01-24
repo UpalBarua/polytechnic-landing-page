@@ -12,7 +12,7 @@ type RecentNoticesProps = {
 
 export function RecentNotices({ notices }: RecentNoticesProps) {
   return (
-    <div className="p-4 mx-auto mt-14 space-y-2 max-w-lg md:max-w-full rounded-md md:bg-background/80 md:border md:shadow md:p-6 md:mt-0">
+    <div className="p-4 mx-auto mt-8 space-y-2 max-w-lg md:max-w-full rounded-md md:bg-background/80 md:border md:shadow md:p-6 md:mt-0 h-full">
       <Heading className="pb-0 md:pb-0">সাম্প্রতিক নোটিশ</Heading>
       <Separator className="hidden md:block" />
       <div className="pb-2 divide-y">

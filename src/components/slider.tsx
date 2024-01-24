@@ -8,11 +8,12 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 import { FaSchool } from 'react-icons/fa';
+import { Logo } from './ui/logo';
 
 export function Slider() {
   return (
     <Carousel
-      className="relative rounded-md"
+      className="relative shadow-md border flex-1 rounded-md"
       plugins={[
         Autoplay({
           delay: 2000,
@@ -32,15 +33,13 @@ export function Slider() {
             </CarouselItem>
           ))}
       </CarouselContent>
-      <div className="flex absolute inset-0 justify-start items-end w-full h-full bg-gradient-to-t rounded-md pointer-events-none text-background from-foreground/95 to-foreground/20">
-        <div className="flex flex-col gap-y-2 p-8">
-          <div className="flex justify-center items-center w-16 rounded-full shadow aspect-square bg-background/60 text-foreground">
-            <FaSchool className="text-4xl" />
-          </div>
-          <h2 className="text-2xl font-bold tracking-tight text-primary">
+      <div className="flex absolute inset-0 justify-center items-center w-full h-full bg-gradient-to-t rounded-md pointer-events-none text-background from-foreground/95 to-foreground/50 md:justify-start md:items-end">
+        <div className="flex flex-col text-center md:items-start md:justify-start md:p-8 justify-center items-center gap-y-2 p-6">
+          <Logo />
+          <h2 className="text-2xl italic font-medium capitalize text-primary">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </h2>
-          <span className="text-lg">
+          <span className="text-background/80">
             সমৃদ্ধ বাংলাদেশ গড়ার হাতিয়ার, ডিপ্লোমা ইঞ্জিনিয়ার
           </span>
         </div>
