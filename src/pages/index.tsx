@@ -1,22 +1,20 @@
-import { ChairmansMessage } from "@/components/chairmans-message";
-import { Facilities } from "@/components/facilities";
-import Footer from "@/components/footer";
-import { LatestUpdate } from "@/components/latest-update";
-import { Milestones } from "@/components/milestones";
-import { PrincipalsMessage } from "@/components/principals-message";
-import { RecentNotices } from "@/components/recent-notices";
-import { RecentPictures } from "@/components/recent-pictures";
-import { Slider } from "@/components/slider";
-import { Technologies } from "@/components/technologies";
-import { getAllNotices, getAllPictures } from "@/lib/services";
-import { TNotice } from "@/types";
+import { ChairmansMessage } from '@/components/chairmans-message';
+import { Facilities } from '@/components/facilities';
+import Footer from '@/components/footer';
+import { LatestUpdate } from '@/components/latest-update';
+import { Milestones } from '@/components/milestones';
+import { PrincipalsMessage } from '@/components/principals-message';
+import { RecentNotices } from '@/components/recent-notices';
+import { RecentPictures } from '@/components/recent-pictures';
+import { Slider } from '@/components/slider';
+import { Technologies } from '@/components/technologies';
+import { getAllNotices, getAllPictures } from '@/lib/services';
+import { TNotice } from '@/types';
 
 export const getStaticProps = async () => {
   try {
     const notices = (await getAllNotices()).slice(0, 4);
     const pictures = await getAllPictures();
-
-    // const notices = (await getAllNotices()).slice(0, 3);
 
     return {
       props: {
