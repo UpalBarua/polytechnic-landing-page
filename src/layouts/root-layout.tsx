@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/navbar';
+import { Footer } from '@/components/footer';
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ function RootLayout({ children }: RootLayoutProps) {
     <>
       <Navbar />
       {children}
+      <Footer />
     </>
   );
 }

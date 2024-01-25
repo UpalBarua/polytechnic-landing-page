@@ -1,6 +1,7 @@
+import { Testimonials } from '@/components/testimonials';
 import { ChairmansMessage } from '@/components/chairmans-message';
 import { Facilities } from '@/components/facilities';
-import Footer from '@/components/footer';
+import { Footer } from '@/components/footer';
 import { LatestUpdate } from '@/components/latest-update';
 import { Milestones } from '@/components/milestones';
 import { PrincipalsMessage } from '@/components/principals-message';
@@ -40,8 +41,8 @@ type HomePageProps = {
 export default function HomePage({ notices, pictures }: HomePageProps) {
   return (
     <main>
-      <section className="container grid grid-cols-1 pt-16 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-3 pb-6">
-        <div className="col-span-full md:col-span-8 space-y-2 flex flex-col">
+      <section className="container grid grid-cols-1 pt-16 pb-6 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-3">
+        <div className="flex flex-col col-span-full space-y-2 md:col-span-8">
           <Slider />
           <LatestUpdate />
         </div>
@@ -56,9 +57,8 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
       <Technologies />
       <Facilities />
       <Milestones />
-
-      <RecentPictures pictures={pictures} />
-      {/* <Footer /> */}
+      {/* <Testimonials /> */}
+      {/* <RecentPictures pictures={pictures} /> */}
     </main>
   );
 }

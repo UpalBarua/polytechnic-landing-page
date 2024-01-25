@@ -24,11 +24,11 @@ export const getStaticProps = async () => {
 const Gallery = ({ pictures }) => {
   console.log(pictures);
   return (
-    <section className="mt-36 ml-4 mr-4 ">
-      <h1 className="text-2xl pb-8 font-bold text-center">
+    <section className="mt-36 mr-4 ml-4 ">
+      <h1 className="pb-8 text-2xl font-bold text-center">
         আমাদের স্মৃতিচারণ মুহূর্ত
       </h1>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {pictures?.map((picture) => (
           <div key={picture?.id}>
             {" "}

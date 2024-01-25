@@ -6,9 +6,9 @@ import { MdLocalPhone } from 'react-icons/md';
 
 export default function Teachers() {
   return (
-    <section className="mt-20 sm:mt-24 lg:mt-32 container max-w-5xl">
+    <section className="container mt-20 max-w-5xl sm:mt-24 lg:mt-32">
       <Heading className="md:text-center">আমাদের শিক্ষক মণ্ডলী</Heading>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-2 lg:grid-cols-3">
         {teachers.map((teacher) => (
           <Teacher key={teacher?.id} {...teacher} />
         ))}
@@ -24,13 +24,13 @@ function Teacher({ image, number, position, name }: TeacherProps) {
     <li className="border shadow-md bg-background/80 rounded-md">
       <div className="relative h-52">
         <Image
-          className="rounded-md rounded-b-none aspect-square object-center object-cover"
+          className="object-cover object-center rounded-md rounded-b-none aspect-square"
           src={image}
           alt=""
           fill
         />
       </div>
-      <div className="flex flex-col px-4 py-5 gap-y-1">
+      <div className="flex flex-col gap-y-1 py-5 px-4">
         <h3 className="font-medium">{name}</h3>
         <div className="text-sm text-foreground/60 flex items-center gap-x-2">
           <MdLocalPhone />

@@ -13,7 +13,7 @@ import { Logo } from './ui/logo';
 export function Slider() {
   return (
     <Carousel
-      className="relative shadow-md border flex-1 rounded-md"
+      className="relative flex-1 rounded-md border shadow-md"
       plugins={[
         Autoplay({
           delay: 2000,
@@ -34,7 +34,7 @@ export function Slider() {
           ))}
       </CarouselContent>
       <div className="flex absolute inset-0 justify-center items-center w-full h-full bg-gradient-to-t rounded-md pointer-events-none text-background from-foreground/95 to-foreground/50 md:justify-start md:items-end">
-        <div className="flex flex-col text-center md:items-start md:justify-start md:p-8 justify-center items-center gap-y-2 p-6">
+        <div className="flex flex-col gap-y-2 justify-center items-center p-6 text-center md:items-start md:justify-start md:p-8">
           <Logo />
           <h2 className="text-2xl italic font-medium capitalize text-primary">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট

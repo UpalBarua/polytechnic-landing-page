@@ -39,7 +39,11 @@
       rgba(219, 157, 87, 0.15) 65%,
       rgba(215, 127, 51, 0.25) 75%
     );
-    @apply bg-cover bg-top text-foreground/90 !min-w-full;
+    @apply bg-cover bg-top text-foreground/90 !min-w-full min-h-screen;
+  }
+
+  body > div {
+    @apply grid grid-rows-[auto_1fr_auto] min-h-screen;
   }
 }
 

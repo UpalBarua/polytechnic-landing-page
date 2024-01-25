@@ -14,7 +14,7 @@ import { Logo } from './ui/logo';
 
 export function Navbar() {
   return (
-    <header className="bg-primary fixed top-0 left-0 z-10 w-full border-b shadow">
+    <header className="fixed top-0 left-0 z-10 w-full border-b shadow bg-primary">
       <div className="container flex justify-between items-center py-2 max-w-7xl bg-primary">
         <Link href="/" className="flex gap-x-2 items-center">
           <Logo />

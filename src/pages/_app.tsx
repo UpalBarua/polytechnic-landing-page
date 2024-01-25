@@ -1,7 +1,7 @@
+import { Toaster } from '@/components/ui/sonner';
+import RootLayout from '@/layouts/root-layout';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import RootLayout from '@/layouts/root-layout';
-import { Toaster } from '@/components/ui/sonner';
 import { Noto_Sans_Bengali } from 'next/font/google';
 import { PhotoProvider } from 'react-photo-view';
 
@@ -17,12 +17,12 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${notoSansBengali.style.fontFamily};
         }
       `}</style>
-      <RootLayout>
-        <PhotoProvider>
+      <PhotoProvider>
+        <RootLayout>
           <Component {...pageProps} />
           <Toaster />
-        </PhotoProvider>
-      </RootLayout>
+        </RootLayout>
+      </PhotoProvider>
     </>
   );
 }

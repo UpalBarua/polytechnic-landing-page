@@ -53,12 +53,12 @@ const Routine = () => {
     },
   ];
   return (
-    <section className="mt-44 max-w-5xl mx-auto">
-      <h1 className="text-center text-4xl pb-8 font-bold">OUR ALL ROUTINE</h1>
-      <div className="grid gap-8 grid-cols-1 lg:grid-cols-4">
+    <section className="mx-auto mt-44 max-w-5xl">
+      <h1 className="pb-8 text-4xl font-bold text-center">OUR ALL ROUTINE</h1>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
         {allRoutine?.map((routine) => (
           <div
-            className="text-3xl  shadow-md shadow-orange-200 p-6"
+            className="p-6 text-3xl shadow-md  shadow-orange-200"
             key={routine?.id}
             routine={routine}
           >
