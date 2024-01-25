@@ -8,6 +8,7 @@ import {
   MdOutlineSettings,
 } from 'react-icons/md';
 import {
+  PiBell,
   PiBuildings,
   PiChalkboardTeacher,
   PiStudent,
@@ -16,8 +17,9 @@ import {
 import { RiBuilding4Fill } from 'react-icons/ri';
 import { SiGoogleclassroom } from 'react-icons/si';
 import { TbBuildingBroadcastTower } from 'react-icons/tb';
+import { AiOutlinePicture } from 'react-icons/ai';
 
-export const navLinks = [
+export const mainNavLinks = [
   {
     route: '/curriculum',
     label: 'পাঠ্যক্রম',
@@ -110,7 +112,25 @@ export const navLinks = [
   },
 ] as const;
 
-export type NavLink = (typeof navLinks)[number];
+export type NavLink = (typeof mainNavLinks)[number];
+
+export const adminNavLinks = [
+  {
+    Icon: PiChalkboardTeacher,
+    href: '/admin/teachers',
+    label: 'Teachers',
+  },
+  {
+    Icon: PiBell,
+    href: '/admin/notices',
+    label: 'Notices',
+  },
+  {
+    Icon: AiOutlinePicture,
+    href: '/admin/pictures',
+    label: 'Pictures',
+  },
+] as const;
 
 export const chairmansMessage = {
   picture: '/chairman.jpeg',
@@ -498,18 +518,18 @@ export const testimonials = [
     comment:
       'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
   },
-  // {
-  //   name: 'আশিক মাহমুদ',
-  //   identity: 'প্রাক্তন ছাত্র',
-  //   image: '/chairman.jpg',
-  //   comment:
-  //     'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
-  // },
-  // {
-  //   name: 'আশিক মাহমুদ',
-  //   identity: 'প্রাক্তন ছাত্র',
-  //   image: '/chairman.jpg',
-  //   comment:
-  //     'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ',
-  // },
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'প্রাক্তন ছাত্র',
+    image: '/chairman.jpg',
+    comment:
+      'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+  },
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'প্রাক্তন ছাত্র',
+    image: '/chairman.jpg',
+    comment:
+      'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ',
+  },
 ] as const;

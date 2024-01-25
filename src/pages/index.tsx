@@ -50,7 +50,8 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
           <RecentNotices notices={notices} />
         </div>
       </section>
-      <section className="py-12 space-y-16 md:space-y-28 md:py-24 bg-background/80">
+      {/* className="py-12 space-y-16 md:space-y-28 md:py-24 bg-background/80" */}
+      <section className="flex flex-col items-start justify-center gap-14 py-14 md:py-24 bg-background/80 px-6 md:px-10 lg:flex-row">
         <ChairmansMessage />
         <PrincipalsMessage />
       </section>

@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { navLinks, type NavLink } from '@/config';
+import { mainNavLinks, type NavLink } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
@@ -25,7 +25,7 @@ export function Navbar() {
         <MobileNav />
       </div>
       <nav className="w-full hidden gap-x-2 justify-center items-center py-1 text-sm bg-background/95 lg:flex">
-        {navLinks.map((link) => (
+        {mainNavLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}
       </nav>

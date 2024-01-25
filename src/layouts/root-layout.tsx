@@ -5,7 +5,7 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-function RootLayout({ children }: RootLayoutProps) {
+export function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <Navbar />
@@ -14,5 +14,3 @@ function RootLayout({ children }: RootLayoutProps) {
     </>
   );
 }
-
-export default RootLayout;

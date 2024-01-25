@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { navLinks, type NavLink } from '@/config';
+import { mainNavLinks, type NavLink } from '@/config';
 import Link from 'next/link';
 import * as React from 'react';
 import { useState } from 'react';
@@ -23,7 +23,7 @@ export function MobileNav() {
       <SheetContent side="right">
         <ScrollArea className="my-8 h-[calc(100vh-4rem)]">
           <div className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
+            {mainNavLinks.map((link) => (
               <MobileNavItem key={link.route} {...link} />
             ))}
           </div>
