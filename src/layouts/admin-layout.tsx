@@ -12,7 +12,7 @@ type AdminLayoutProps = {
 
 export function AdminLayout({ children }: AdminLayoutProps) {
   return (
-    <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+    <div className="container flex-1 items-start md:grid md:grid-cols-[180px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-10">
       <aside className="fixed top-14 z-30 -ml-2 hidden h-screen w-full shrink-0 md:sticky md:block bg-background/80">
         <ScrollArea className="h-full py-6 pr-6 lg:py-8">
           <nav
@@ -45,7 +45,7 @@ function NavLink({ Icon, href, label }: NavLinkProps) {
           : 'hover:bg-transparent hover:underline',
         'justify-start'
       )}>
-      <Icon />
+      <Icon className="text-lg" />
       <span>{label}</span>
     </Link>
   );

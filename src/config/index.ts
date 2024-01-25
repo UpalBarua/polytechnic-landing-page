@@ -13,6 +13,7 @@ import {
   PiChalkboardTeacher,
   PiStudent,
   PiUser,
+  PiHouse,
 } from 'react-icons/pi';
 import { RiBuilding4Fill } from 'react-icons/ri';
 import { SiGoogleclassroom } from 'react-icons/si';
@@ -116,13 +117,18 @@ export type NavLink = (typeof mainNavLinks)[number];
 
 export const adminNavLinks = [
   {
+    Icon: PiHouse,
+    href: '/admin/',
+    label: 'Home',
+  },
+  {
     Icon: PiChalkboardTeacher,
     href: '/admin/teachers',
     label: 'Teachers',
   },
   {
     Icon: PiBell,
-    href: '/admin/notices',
+    href: '/admin/noticeboard',
     label: 'Notices',
   },
   {
