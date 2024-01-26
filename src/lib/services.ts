@@ -1,5 +1,5 @@
 import { db } from '@/firebase/firebase.config';
-import { TTeacher, type TNotice } from '@/types';
+import { TTeacher, type TNotice, TPicture } from '@/types';
 import {
   addDoc,
   collection,
@@ -55,11 +55,12 @@ export const getLatestNotices = async () => {
 };
 
 export const getAllPictures = async () => {
-  let gallery = [];
+  let gallery: TPicture[] = [];
+
   const querySnapShot = await getDocs(collection(db, 'gallery'));
 
   querySnapShot.forEach((doc) => {
-    gallery.push({ id: doc.id, ...doc.data() });
+    gallery.push({ id: doc.id, ...doc.data() } as TPicture);
   });
 
   return gallery;
@@ -79,6 +80,10 @@ export const deleteNoticeById = async (id: string) => {
   await deleteDoc(doc(db, 'notices', id));
 };
 
+export const deletePictureById = async (id: string) => {
+  await deleteDoc(doc(db, 'gallery', id));
+};
+
 export const deleteTeacherById = async (id: string) => {
   await deleteDoc(doc(db, 'teachers', id));
 };
@@ -89,4 +94,8 @@ export const addNewNotice = async (newNotice: Omit<TNotice, 'id'>) => {
 
 export const addNewTeacher = async (newTeacher: Omit<TTeacher, 'id'>) => {
   await addDoc(collection(db, 'teachers'), newTeacher);
+};
+
+export const addNewPicture = async (picture: Omit<TPicture, 'id'>) => {
+  await addDoc(collection(db, 'gallery'), picture);
 };

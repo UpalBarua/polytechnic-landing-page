@@ -1,6 +1,9 @@
+import { AuthForm } from '@/components/auth-form';
 import { buttonVariants } from '@/components/ui/button';
+import { Heading } from '@/components/ui/heading';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { adminNavLinks } from '@/config';
+import { useAuthContext } from '@/context/auth-context';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -11,9 +14,22 @@ type AdminLayoutProps = {
 };
 
 export function AdminLayout({ children }: AdminLayoutProps) {
+  const { user } = useAuthContext();
+
+  if (!user) {
+    return (
+      <main className="flex items-center justify-center flex-col h-screen">
+        <div className="bg-background/80 w-[20rem] border shadow-lg p-6 rounded-md">
+          <Heading className="md:text-center">Admin Login</Heading>
+          <AuthForm />
+        </div>
+      </main>
+    );
+  }
+
   return (
     <div className="container flex-1 items-start md:grid md:grid-cols-[180px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-10">
-      <aside className="fixed top-14 z-30 -ml-2 hidden h-screen w-full shrink-0 md:sticky md:block bg-background/80">
+      <aside className="fixed top-0 z-30 -ml-2 hidden h-screen w-full shrink-0 md:sticky md:block bg-background/80">
         <ScrollArea className="h-full py-6 pr-6 lg:py-8">
           <nav
             className={cn(

@@ -1,4 +1,5 @@
 import { Toaster } from '@/components/ui/sonner';
+import { AuthContextProvider } from '@/context/auth-context';
 import { RootLayout } from '@/layouts/root-layout';
 import '@/styles/globals.css';
 import { NextPage } from 'next';
@@ -23,7 +24,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ?? ((page) => <RootLayout>{page}</RootLayout>);
 
-  return getLayout(
+  return (
     <React.Fragment>
       <style jsx global>{`
         html {
@@ -31,8 +32,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         }
       `}</style>
       <PhotoProvider>
-        <Component {...pageProps} />
-        <Toaster />
+        <AuthContextProvider>
+          {getLayout(<Component {...pageProps} />)}
+          <Toaster />
+        </AuthContextProvider>
       </PhotoProvider>
     </React.Fragment>
   );

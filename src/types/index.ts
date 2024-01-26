@@ -13,3 +13,8 @@ export type TTeacher = {
   phone?: string;
   imgURL: string;
 };
+
+export type TPicture = {
+  id: string;
+  imageUrl: string;
+};
