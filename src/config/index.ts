@@ -1,3 +1,4 @@
+import { AiOutlinePicture } from 'react-icons/ai';
 import { FaCaravan, FaPencilRuler } from 'react-icons/fa';
 import { GrMultimedia } from 'react-icons/gr';
 import {
@@ -11,14 +12,13 @@ import {
   PiBell,
   PiBuildings,
   PiChalkboardTeacher,
+  PiHouse,
   PiStudent,
   PiUser,
-  PiHouse,
 } from 'react-icons/pi';
 import { RiBuilding4Fill } from 'react-icons/ri';
 import { SiGoogleclassroom } from 'react-icons/si';
 import { TbBuildingBroadcastTower } from 'react-icons/tb';
-import { AiOutlinePicture } from 'react-icons/ai';
 
 export const mainNavLinks = [
   {
@@ -56,7 +56,6 @@ export const mainNavLinks = [
       { route: '/tuition-fees-and-others', label: 'স্কলারশিপ' },
     ],
   },
-
   {
     route: '/technologies',
     label: 'টেকনোলজি সমূহ',
@@ -78,11 +77,6 @@ export const mainNavLinks = [
     label: 'গ্যালারি',
     subRoutes: [],
   },
-  // {
-  //   route: "/academic",
-  //   label: "একাডেমিক",
-  //   subRoutes: [],
-  // },
   {
     route: '/our-world',
     label: 'আমাদের ভূবন',
@@ -334,76 +328,76 @@ export const facilities = [
 
 export const teachers = [
   {
-    id: 1,
+    id: '1',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1581455527083-9d62f3f5ae01?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 3,
+    id: '3',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 4,
+    id: '4',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 5,
+    id: '5',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1585807515950-bc46d934c28b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 6,
+    id: '6',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1567515004624-219c11d31f2e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 7,
+    id: '7',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?q=80&w=1399&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 8,
+    id: '8',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1583195763986-0231686dcd43?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
   {
-    id: 9,
+    id: '9',
     name: 'Asim Roy',
-    image:
+    imgURL:
       'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     position: 'Chief Instructor',
-    number: '01819453623',
+    phone: '01819453623',
   },
 ] as const;
 
