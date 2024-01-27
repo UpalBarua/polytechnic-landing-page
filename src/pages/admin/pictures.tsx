@@ -57,7 +57,7 @@ export default function AdminPictures({ pictures }: AdminPicturesProps) {
 
   return (
     <main className="max-w-4xl">
-      <div className="flex py-8 items-center justify-between">
+      <div className="flex justify-between items-center py-8">
         <Heading className="!pb-0">Pictures</Heading>
         <form
           className="flex gap-x-2 bg-background/80 border items-center rounded-md p-1 shadow-sm"
@@ -100,7 +100,7 @@ function AdminPicture({ id, imageUrl }: TPicture) {
       <Button
         size="sm"
         variant="destructive"
-        className="gap-x-2 absolute top-0 right-0 m-2"
+        className="absolute top-0 right-0 gap-x-2 m-2"
         onClick={() => handleDeletePicture(id)}>
         <GoTrash className="text-base" />
         <span>Delete</span>

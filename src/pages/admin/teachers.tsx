@@ -35,7 +35,7 @@ type AdminTeachersProps = {
 export default function AdminTeachers({ teachers }: AdminTeachersProps) {
   return (
     <main className="max-w-4xl">
-      <div className="flex py-8 items-center justify-between">
+      <div className="flex justify-between items-center py-8">
         <Heading className="!pb-0">Teachers</Heading>
         <NewTeacherDialog />
       </div>
@@ -65,7 +65,7 @@ function AdminTeacher({ id, ...props }: TTeacher) {
       <Button
         size="sm"
         variant="destructive"
-        className="gap-x-2 absolute top-0 right-0 m-2"
+        className="absolute top-0 right-0 gap-x-2 m-2"
         onClick={() => handleDeleteTeacher(id)}>
         <GoTrash className="text-base" />
         <span>Delete</span>

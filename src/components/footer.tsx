@@ -32,7 +32,7 @@ export function Footer() {
   );
 
   return (
-    <footer className="bg-background/80">
+    <footer className="bg-background/80 mt-20">
       <div className="container grid grid-cols-1 gap-8 py-8 max-w-5xl sm:grid-cols-2 sm:py-12">
         <div className="flex flex-col text-foreground/60">
           <Logo />

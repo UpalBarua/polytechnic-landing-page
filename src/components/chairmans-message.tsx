@@ -8,7 +8,7 @@ export function ChairmansMessage() {
   const { name, picture, message, position } = chairmansMessage;
 
   return (
-    <div className="container flex flex-col gap-8 sm:gap-6 justify-center items-center max-w-5xl text-center sm:items-start">
+    <div className="py-10 md:px-8 container flex flex-col gap-8 sm:gap-6 justify-center items-center max-w-5xl text-center sm:items-start bg-background/80 border rounded-md shadow-md">
       <div className="relative mx-auto min-w-56 md:min-w-[14rem] aspect-square">
         <Image
           className="object-cover object-center rounded-full border shadow-lg"

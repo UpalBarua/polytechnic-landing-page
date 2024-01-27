@@ -3,14 +3,14 @@ import { Heading } from '@/components/ui/heading';
 
 export default function AboutUsPage() {
   return (
-    <main className="mt-20 sm:mt-24 lg:mt-32 container max-w-6xl space-y-4 pb-20">
+    <main className="container pb-20 mt-20 space-y-4 max-w-6xl sm:mt-24 lg:mt-32">
       <section className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Image
           src="/slider1.jpg"
           alt=""
           height={500}
           width={500}
-          className="w-full object-center object-cover rounded-md"></Image>
+          className="object-cover object-center w-full rounded-md"></Image>
         <div>
           <Heading className="text-start">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
@@ -36,9 +36,9 @@ export default function AboutUsPage() {
           </p>
         </div>
       </section>
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <section className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div className="bg-background/80 border rounded-md p-6 md:p-8">
-          <h3 className="font-medium text-lg pb-2">আমাদের মিশন</h3>
+          <h3 className="pb-2 text-lg font-medium">আমাদের মিশন</h3>
           <p className="text-foreground/60 leading-relaxed">
             উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর
             নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব
@@ -47,7 +47,7 @@ export default function AboutUsPage() {
           </p>
         </div>
         <div className="bg-background/80 border rounded-md p-6 md:p-8">
-          <h3 className="font-medium text-lg pb-2">আমাদের গোল</h3>
+          <h3 className="pb-2 text-lg font-medium">আমাদের গোল</h3>
           <p className="text-foreground/60 leading-relaxed">
             উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর
             নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব
@@ -56,7 +56,7 @@ export default function AboutUsPage() {
           </p>
         </div>
         <div className="bg-background/80 border rounded-md p-6 md:p-8">
-          <h3 className="font-medium text-lg pb-2">আমাদের দায়িত্ব</h3>
+          <h3 className="pb-2 text-lg font-medium">আমাদের দায়িত্ব</h3>
           <div className="text-foreground/60 leading-relaxed space-y-1">
             <p>প্রথমতঃ বিশ্বমানের জ্ঞান এবং দক্ষতার সাথে নিজেদের সজ্জিত করা।</p>
             <p>
@@ -79,7 +79,7 @@ export default function AboutUsPage() {
           </div>
         </div>
         <div className="bg-background/80 border rounded-md p-6 md:p-8">
-          <h3 className="font-medium text-lg pb-2">
+          <h3 className="pb-2 text-lg font-medium">
             কেনো আমরা ব্যতিক্রম ও অনন্য
           </h3>
           <div className="gap-2 text-foreground/60 leading-relaxed grid grid-cols-1 md:grid-cols-2">

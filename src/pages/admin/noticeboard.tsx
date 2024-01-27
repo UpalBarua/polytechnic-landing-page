@@ -36,7 +36,7 @@ type AdminNoticeboardProps = {
 export default function AdminNoticeboard({ notices }: AdminNoticeboardProps) {
   return (
     <main className="max-w-4xl">
-      <div className="flex py-8 items-center justify-between">
+      <div className="flex justify-between items-center py-8">
         <Heading className="!pb-0">Noticeboard</Heading>
         <NewNoticeDialog />
       </div>
@@ -61,7 +61,7 @@ const handleDeleteNotice = async (id: string) => {
 
 function AdminNotice({ id, ...props }: TNotice) {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex justify-between items-center">
       <Notice id={id} {...props} />
       <Button
         size="sm"

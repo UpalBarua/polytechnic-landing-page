@@ -106,7 +106,7 @@ export function NewNoticeDialog() {
                   <FormControl>
                     <Textarea
                       placeholder="description"
-                      className="resize-none h-32"
+                      className="h-32 resize-none"
                       {...field}
                     />
                   </FormControl>

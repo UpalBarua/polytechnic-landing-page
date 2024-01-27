@@ -9,7 +9,7 @@ export function Testimonials() {
       <Heading className="md:text-center">
         আমাদের প্রাক্তন ছাত্র দের মতামত
       </Heading>
-      <Marquee className="w-screen overflow-hidden">
+      <Marquee className="overflow-hidden w-screen">
         <ul className="flex gap-x-4 px-2">
           {testimonials.map((testimonial) => (
             <Testimonial key={testimonial.name} {...testimonial} />

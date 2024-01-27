@@ -8,7 +8,7 @@ export function PrincipalsMessage() {
   const { name, picture, message, position } = principleMessage;
 
   return (
-    <div className="container flex flex-col gap-8 sm:gap-6 justify-center items-center max-w-5xl text-center sm:items-start">
+    <div className="container flex flex-col gap-8 sm:gap-6 justify-center items-center max-w-5xl text-center sm:items-start bg-background/80 border rounded-md shadow-md py-10 md:px-8">
       <div className="relative min-w-56 mx-auto md:min-w-[14rem] aspect-square">
         <Image
           className="object-cover object-center rounded-full border shadow-lg"

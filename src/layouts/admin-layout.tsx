@@ -18,7 +18,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 
   if (!user) {
     return (
-      <main className="flex items-center justify-center flex-col h-screen">
+      <main className="flex flex-col justify-center items-center h-screen">
         <div className="bg-background/80 w-[20rem] border shadow-lg p-6 rounded-md">
           <Heading className="md:text-center">Admin Login</Heading>
           <AuthForm />
@@ -30,7 +30,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
   return (
     <div className="container flex-1 items-start md:grid md:grid-cols-[180px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-10">
       <aside className="fixed top-0 z-30 -ml-2 hidden h-screen w-full shrink-0 md:sticky md:block bg-background/80">
-        <ScrollArea className="h-full py-6 pr-6 lg:py-8">
+        <ScrollArea className="py-6 pr-6 h-full lg:py-8">
           <nav
             className={cn(
               'flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1'
