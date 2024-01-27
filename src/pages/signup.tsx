@@ -1,9 +1,9 @@
-import { Input } from "@/components/ui/input";
-import React, { useState } from "react";
+import { Input } from '@/components/ui/input';
+import React, { useState } from 'react';
 
 const SignUp = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = {
@@ -20,11 +20,11 @@ const SignUp = () => {
     setPassword(e.target?.value);
   };
   return (
-    <section className=" mt-56 ">
-      <h1 className="text-center text-2xl font-bold pb-3">Auth in Admin</h1>
+    <section className="mt-56 ">
+      <h1 className="pb-3 text-2xl font-bold text-center">Auth in Admin</h1>
 
       <form className="flex justify-center" onSubmit={handleSubmit}>
-        <div className="border-2 p-8 border-orange-400 rounded-md">
+        <div className="p-8 rounded-md border-2 border-orange-400">
           <div className="pb-4">
             <label className="block text-sm font-medium">Email</label>
             <div className="flex">
@@ -33,7 +33,7 @@ const SignUp = () => {
                 type="email"
                 name="email"
                 id="email"
-                className=" w-full lg:w-60 h-10 flex bg-orange-200 flex-1 border sm:text-sm rounded-r-md   "
+                className="flex flex-1 w-full h-10 bg-orange-200 rounded-r-md border  lg:w-60 sm:text-sm"
               />
             </div>
           </div>
@@ -45,15 +45,14 @@ const SignUp = () => {
                 type="password"
                 name="password"
                 id="password"
-                className=" w-full lg:w-60 h-10 flex bg-orange-200 flex-1 border sm:text-sm rounded-r-md   "
+                className="flex flex-1 w-full h-10 bg-orange-200 rounded-r-md border  lg:w-60 sm:text-sm"
               />
             </div>
           </div>
 
           <button
-            className="w-full font-bold bg-orange-400 px-6 py-2 mt-4 rounded-md"
-            type="submit"
-          >
+            className="py-2 px-6 mt-4 w-full font-bold bg-orange-400 rounded-md"
+            type="submit">
             Submit
           </button>
         </div>

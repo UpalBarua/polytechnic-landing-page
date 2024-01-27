@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+import { AiOutlinePicture } from 'react-icons/ai';
+import { FaCaravan, FaPencilRuler } from 'react-icons/fa';
+import { GrMultimedia } from 'react-icons/gr';
+=======
 import { FaCaravan, FaPencilRuler } from "react-icons/fa";
 import { GrMultimedia } from "react-icons/gr";
+>>>>>>> main
 import {
   MdComputer,
   MdDirectionsCar,
@@ -8,8 +14,10 @@ import {
   MdOutlineSettings,
 } from "react-icons/md";
 import {
+  PiBell,
   PiBuildings,
   PiChalkboardTeacher,
+  PiHouse,
   PiStudent,
   PiUser,
 } from "react-icons/pi";
@@ -17,7 +25,7 @@ import { RiBuilding4Fill } from "react-icons/ri";
 import { SiGoogleclassroom } from "react-icons/si";
 import { TbBuildingBroadcastTower } from "react-icons/tb";
 
-export const navLinks = [
+export const mainNavLinks = [
   {
     route: "/curriculum",
     label: "পাঠ্যক্রম",
@@ -53,7 +61,6 @@ export const navLinks = [
       { route: "/tuition-fees-and-others", label: "স্কলারশিপ" },
     ],
   },
-
   {
     route: "/technologies",
     label: "টেকনোলজি সমূহ",
@@ -75,11 +82,6 @@ export const navLinks = [
     label: "গ্যালারি",
     subRoutes: [],
   },
-  // {
-  //   route: "/academic",
-  //   label: "একাডেমিক",
-  //   subRoutes: [],
-  // },
   {
     route: "/our-world",
     label: "আমাদের ভূবন",
@@ -105,7 +107,30 @@ export const navLinks = [
   },
 ] as const;
 
-export type NavLink = (typeof navLinks)[number];
+export type NavLink = (typeof mainNavLinks)[number];
+
+export const adminNavLinks = [
+  {
+    Icon: PiHouse,
+    href: '/admin/',
+    label: 'Home',
+  },
+  {
+    Icon: PiChalkboardTeacher,
+    href: '/admin/teachers',
+    label: 'Teachers',
+  },
+  {
+    Icon: PiBell,
+    href: '/admin/noticeboard',
+    label: 'Notices',
+  },
+  {
+    Icon: AiOutlinePicture,
+    href: '/admin/pictures',
+    label: 'Pictures',
+  },
+] as const;
 
 export const chairmansMessage = {
   picture: "/chairman.jpeg",
@@ -303,76 +328,76 @@ export const facilities = [
 
 export const teachers = [
   {
-    id: 1,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '1',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 2,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1581455527083-9d62f3f5ae01?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '2',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1581455527083-9d62f3f5ae01?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 3,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '3',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 4,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '4',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 5,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1585807515950-bc46d934c28b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '5',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1585807515950-bc46d934c28b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 6,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '6',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1567515004624-219c11d31f2e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 7,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?q=80&w=1399&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '7',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?q=80&w=1399&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 8,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1583195763986-0231686dcd43?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '8',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1583195763986-0231686dcd43?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
   {
-    id: 9,
-    name: "Asim Roy",
-    image:
-      "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Chief Instructor",
-    number: "01819453623",
+    id: '9',
+    name: 'Asim Roy',
+    imgURL:
+      'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    position: 'Chief Instructor',
+    phone: '01819453623',
   },
 ] as const;
 
@@ -461,5 +486,50 @@ export const gradePercentage = [
   {
     grade: "৮ম পর্ব",
     percentage: "১৫%",
+  },
+] as const;
+
+export const testimonials = [
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'অভিভাবক',
+    image: '/chairman.jpg',
+    comment:
+      'উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ',
+  },
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'অভিভাবক',
+    image: '/chairman.jpg',
+    comment:
+      'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+  },
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'প্রাক্তন ছাত্র',
+    image: '/chairman.jpg',
+    comment:
+      'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+  },
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'অভিভাবক',
+    image: '/chairman.jpg',
+    comment:
+      'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+  },
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'প্রাক্তন ছাত্র',
+    image: '/chairman.jpg',
+    comment:
+      'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।',
+  },
+  {
+    name: 'আশিক মাহমুদ',
+    identity: 'প্রাক্তন ছাত্র',
+    image: '/chairman.jpg',
+    comment:
+      'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ',
   },
 ] as const;

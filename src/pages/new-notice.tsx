@@ -1,4 +1,4 @@
-import { NoticeForm } from '@/components/notice-form';
+import { NewNoticeDialog } from '@/components/new-notice-dialog';
 
 export default function NewNoticePage() {
   return (
@@ -6,7 +6,7 @@ export default function NewNoticePage() {
       <h2 className="pb-5 text-2xl font-bold tracking-tight">
         Add a New Notice
       </h2>
-      <NoticeForm />
+      <NewNoticeDialog />
     </main>
   );
 }

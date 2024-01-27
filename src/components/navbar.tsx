@@ -5,27 +5,45 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { navLinks, type NavLink } from '@/config';
+import { mainNavLinks, type NavLink } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import { MobileNav } from './mobile-nav';
 import { Logo } from './ui/logo';
+import { MdOutlineEmail } from 'react-icons/md';
+import { MdOutlineLocalPhone } from 'react-icons/md';
 
 export function Navbar() {
   return (
-    <header className="bg-primary fixed top-0 left-0 z-10 w-full border-b shadow">
-      <div className="container flex justify-between items-center py-2 max-w-7xl bg-primary">
+    <header className="fixed top-0 left-0 z-10 w-full bg-primary">
+      <div className="container flex justify-between items-center py-2 max-w-7xl shadow-md bg-background">
         <Link href="/" className="flex gap-x-2 items-center">
           <Logo />
-          <span className="hidden text-2xl italic font-medium capitalize text-background sm:inline-block">
+          <span className="hidden text-2xl italic font-medium capitalize text-primary sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
+        <div className="flex gap-x-8 items-center">
+          <div className="flex gap-x-2.5 items-center">
+            <MdOutlineEmail className="text-3xl text-foreground/80" />
+            <div className="flex flex-col">
+              <span className="text-xs">Email Us</span>
+              <span className="text-sm font-medium">snhpi@gmail.com</span>
+            </div>
+          </div>
+          <div className="flex gap-x-2.5 items-center">
+            <MdOutlineLocalPhone className="text-3xl text-foreground/80" />
+            <div className="flex flex-col">
+              <span className="text-xs">Call Us</span>
+              <span className="text-sm font-medium">01234567890</span>
+            </div>
+          </div>
+        </div>
         <MobileNav />
       </div>
-      <nav className="w-full hidden gap-x-2 justify-center items-center py-1 text-sm bg-background/95 lg:flex">
-        {navLinks.map((link) => (
+      <nav className="hidden gap-x-2 justify-center items-center py-1 w-full text-sm shadow-md bg-primary/90 lg:flex">
+        {mainNavLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}
       </nav>
@@ -40,11 +58,9 @@ function NavItem({ route, label, subRoutes }: NavLink) {
         <Button
           variant="link"
           size="sm"
-          className={cn(
-            'text-base text-foreground/60 hover:text-foreground/80'
-          )}>
+          className={cn('text-base text-background/80 hover:text-background')}>
           <span>{label}</span>
-          <FaChevronDown className="text-xs text-foreground/40" />
+          <FaChevronDown className="text-xs text-background/80" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-background/95">
@@ -56,10 +72,10 @@ function NavItem({ route, label, subRoutes }: NavLink) {
                 variant: 'link',
                 size: 'sm',
                 className:
-                  '!text-base !text-foreground/60 hover:!text-foreground/80',
+                  '!text-base !text-foreground/80 hover:!text-foreground/80',
               })}>
               <span>{label}</span>
-              <FaChevronRight className="text-xs text-foreground/40" />
+              <FaChevronRight className="text-xs text-foreground/80" />
             </Link>
           </DropdownMenuItem>
         ))}
@@ -71,10 +87,10 @@ function NavItem({ route, label, subRoutes }: NavLink) {
       className={buttonVariants({
         variant: 'link',
         size: 'sm',
-        className: '!text-base !text-foreground/60 hover:!text-foreground/80',
+        className: '!text-base !text-background/80 hover:!text-background',
       })}>
       <span>{label}</span>
-      <FaChevronRight className="text-xs text-foreground/40" />
+      <FaChevronRight className="text-xs text-background/80" />
     </Link>
   );
 }

@@ -29,20 +29,20 @@ const addGallery = () => {
     setFile(e.target?.files[0]);
   };
   return (
-    <section className=" mt-56 ">
-      <h1 className="text-center text-2xl font-bold pb-3">
+    <section className="mt-56 ">
+      <h1 className="pb-3 text-2xl font-bold text-center">
         Add Memory In Gallery
       </h1>
 
       <form className="flex justify-center" onSubmit={handleSubmit}>
-        <div className="border-2 p-6 border-orange-400 rounded-md">
+        <div className="p-6 rounded-md border-2 border-orange-400">
           <Input
             onChange={handleChange}
             type="file"
-            className=" bg-orange-200"
+            className="bg-orange-200 "
           ></Input>
           <button
-            className="w-full bg-orange-400 px-6 py-2 mt-4 rounded-md"
+            className="py-2 px-6 mt-4 w-full bg-orange-400 rounded-md"
             type="submit"
           >
             Submit
