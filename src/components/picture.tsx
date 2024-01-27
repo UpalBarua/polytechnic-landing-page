@@ -9,8 +9,10 @@ export function Picture({ imageUrl }: TPicture) {
         src={imageUrl}
         alt=""
         className="object-cover object-center rounded aspect-square"
-        height={1200}
-        width={1200}
+        height={500}
+        width={500}
+        placeholder="blur"
+        blurDataURL={imageUrl}
       />
     </PhotoView>
   );
