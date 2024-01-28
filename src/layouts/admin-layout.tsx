@@ -4,19 +4,24 @@ import { Heading } from '@/components/ui/heading';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { adminNavLinks } from '@/config';
 import { useAuthContext } from '@/context/auth-context';
+import { auth } from '@/firebase/firebase.config';
 import { cn } from '@/lib/utils';
+import { signOut } from 'firebase/auth';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import * as React from 'react';
+import { IoMdLogOut } from 'react-icons/io';
+import { toast } from 'sonner';
 
 type AdminLayoutProps = {
   children: React.ReactNode;
 };
 
 export function AdminLayout({ children }: AdminLayoutProps) {
-  const { user } = useAuthContext();
+  const { user, isLoading } = useAuthContext();
 
-  if (!user) {
+  if (!isLoading && !user) {
     return (
       <main className="flex flex-col justify-center items-center h-screen">
         <div className="bg-background/80 w-[20rem] border shadow-lg p-6 rounded-md">
@@ -39,6 +44,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
               <NavLink key={navLink.label} {...navLink} />
             ))}
           </nav>
+          <LogOutButton />
         </ScrollArea>
       </aside>
       {children}
@@ -64,5 +70,29 @@ function NavLink({ Icon, href, label }: NavLinkProps) {
       <Icon className="text-lg" />
       <span>{label}</span>
     </Link>
+  );
+}
+
+function LogOutButton() {
+  const router = useRouter();
+
+  const handleLogOut = async () => {
+    try {
+      await signOut(auth);
+      router.reload();
+    } catch (error) {
+      console.log(error);
+      toast('Failed to logout');
+    }
+  };
+
+  return (
+    <Button
+      className="absolute bottom-0 left-0 m-4"
+      variant="destructive"
+      onClick={handleLogOut}>
+      <IoMdLogOut className="text-xl" />
+      <span>Logout</span>
+    </Button>
   );
 }

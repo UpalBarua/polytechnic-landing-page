@@ -5,10 +5,12 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 type AuthContextProps = {
   user: User | null;
+  isLoading: boolean;
 };
 
 const AuthContext = createContext<AuthContextProps>({
   user: null,
+  isLoading: true,
 });
 
 type AuthContextProviderProps = {
@@ -34,8 +36,8 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user }}>
-      {!isLoading && children}
+    <AuthContext.Provider value={{ user, isLoading }}>
+      {children}
     </AuthContext.Provider>
   );
 }
