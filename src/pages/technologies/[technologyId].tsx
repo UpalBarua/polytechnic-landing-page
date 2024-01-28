@@ -1,10 +1,8 @@
 import { Heading } from '@/components/ui/heading';
 import { technologies } from '@/config';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaBookReader, FaChevronRight } from 'react-icons/fa';
-import * as React from 'react';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
 
 export function getStaticPaths() {
   const paths = technologies.map(({ id }) => ({
@@ -33,13 +31,13 @@ export function getStaticProps({
   };
 }
 
-export default function Technology({ technology }) {
+type TechnologyProps = {
+  technology: (typeof technologies)[number];
+};
+
+export default function Technology({ technology }: TechnologyProps) {
   const {
-    id,
     name,
-    picture,
-    cheifInstructor,
-    icon,
     description,
     images,
     deptOverView,
@@ -71,7 +69,9 @@ export default function Technology({ technology }) {
                   key={key}
                   className="flex items-center justify-between text-foreground/60">
                   <span>{key}</span>
-                  <span className="font-medium">{deptOverView[key]}</span>
+                  <span className="font-medium">
+                    {deptOverView[key as keyof typeof deptOverView]}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -81,7 +81,7 @@ export default function Technology({ technology }) {
             <div className="space-y-3">
               {Object.keys(courseOverView).map((key) => (
                 <Link
-                  href={courseOverView[key]}
+                  href={courseOverView[key as keyof typeof courseOverView]}
                   key={key}
                   className="flex items-center justify-between text-foreground/60 hover:text-foreground/90 hover:underline underline-offset-2">
                   <span>{key}</span>
@@ -101,12 +101,14 @@ export default function Technology({ technology }) {
               key={key}>
               <h2 className="pb-2 font-medium">{key}</h2>
               <ul className="text-foreground/60 space-y-2 text-sm">
-                {courseOutline[key].map((subject: string) => (
-                  <li className="flex gap-x-3 items-center" key={subject}>
-                    <FaBookReader></FaBookReader>
-                    <span>{subject}</span>
-                  </li>
-                ))}
+                {courseOutline[key as keyof typeof courseOutline].map(
+                  (subject: string) => (
+                    <li className="flex gap-x-3 items-center" key={subject}>
+                      <FaBookReader></FaBookReader>
+                      <span>{subject}</span>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           ))}

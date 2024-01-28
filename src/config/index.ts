@@ -785,7 +785,7 @@ export const technologies = [
       ],
     },
   },
-];
+] as const;
 
 export const milestones = [
   {
@@ -1062,81 +1062,3 @@ export const testimonials = [
       'আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ',
   },
 ] as const;
-
-const outlines = {
-  'Semester 1': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-  'Semester 2': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-  'Semester 3': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-  'Semester 4': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-  'Semester 5': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-  'Semester 6': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-  'Semester 7': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-  'Semester 8': [
-    'Bangla 1',
-    'English 1',
-    'Mathematics 1',
-    'Physics 1',
-    'Engineering Drawing',
-    'Basic Electricity',
-    'Basic Workshop practice',
-  ],
-};
-
-{
-}

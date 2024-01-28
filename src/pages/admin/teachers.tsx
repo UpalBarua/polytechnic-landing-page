@@ -6,7 +6,7 @@ import { deleteTeacherById, getAllTeachers } from '@/lib/services';
 import { TTeacher } from '@/types';
 import { GoTrash } from 'react-icons/go';
 import { toast } from 'sonner';
-import { NewTeacherDialog } from '../new-teacher-dialog';
+import { NewTeacherDialog } from '@/components/new-teacher-dialog';
 
 export const getServerSideProps = async () => {
   try {
