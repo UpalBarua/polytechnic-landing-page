@@ -33,11 +33,10 @@
   }
 
   body {
-    background: rgb(219, 157, 87);
     background: radial-gradient(
       circle,
-      rgba(219, 157, 87, 0.1) 65%,
-      rgba(215, 127, 51, 0.2) 75%
+      rgba(163, 45, 37, 0.05) 65%,
+      rgba(163, 45, 37, 0.1) 75%
     );
     @apply bg-cover bg-top text-foreground/90 !min-w-full min-h-screen;
   }

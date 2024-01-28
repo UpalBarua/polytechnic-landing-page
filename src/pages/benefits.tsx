@@ -59,7 +59,7 @@ const Benefit = () => {
       </h1>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         {allBenefits?.map((benefit) => (
-          <div key={benefit?.id} benefit={benefit}>
+          <div key={benefit?.id}>
             <div className="p-10 rounded-md shadow bg-background/50 lg:p-12">
               <div className="flex justify-center pb-4">
                 <h1 className="text-5xl">{benefit?.icons}</h1>

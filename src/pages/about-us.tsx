@@ -4,14 +4,14 @@ import { Heading } from '@/components/ui/heading';
 export default function AboutUsPage() {
   return (
     <main className="container pb-20 mt-20 space-y-4 max-w-6xl sm:mt-24 lg:mt-32">
-      <section className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Image
           src="/slider1.jpg"
           alt=""
           height={500}
           width={500}
-          className="object-cover object-center w-full rounded-md"></Image>
-        <div>
+          className="object-cover object-center h-full w-full rounded-md shadow-md"></Image>
+        <div className="bg-background/80 border rounded-md shadow-md p-6 md:p-8">
           <Heading className="text-start">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </Heading>
