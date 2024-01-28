@@ -16,7 +16,7 @@ import { MdOutlineLocalPhone } from 'react-icons/md';
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 z-10 w-full bg-primary">
+    <header className="fixed top-0 left-0 z-20 w-full bg-primary">
       <div className="container flex justify-between items-center py-2 max-w-7xl shadow-md bg-background">
         <Link href="/" className="flex gap-x-2 items-center">
           <Logo />
@@ -24,7 +24,7 @@ export function Navbar() {
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
-        <div className="flex gap-x-8 items-center">
+        <div className="md:flex gap-x-8 items-center hidden">
           <div className="flex gap-x-2.5 items-center">
             <MdOutlineEmail className="text-3xl text-foreground/80" />
             <div className="flex flex-col">

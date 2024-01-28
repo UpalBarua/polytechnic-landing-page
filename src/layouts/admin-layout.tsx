@@ -1,5 +1,5 @@
 import { AuthForm } from '@/components/auth-form';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { adminNavLinks } from '@/config';
