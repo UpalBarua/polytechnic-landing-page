@@ -58,14 +58,14 @@ export function Footer() {
             </div>
           </div>
         </div>
-        {isLoaded && (
+        {/* {isLoaded && (
           <GoogleMap
             mapContainerClassName="h-full sm:h-auto h-64 rounded-md"
             center={center}
             zoom={90}>
             <Marker position={center} />
           </GoogleMap>
-        )}
+        )} */}
       </div>
     </footer>
   );
