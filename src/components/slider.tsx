@@ -35,8 +35,8 @@ export function Slider() {
       </CarouselContent>
       <div className="flex absolute inset-0 justify-center items-center w-full h-full bg-gradient-to-t rounded-md pointer-events-none text-background from-foreground/95 to-foreground/50 md:justify-start md:items-end">
         <div className="flex flex-col gap-y-2 justify-center items-center p-6 text-center md:items-start md:justify-start md:p-8">
-          <Logo />
-          <h2 className="text-2xl italic font-medium capitalize text-primary">
+          <Logo className="bg-background rounded-full w-20 p-1" />
+          <h2 className="text-2xl md:text-3xl italic font-medium capitalize text-primary">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </h2>
           <span className="text-background/80">

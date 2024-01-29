@@ -1,7 +1,19 @@
-import React from 'react';
+import Image from 'next/image';
+import * as React from 'react';
+import { cn } from '@/lib/utils';
 
-export function Logo() {
+type LogoProps = {
+  className: string;
+};
+
+export function Logo({ className }: LogoProps) {
   return (
-    <div className="w-10 rounded-full shadow aspect-square bg-primary/60" />
+    <Image
+      src="/logo.png"
+      alt="snhpi logo"
+      height={50}
+      width={50}
+      className={cn(className)}
+    />
   );
 }

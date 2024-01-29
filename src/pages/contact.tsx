@@ -1,12 +1,31 @@
-import Image from "next/image";
-import React from "react";
-import { RiHomeOfficeFill } from "react-icons/ri";
-import { FaBlenderPhone } from "react-icons/fa";
-import { GoStopwatch } from "react-icons/go";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { MdMarkEmailUnread } from "react-icons/md";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
+import Image from 'next/image';
+import React, { useCallback, useState } from 'react';
+import { RiHomeOfficeFill } from 'react-icons/ri';
+import { FaBlenderPhone } from 'react-icons/fa';
+import { GoStopwatch } from 'react-icons/go';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { MdMarkEmailUnread } from 'react-icons/md';
+import { FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  Libraries,
+} from '@react-google-maps/api';
+import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+
+const libraries: Libraries = ['places'];
+
+const mapContainerStyle = {
+  width: '100vw',
+  height: '100vh',
+};
+
+const center = {
+  lat: -3.745,
+  lng: -38.523,
+};
 
 const Contact = () => {
   return (
@@ -14,17 +33,19 @@ const Contact = () => {
       <h1 className="text-center font-bold text-2xl pb-8">
         আমাদের সাথে যোগাযোগ
       </h1>
-
       <div className="flex flex-col lg:flex-row gap-14">
         <div className="flex-1">
           <div>
-            <Image
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              height={400}
-              width={500}
-              alt=""
-              className="rounded-md"
-            ></Image>
+            <MapContainer
+              center={[51.505, -0.09]}
+              zoom={13}
+              scrollWheelZoom={false}>
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[51.505, -0.09]}></Marker>
+            </MapContainer>
           </div>
         </div>
         <div className="flex-1 ">

@@ -46,7 +46,7 @@ export default function Technology({ technology }: TechnologyProps) {
   } = technology;
 
   return (
-    <main className="container mt-20 sm:mt-24 max-w-5xl lg:mt-32 space-y-14 sm:space-y-20">
+    <main className="container mt-20 sm:mt-24 max-w-5xl lg:mt-52 space-y-14 sm:space-y-20">
       <Image
         src={images[0]}
         alt={name}
