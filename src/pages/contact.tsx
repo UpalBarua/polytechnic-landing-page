@@ -75,6 +75,46 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* contract form  */}
+
+      <div className="w-full lg:w-[500px]   p-4 mx-auto">
+        <h1 className="pt-14 text-primary  text-3xl text-center pb-8 font-bold">
+          Our Contract from{" "}
+        </h1>
+        <div>
+          <form className="grid gap-10 p-8 border">
+            <input
+              className="p-2 transition-all border-2 border-gray-500 rounded-sm outline-none bg-orange-50 "
+              type="text"
+              placeholder=" Name"
+              name="user_name"
+            ></input>
+
+            <input
+              className="p-2  transition-all border-2 border-gray-500 outline-none bg-orange-50 focus:border-accent-400"
+              type="text"
+              placeholder=" Email"
+              name="user_email"
+            ></input>
+            <textarea
+              name="message"
+              className="border-2 border-gray-500 outline-none focus:border-accent-400 transition-all p-2 resize-none overflow-hidden min-h-[8rem]"
+              type="text"
+              placeholder=" Message"
+            ></textarea>
+
+            <button className="bg-primary font-bold text-white px-2 py-4">
+              Send Message
+            </button>
+
+            {/* 
+            <button className="rounded-none btn bg-accent-400 text-dark-500 hover:text-accent-400">
+              Send Message
+            </button> */}
+          </form>
+        </div>
+      </div>
     </section>
   );
 };
