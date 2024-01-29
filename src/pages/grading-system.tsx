@@ -11,7 +11,7 @@ import { gradePercentage, gradingSystem } from '@/config';
 
 export default function GradingSystem() {
   return (
-    <section className="mt-20 sm:mt-24 lg:mt-32 container max-w-4xl">
+    <section className="container mt-20 max-w-4xl sm:mt-24 lg:mt-32">
       <Heading className="md:text-center">গ্রেডিং সিস্টেম</Heading>
       <p className="leading-relaxed text-foreground/60 text-center px-4 sm:px-14 md:px-36 lg: mx-auto pb-6 md:pb-8">
         প্রতি সেমিস্টারে একজন শিক্ষার্থী প্রাপ্ত নম্বরের ভিত্তিতে লেটার গ্রেড
@@ -19,7 +19,7 @@ export default function GradingSystem() {
         নম্বরের ভিত্তিতে লেটার গ্রেড এবং তার বিপরীতে গ্রেড পয়েন্ট প্রদান করা
         হবে।
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Table className="bg-background/80 text-foreground/60 rounded-md shadow-md border">
           <TableHeader>
             <TableRow>

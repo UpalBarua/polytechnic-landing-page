@@ -11,7 +11,7 @@ export function Notice({ id, title, publishedOn }: NoticeProps) {
   return (
     <Link
       href={`/notices/${id}`}
-      className="flex gap-x-2 items-start py-3 group">
+      className="flex gap-x-3 items-start py-3 group">
       <div className="flex flex-col justify-center items-center py-1 px-2 rounded bg-primary text-background">
         <span className="text-sm font-medium">{publishedDate}</span>
         <span className="text-xs lowercase">{publishedMonth}</span>

@@ -1,13 +1,20 @@
-import Image from "next/image";
-import React, { Fragment, useEffect } from "react";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import "react-photo-view/dist/react-photo-view.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { TPicture } from '@/types';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect } from 'react';
+import { PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+import { buttonVariants } from './ui/button';
+import { Heading } from './ui/heading';
+import { Picture } from './picture';
 
-import { Heading } from "./ui/heading";
+type RecentPicturesProps = {
+  pictures: TPicture[];
+};
 
-export function RecentPictures({ pictures }) {
+export function RecentPictures({ pictures }: RecentPicturesProps) {
   useEffect(() => {
     AOS.init({
       delay: 400,
@@ -22,20 +29,19 @@ export function RecentPictures({ pictures }) {
         className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 md:grid-cols-4"
         data-aos="fade-down"
         data-aos-easing="linear"
-        data-aos-duration="2000"
-      >
-        {}
-        {pictures?.map(({ imageUrl }, index) => (
-          <PhotoView key={index} src={imageUrl}>
-            <Image
-              src={imageUrl}
-              alt=""
-              className="object-cover object-center rounded aspect-square"
-              height={1200}
-              width={1200}
-            />
-          </PhotoView>
+        data-aos-duration="2000">
+        {pictures.slice(0, 12).map((picture) => (
+          <Picture key={picture.id} {...picture} />
         ))}
+      </div>
+      <div className="flex justify-center items-center pt-6">
+        <Link
+          href="/gallery"
+          className={buttonVariants({
+            variant: 'outline',
+          })}>
+          সকল ছবি দেখুন
+        </Link>
       </div>
     </section>
   );

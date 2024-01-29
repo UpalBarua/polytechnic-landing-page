@@ -1,6 +1,5 @@
 import { ChairmansMessage } from '@/components/chairmans-message';
 import { Facilities } from '@/components/facilities';
-import Footer from '@/components/footer';
 import { LatestUpdate } from '@/components/latest-update';
 import { Milestones } from '@/components/milestones';
 import { PrincipalsMessage } from '@/components/principals-message';
@@ -8,12 +7,13 @@ import { RecentNotices } from '@/components/recent-notices';
 import { RecentPictures } from '@/components/recent-pictures';
 import { Slider } from '@/components/slider';
 import { Technologies } from '@/components/technologies';
-import { getAllNotices, getAllPictures } from '@/lib/services';
-import { TNotice } from '@/types';
+import { Testimonials } from '@/components/testimonials';
+import { getAllPictures, getLatestNotices } from '@/lib/services';
+import { TNotice, TPicture } from '@/types';
 
 export const getStaticProps = async () => {
   try {
-    const notices = (await getAllNotices()).slice(0, 4);
+    const notices = await getLatestNotices();
     const pictures = await getAllPictures();
 
     return {
@@ -35,13 +35,14 @@ export const getStaticProps = async () => {
 
 type HomePageProps = {
   notices: TNotice[];
+  pictures: TPicture[];
 };
 
 export default function HomePage({ notices, pictures }: HomePageProps) {
   return (
     <main>
-      <section className="container grid grid-cols-1 pt-16 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-3 pb-6">
-        <div className="col-span-full md:col-span-8 space-y-2 flex flex-col">
+      <section className="container grid grid-cols-1 pt-16 pb-6 max-w-7xl lg:pt-28 md:grid-cols-12 md:gap-3">
+        <div className="flex flex-col col-span-full space-y-2 md:col-span-8">
           <Slider />
           <LatestUpdate />
         </div>
@@ -49,16 +50,15 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
           <RecentNotices notices={notices} />
         </div>
       </section>
-      <section className="py-12 space-y-16 md:space-y-28 md:py-24 bg-background/80">
+      <section className="container grid grid-cols-1 gap-4 py-6 md:py-8 md:grid-cols-2">
         <ChairmansMessage />
         <PrincipalsMessage />
       </section>
       <Technologies />
       <Facilities />
       <Milestones />
-
+      <Testimonials />
       <RecentPictures pictures={pictures} />
-      {/* <Footer /> */}
     </main>
   );
 }
