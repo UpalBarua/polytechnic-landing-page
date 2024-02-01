@@ -1,9 +1,9 @@
-import { Input } from '@/components/ui/input';
-import React, { useState } from 'react';
+import { Input } from "@/components/ui/input";
+import React, { useState } from "react";
 
 const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = {
@@ -21,10 +21,10 @@ const SignUp = () => {
   };
   return (
     <section className="mt-56 ">
-      <h1 className="pb-3 text-2xl font-bold text-center">Auth in Admin</h1>
+      <h1 className="pb-3 text-center text-2xl font-bold">Auth in Admin</h1>
 
       <form className="flex justify-center" onSubmit={handleSubmit}>
-        <div className="p-8 rounded-md border-2 border-orange-400">
+        <div className="rounded-md border-2 border-orange-400 p-8">
           <div className="pb-4">
             <label className="block text-sm font-medium">Email</label>
             <div className="flex">
@@ -33,7 +33,7 @@ const SignUp = () => {
                 type="email"
                 name="email"
                 id="email"
-                className="flex flex-1 w-full h-10 bg-orange-200 rounded-r-md border  lg:w-60 sm:text-sm"
+                className="flex h-10 w-full flex-1  rounded-r-md border bg-orange-200 sm:text-sm lg:w-60"
               />
             </div>
           </div>
@@ -45,14 +45,15 @@ const SignUp = () => {
                 type="password"
                 name="password"
                 id="password"
-                className="flex flex-1 w-full h-10 bg-orange-200 rounded-r-md border  lg:w-60 sm:text-sm"
+                className="flex h-10 w-full flex-1 rounded-r-md border bg-orange-200  sm:text-sm lg:w-60"
               />
             </div>
           </div>
 
           <button
-            className="py-2 px-6 mt-4 w-full font-bold bg-orange-400 rounded-md"
-            type="submit">
+            className="mt-4 w-full rounded-md bg-orange-400 px-6 py-2 font-bold"
+            type="submit"
+          >
             Submit
           </button>
         </div>
