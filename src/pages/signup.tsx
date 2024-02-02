@@ -1,9 +1,9 @@
-import { Input } from '@/components/ui/input';
-import React, { useState } from 'react';
+import { Input } from "@/components/ui/input";
+import React, { useState } from "react";
 
 const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = {
@@ -52,7 +52,8 @@ const SignUp = () => {
 
           <button
             className="py-2 px-6 mt-4 w-full font-bold bg-orange-400 rounded-md"
-            type="submit">
+            type="submit"
+          >
             Submit
           </button>
         </div>
