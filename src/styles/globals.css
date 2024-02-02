@@ -33,12 +33,12 @@
   }
 
   body {
-    background: radial-gradient(
+    /* background: radial-gradient(
       circle,
       rgba(163, 45, 37, 0.05) 65%,
       rgba(163, 45, 37, 0.1) 75%
-    );
-    @apply bg-cover bg-top text-foreground/90 !min-w-full min-h-screen;
+    ); */
+    @apply min-h-screen !min-w-full overflow-x-hidden bg-cover bg-top text-foreground/90;
   }
 
   body > div {

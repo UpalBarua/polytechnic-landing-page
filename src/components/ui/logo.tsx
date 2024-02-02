@@ -3,7 +3,7 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 
 type LogoProps = {
-  className: string;
+  className?: string;
 };
 
 export function Logo({ className }: LogoProps) {

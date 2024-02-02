@@ -1,38 +1,41 @@
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { mainNavLinks, type NavLink } from '@/config';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import { MobileNav } from './mobile-nav';
-import { Logo } from './ui/logo';
-import { MdOutlineEmail } from 'react-icons/md';
-import { MdOutlineLocalPhone } from 'react-icons/md';
+} from "@/components/ui/dropdown-menu";
+import { mainNavLinks, type NavLink } from "@/config";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { MdOutlineEmail, MdOutlineLocalPhone } from "react-icons/md";
+import { MobileNav } from "./mobile-nav";
+import { Logo } from "./ui/logo";
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 z-20 w-full bg-primary">
-      <div className="container flex justify-between items-center py-2 max-w-7xl shadow-md bg-background">
-        <Link href="/" className="flex gap-x-2 items-center">
+    <header
+      className="fixed left-0 top-0 z-20 w-full bg-background/95"
+      data-aos="fade-down"
+      data-duration="10"
+    >
+      <div className="container flex max-w-7xl items-center justify-between py-2 shadow-md">
+        <Link href="/" className="flex items-center gap-x-2">
           <Logo />
-          <span className="hidden text-2xl italic font-medium capitalize text-primary sm:inline-block">
+          <span className="hidden text-2xl font-medium capitalize italic text-primary sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
-        <div className="md:flex gap-x-8 items-center hidden">
-          <div className="flex gap-x-2.5 items-center">
+        <div className="hidden items-center gap-x-8 md:flex">
+          <div className="flex items-center gap-x-2.5">
             <MdOutlineEmail className="text-3xl text-foreground/80" />
             <div className="flex flex-col">
               <span className="text-xs">Email Us</span>
               <span className="text-sm font-medium">snhpi@gmail.com</span>
             </div>
           </div>
-          <div className="flex gap-x-2.5 items-center">
+          <div className="flex items-center gap-x-2.5">
             <MdOutlineLocalPhone className="text-3xl text-foreground/80" />
             <div className="flex flex-col">
               <span className="text-xs">Call Us</span>
@@ -42,7 +45,7 @@ export function Navbar() {
         </div>
         <MobileNav />
       </div>
-      <nav className="hidden gap-x-2 justify-center items-center py-1 w-full text-sm shadow-md bg-primary/90 lg:flex">
+      <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary/90 py-1 text-sm shadow-md lg:flex">
         {mainNavLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}
@@ -58,7 +61,8 @@ function NavItem({ route, label, subRoutes }: NavLink) {
         <Button
           variant="link"
           size="sm"
-          className={cn('text-base text-background/80 hover:text-background')}>
+          className={cn("text-base text-background/80 hover:text-background")}
+        >
           <span>{label}</span>
           <FaChevronDown className="text-xs text-background/80" />
         </Button>
@@ -69,11 +73,12 @@ function NavItem({ route, label, subRoutes }: NavLink) {
             <Link
               href={route}
               className={buttonVariants({
-                variant: 'link',
-                size: 'sm',
+                variant: "link",
+                size: "sm",
                 className:
-                  '!text-base !text-foreground/80 hover:!text-foreground/80',
-              })}>
+                  "!text-base !text-foreground/80 hover:!text-foreground/80",
+              })}
+            >
               <span>{label}</span>
               <FaChevronRight className="text-xs text-foreground/80" />
             </Link>
@@ -85,10 +90,11 @@ function NavItem({ route, label, subRoutes }: NavLink) {
     <Link
       href={route}
       className={buttonVariants({
-        variant: 'link',
-        size: 'sm',
-        className: '!text-base !text-background/80 hover:!text-background',
-      })}>
+        variant: "link",
+        size: "sm",
+        className: "!text-base !text-background/80 hover:!text-background",
+      })}
+    >
       <span>{label}</span>
       <FaChevronRight className="text-xs text-background/80" />
     </Link>
