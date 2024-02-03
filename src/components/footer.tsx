@@ -1,72 +1,143 @@
-import Image from 'next/image';
-import { HiPhoneIncoming } from 'react-icons/hi';
-import { MdAttachEmail } from 'react-icons/md';
-import { SiFacebook } from 'react-icons/si';
-import { Heading } from './ui/heading';
-import { Logo } from './ui/logo';
-import { MdLocationPin } from 'react-icons/md';
-import {
-  GoogleMap,
-  Marker,
-  useJsApiLoader,
-  Libraries,
-} from '@react-google-maps/api';
-import { useMemo } from 'react';
-
-const libraries: Libraries = ['places'];
-
-const geoLocation = {
-  lat: 22.368553444275918,
-  lng: 91.84601876770998,
-};
+import { MdAttachEmail } from "react-icons/md";
+import { Logo } from "./ui/logo";
+import { FaFacebook } from "react-icons/fa";
+import { BsWhatsapp } from "react-icons/bs";
 
 export function Footer() {
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
-    libraries,
-  });
-
-  const center = useMemo(
-    () => ({ lat: geoLocation.lat, lng: geoLocation.lng }),
-    [geoLocation]
-  );
-
   return (
-    <footer className="bg-background/80 mt-20">
-      <div className="container grid grid-cols-1 gap-8 py-8 max-w-5xl sm:grid-cols-2 sm:py-12">
-        <div className="flex flex-col text-foreground/60">
-          <Logo />
-          <Heading className="pt-3 !pb-3 text-start text-foreground/90">
-            সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
-          </Heading>
-          <div className="space-y-2">
-            <div className="flex gap-x-2 items-center">
-              <MdLocationPin className="text-foreground/50" />
-              <span>Muradpur Chittagong</span>
+    <div>
+      <footer className="px-8 bg-pink-50  mt-24  divide-y">
+        <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+          <div className="lg:w-1/3">
+            <a
+              rel="noopener noreferrer"
+              href="#"
+              className="flex justify-center space-x-3 lg:justify-start"
+            >
+              <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
+                <Logo className="" />
+              </div>
+              <span className="self-center text-2xl font-semibold">
+                সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
+              </span>
+            </a>
+          </div>
+          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+            <div className="space-y-3">
+              <h3 className="trackiv text-[20px]  uppercase dark:text-gray-50">
+                অর্গানাইজেশন
+              </h3>
+
+              <ul className="space-y-1 text-[16px]">
+                <li>
+                  <a className="text-[16px]" rel="noopener noreferrer" href="#">
+                    আমাদের সম্পর্কে
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    মিশন
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    অধ্যক্ষের কথা
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    যোগাযোগ
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div className="flex gap-x-2 items-center">
-              <HiPhoneIncoming className="text-foreground/50" />
-              <span>01918236789</span>
+            <div className="space-y-3">
+              <h3 className="tracki uppercase dark:text-gray-50 text-[20px]">
+                {" "}
+                যোগাযোগ
+              </h3>
+              <ul className="space-y-1 text-[16px]">
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    রুটিন
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    নোটিশ
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    ডিপার্টমেন্ট
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    সার্কুলার
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div className="flex gap-x-2 items-center">
-              <MdAttachEmail className="text-foreground/50" />
-              <span>samsur55@gmail.com</span>
+            <div className="space-y-3">
+              <h3 className="uppercase dark:text-gray-50 text-[20px]">
+                কমিউনিটি
+              </h3>
+              <ul className="space-y-1 text-[16px]">
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    সুবিধা
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    গ্যালারি
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    শিক্ষকমন্ডলী
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div className="flex gap-x-2 items-center">
-              <SiFacebook className="text-foreground/50" />
-              <span>Samsur Nahar Harun</span>
+            <div className="space-y-3">
+              <div className="uppercase dark:text-gray-50 text-[20px]">
+                সোশ্যাল মিডিয়া
+              </div>
+              <div className="flex justify-start space-x-3">
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Facebook"
+                  className="flex items-center p-1"
+                >
+                  <FaFacebook className="text-[#316FF6] text-[24px]" />
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Twitter"
+                  className="flex items-center p-1"
+                >
+                  <BsWhatsapp className="text-[#2eb361] text-[24px]" />
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Instagram"
+                  className="flex items-center p-1"
+                >
+                  <MdAttachEmail className="text-[#c23535] text-[24px]" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        {/* {isLoaded && (
-          <GoogleMap
-            mapContainerClassName="h-full sm:h-auto h-64 rounded-md"
-            center={center}
-            zoom={90}>
-            <Marker position={center} />
-          </GoogleMap>
-        )} */}
-      </div>
-    </footer>
+        <div className="py-6 text-sm text-center dark:text-gray-400">
+          @wellup It studio.com
+        </div>
+      </footer>
+    </div>
   );
 }

@@ -1,15 +1,15 @@
-import { Toaster } from '@/components/ui/sonner';
-import { AuthContextProvider } from '@/context/auth-context';
-import { RootLayout } from '@/layouts/root-layout';
-import '@/styles/globals.css';
-import { NextPage } from 'next';
-import type { AppProps } from 'next/app';
-import { Noto_Sans_Bengali } from 'next/font/google';
-import * as React from 'react';
-import { PhotoProvider } from 'react-photo-view';
+import { Toaster } from "@/components/ui/sonner";
+import { AuthContextProvider } from "@/context/auth-context";
+import { RootLayout } from "@/layouts/root-layout";
+import "@/styles/globals.css";
+import { NextPage } from "next";
+import type { AppProps } from "next/app";
+import { Noto_Sans_Bengali } from "next/font/google";
+import * as React from "react";
+import { PhotoProvider } from "react-photo-view";
 
 const notoSansBengali = Noto_Sans_Bengali({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
