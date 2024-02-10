@@ -1,5 +1,5 @@
-import { db } from "@/firebase/firebase.config";
-import { TTeacher, type TNotice, TPicture } from "@/types";
+import { db, storage } from "@/firebase/firebase.config";
+import { TPicture, TTeacher, type TNotice } from "@/types";
 import {
   addDoc,
   collection,
@@ -10,8 +10,8 @@ import {
   limit,
   orderBy,
   query,
-  Timestamp,
 } from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage";
 
 export const getAllNotices = async () => {
   let notices: TNotice[] = [];
@@ -83,6 +83,12 @@ export const deleteNoticeById = async (id: string) => {
 };
 
 export const deletePictureById = async (id: string) => {
+  const querySnapshot = await getDoc(doc(db, "gallery", id));
+  const document = querySnapshot.data();
+
+  const docRef = ref(storage, document?.imageUrl);
+  await deleteObject(docRef);
+
   await deleteDoc(doc(db, "gallery", id));
 };
 

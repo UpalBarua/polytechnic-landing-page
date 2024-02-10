@@ -1,11 +1,11 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -13,60 +13,57 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { addNewTeacher } from '@/lib/services';
-import { uploadFile } from '@/lib/upload-file';
-import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { CgSpinnerTwo } from 'react-icons/cg';
-import { IoMdAdd } from 'react-icons/io';
-import { toast } from 'sonner';
-import * as z from 'zod';
-
-const formSchema = z.object({
-  name: z.string().min(1).max(50),
-  position: z.string().min(1),
-  phone: z.string().optional(),
-  picture: z.instanceof(File),
-});
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { addNewTeacher } from "@/lib/services";
+import { uploadFiles } from "@/lib/upload-file";
+import { zodResolver } from "@hookform/resolvers/zod";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { CgSpinnerTwo } from "react-icons/cg";
+import { IoMdAdd } from "react-icons/io";
+import { toast } from "sonner";
+import * as z from "zod";
 
 export function NewTeacherDialog() {
+  const formSchema = z.object({
+    name: z.string().min(1).max(50),
+    picture: z.any() as z.ZodType<FileList | null>,
+    department: z.string().min(1).max(50),
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      position: '',
-      phone: '',
-      picture: new File([], ''),
+      name: "",
+      department: "",
+      picture: null,
     },
   });
 
   const onSubmit = async ({
     name,
     picture,
-    position,
-    phone,
+    department,
   }: z.infer<typeof formSchema>) => {
     try {
       setIsSubmitting(true);
-      const imgURL = await uploadFile(picture);
+      if (!picture) return;
+      const [imgURL] = await uploadFiles(picture);
 
       await addNewTeacher({
         name,
-        phone,
-        position,
         imgURL,
+        department,
       });
 
       form.reset();
-      toast('Teacher added successfully');
+      toast("Teacher added successfully");
     } catch (error) {
       console.log(error);
-      toast('Teacher adding failed');
+      toast("Teacher adding failed");
     } finally {
       setIsSubmitting(false);
     }
@@ -101,25 +98,12 @@ export function NewTeacherDialog() {
             />
             <FormField
               control={form.control}
-              name="position"
+              name="department"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Position *</FormLabel>
+                  <FormLabel>Department *</FormLabel>
                   <FormControl>
                     <Input placeholder="position" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Phone" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -135,11 +119,7 @@ export function NewTeacherDialog() {
                     <Input
                       accept="image/*"
                       type="file"
-                      onChange={(e) =>
-                        field.onChange(
-                          e.target.files ? e.target.files[0] : null
-                        )
-                      }
+                      onChange={(e) => field.onChange(e.target.files || null)}
                     />
                   </FormControl>
                   <FormMessage />
@@ -150,7 +130,7 @@ export function NewTeacherDialog() {
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <React.Fragment>
-                    <CgSpinnerTwo className="text-2xl animate-spin" />
+                    <CgSpinnerTwo className="animate-spin text-2xl" />
                     <span>Please Wait</span>
                   </React.Fragment>
                 ) : (

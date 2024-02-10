@@ -78,6 +78,17 @@ export default function AdminPictures({ pictures }: AdminPicturesProps) {
     }
   };
 
+  const handleDeletePicture = async (id: string) => {
+    try {
+      await deletePictureById(id);
+      refreshData();
+      toast("Picture deleted successfully");
+    } catch (error) {
+      console.log(error);
+      toast("Failed to delete picture");
+    }
+  };
+
   return (
     <main className="max-w-4xl">
       <div className="flex items-center justify-between py-8">
@@ -106,24 +117,26 @@ export default function AdminPictures({ pictures }: AdminPicturesProps) {
       </div>
       <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 md:grid-cols-4">
         {pictures.map((picture) => (
-          <AdminPicture key={picture.id} {...picture} />
+          <AdminPicture
+            key={picture.id}
+            {...picture}
+            handleDeletePicture={handleDeletePicture}
+          />
         ))}
       </div>
     </main>
   );
 }
 
-const handleDeletePicture = async (id: string) => {
-  try {
-    await deletePictureById(id);
-    toast("Picture deleted successfully");
-  } catch (error) {
-    console.log(error);
-    toast("Failed to delete picture");
-  }
+type AdminPictureProps = TPicture & {
+  handleDeletePicture: (id: string) => void;
 };
 
-function AdminPicture({ id, imageUrl }: TPicture) {
+function AdminPicture({
+  id,
+  imageUrl,
+  handleDeletePicture,
+}: AdminPictureProps) {
   return (
     <div className="relative">
       <Picture id={id} imageUrl={imageUrl} />

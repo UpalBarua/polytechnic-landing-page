@@ -9,9 +9,8 @@ export type TNotice = {
 export type TTeacher = {
   id: string;
   name: string;
-  position: string;
-  phone?: string;
   imgURL: string;
+  department: string;
 };
 
 export type TPicture = {
