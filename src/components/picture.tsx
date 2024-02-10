@@ -1,6 +1,6 @@
-import { TPicture } from '@/types';
-import Image from 'next/image';
-import { PhotoView } from 'react-photo-view';
+import { TPicture } from "@/types";
+import Image from "next/image";
+import { PhotoView } from "react-photo-view";
 
 export function Picture({ imageUrl }: TPicture) {
   return (
@@ -8,7 +8,7 @@ export function Picture({ imageUrl }: TPicture) {
       <Image
         src={imageUrl}
         alt=""
-        className="object-cover object-center rounded aspect-square"
+        className="aspect-square rounded object-cover object-center"
         height={600}
         width={600}
       />

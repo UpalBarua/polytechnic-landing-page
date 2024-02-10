@@ -17,4 +17,5 @@ export type TTeacher = {
 export type TPicture = {
   id: string;
   imageUrl: string;
+  createdAt: number;
 };

@@ -14,6 +14,8 @@ import * as React from "react";
 import { useState } from "react";
 import { GoTrash } from "react-icons/go";
 import { toast } from "sonner";
+import { CgSpinnerTwo } from "react-icons/cg";
+import { useRouter } from "next/router";
 
 export const getServerSideProps = async () => {
   try {
@@ -40,8 +42,13 @@ type AdminPicturesProps = {
 };
 
 export default function AdminPictures({ pictures }: AdminPicturesProps) {
+  const router = useRouter();
   const [imageFiles, setImageFiles] = useState<FileList | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+
+  const refreshData = () => {
+    router.replace(router.asPath);
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
@@ -50,18 +57,22 @@ export default function AdminPictures({ pictures }: AdminPicturesProps) {
       if (!imageFiles) return;
 
       const imgURLs = await uploadFiles(imageFiles);
-      console.log(imgURLs);
 
       await Promise.all(
         imgURLs.map(
-          async (imgURL) => await addNewPicture({ imageUrl: imgURL }),
+          async (imgURL) =>
+            await addNewPicture({
+              imageUrl: imgURL,
+              createdAt: Date.now(),
+            }),
         ),
       );
 
-      toast("New picture added");
+      refreshData();
+      toast("New pictures added");
     } catch (error) {
       console.log(error);
-      toast("Failed to add picture");
+      toast("Failed to add pictures");
     } finally {
       setIsUploading(false);
     }
@@ -82,7 +93,14 @@ export default function AdminPictures({ pictures }: AdminPicturesProps) {
             onChange={(e) => setImageFiles(e.target.files || null)}
           />
           <Button size="sm" disabled={!imageFiles || isUploading}>
-            {isUploading ? "Uploading..." : "Add Picture"}
+            {isUploading ? (
+              <React.Fragment>
+                <CgSpinnerTwo className="animate-spin" />
+                <span>Uploading</span>
+              </React.Fragment>
+            ) : (
+              <span>Upload Picture</span>
+            )}
           </Button>
         </form>
       </div>
