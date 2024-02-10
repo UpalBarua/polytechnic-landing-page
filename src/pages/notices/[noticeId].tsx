@@ -97,7 +97,7 @@ export default function NoticeDetails({
           </Document>
         </div>
       </section>
-      <section className="hidden col-span-4 h-max md:block">
+        <section className="hidden col-span-4 h-max md:block">
         <RecentNotices notices={latestNotices} />
       </section>
     </main>

@@ -1,8 +1,8 @@
-import { Picture } from '@/components/picture';
-import { Heading } from '@/components/ui/heading';
-import { getAllPictures } from '@/lib/services';
-import { TPicture } from '@/types';
-import 'react-photo-view/dist/react-photo-view.css';
+import { Picture } from "@/components/picture";
+import { Heading } from "@/components/ui/heading";
+import { getAllPictures } from "@/lib/services";
+import { TPicture } from "@/types";
+import "react-photo-view/dist/react-photo-view.css";
 
 export const getStaticProps = async () => {
   try {

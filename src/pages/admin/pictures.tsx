@@ -1,18 +1,21 @@
-import { Picture } from '@/components/picture';
-import { Button } from '@/components/ui/button';
-import { Heading } from '@/components/ui/heading';
-import { Input } from '@/components/ui/input';
-import { AdminLayout } from '@/layouts/admin-layout';
+import { Picture } from "@/components/picture";
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
+import { Input } from "@/components/ui/input";
+import { AdminLayout } from "@/layouts/admin-layout";
 import {
   addNewPicture,
   deletePictureById,
   getAllPictures,
-} from '@/lib/services';
-import { uploadFile } from '@/lib/upload-file';
-import { TPicture } from '@/types';
-import { useState } from 'react';
-import { GoTrash } from 'react-icons/go';
-import { toast } from 'sonner';
+} from "@/lib/services";
+import { uploadFiles } from "@/lib/upload-file";
+import { TPicture } from "@/types";
+import * as React from "react";
+import { useState } from "react";
+import { GoTrash } from "react-icons/go";
+import { toast } from "sonner";
+import { CgSpinnerTwo } from "react-icons/cg";
+import { useRouter } from "next/router";
 
 export const getServerSideProps = async () => {
   try {
@@ -39,69 +42,110 @@ type AdminPicturesProps = {
 };
 
 export default function AdminPictures({ pictures }: AdminPicturesProps) {
-  const [imageFile, setImageFile] = useState<File | null>(null);
+  const router = useRouter();
+  const [imageFiles, setImageFiles] = useState<FileList | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
 
-  const handleSubmit = async () => {
+  const refreshData = () => {
+    router.replace(router.asPath);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
-      if (!imageFile) return;
+      event.preventDefault();
+      setIsUploading(true);
+      if (!imageFiles) return;
 
-      const imgURL = await uploadFile(imageFile);
-      await addNewPicture({ imageUrl: imgURL });
+      const imgURLs = await uploadFiles(imageFiles);
 
-      toast('New picture added');
+      await Promise.all(
+        imgURLs.map(
+          async (imgURL) =>
+            await addNewPicture({
+              imageUrl: imgURL,
+              createdAt: Date.now(),
+            }),
+        ),
+      );
+
+      refreshData();
+      toast("New pictures added");
     } catch (error) {
       console.log(error);
-      toast('Failed to add picture');
+      toast("Failed to add pictures");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleDeletePicture = async (id: string) => {
+    try {
+      await deletePictureById(id);
+      refreshData();
+      toast("Picture deleted successfully");
+    } catch (error) {
+      console.log(error);
+      toast("Failed to delete picture");
     }
   };
 
   return (
     <main className="max-w-4xl">
-      <div className="flex justify-between items-center py-8">
+      <div className="flex items-center justify-between py-8">
         <Heading className="!pb-0">Pictures</Heading>
         <form
-          className="flex gap-x-2 bg-background/80 border items-center rounded-md p-1 shadow-sm"
-          onSubmit={handleSubmit}>
+          className="flex items-center gap-x-2 rounded-md border bg-background/60 p-1 shadow-sm"
+          onSubmit={handleSubmit}
+        >
           <Input
             accept="image/*"
             type="file"
-            onChange={(e) =>
-              setImageFile(e.target.files ? e.target.files[0] : null)
-            }
+            multiple
+            onChange={(e) => setImageFiles(e.target.files || null)}
           />
-          <Button size="sm" disabled={!imageFile}>
-            Add Picture
+          <Button size="sm" disabled={!imageFiles || isUploading}>
+            {isUploading ? (
+              <React.Fragment>
+                <CgSpinnerTwo className="animate-spin" />
+                <span>Uploading</span>
+              </React.Fragment>
+            ) : (
+              <span>Upload Picture</span>
+            )}
           </Button>
         </form>
       </div>
       <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 md:grid-cols-4">
         {pictures.map((picture) => (
-          <AdminPicture key={picture.id} {...picture} />
+          <AdminPicture
+            key={picture.id}
+            {...picture}
+            handleDeletePicture={handleDeletePicture}
+          />
         ))}
       </div>
     </main>
   );
 }
 
-const handleDeletePicture = async (id: string) => {
-  try {
-    await deletePictureById(id);
-    toast('Picture deleted successfully');
-  } catch (error) {
-    console.log(error);
-    toast('Failed to delete picture');
-  }
+type AdminPictureProps = TPicture & {
+  handleDeletePicture: (id: string) => void;
 };
 
-function AdminPicture({ id, imageUrl }: TPicture) {
+function AdminPicture({
+  id,
+  imageUrl,
+  handleDeletePicture,
+}: AdminPictureProps) {
   return (
     <div className="relative">
       <Picture id={id} imageUrl={imageUrl} />
       <Button
         size="sm"
         variant="destructive"
-        className="absolute top-0 right-0 gap-x-2 m-2"
-        onClick={() => handleDeletePicture(id)}>
+        className="absolute right-0 top-0 m-2 gap-x-2"
+        onClick={() => handleDeletePicture(id)}
+      >
         <GoTrash className="text-base" />
         <span>Delete</span>
       </Button>

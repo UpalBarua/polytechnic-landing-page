@@ -29,11 +29,11 @@ const center = {
 
 const Contact = () => {
   return (
-    <section className="mt-44 ml-4 lg:ml-12">
-      <h1 className="text-center font-bold text-4xl pb-8">
+    <section className="ml-4 mt-44 lg:ml-12">
+      <h1 className="pb-8 text-center text-4xl font-bold">
         আমাদের সাথে যোগাযোগ
       </h1>
-      <div className="flex flex-col lg:flex-row gap-14">
+      <div className="flex flex-col gap-14 lg:flex-row">
         {/* <div className="flex-1">
           <div>
             <MapContainer
@@ -45,20 +45,20 @@ const Contact = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[51.505, -0.09]}></Marker>
+                <Marker position={[51.505, -0.09]}></Marker>
             </MapContainer>
           </div>
         </div> */}
 
         <div className="flex-1">
-          <h1 className="text-2xl pb-8 text-center font-semibold">
+          <h1 className="pb-8 text-center text-2xl font-semibold">
             আমাদের যোগাযোগের ফর্ম
           </h1>
-          <form className="grid gap-10 p-8 border">
+          <form className="grid gap-10 border p-8">
             <div className="flex flex-col gap-2">
               <label> নাম</label>
               <input
-                className="p-2 transition-all border-2 border-gray-500 rounded-sm outline-none bg-orange-50 "
+                className="rounded-sm border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all "
                 type="text"
                 name="user_name"
               ></input>
@@ -67,7 +67,7 @@ const Contact = () => {
             <div className="flex flex-col gap-2">
               <label>মোবাইল নম্বর</label>
               <input
-                className="p-2  rounded-md transition-all border-2 border-gray-500 outline-none bg-orange-50 focus:border-accent-400"
+                className="focus:border-accent-400  rounded-md border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
                 type="text"
                 name="user_number"
               ></input>
@@ -75,7 +75,7 @@ const Contact = () => {
             <div className="flex flex-col gap-2">
               <label>ইমেইল</label>
               <input
-                className="p-2 rounded-md  transition-all border-2 border-gray-500 outline-none bg-orange-50 focus:border-accent-400"
+                className="focus:border-accent-400 rounded-md  border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
                 type="text"
                 name="user_email"
               ></input>
@@ -84,53 +84,53 @@ const Contact = () => {
               <label>মন্তব্য</label>
               <textarea
                 name="message"
-                className="border-2 bg-orange-50 rounded-md border-gray-500 outline-none focus:border-accent-400 transition-all p-2 resize-none overflow-hidden min-h-[8rem]"
+                className="focus:border-accent-400 min-h-[8rem] resize-none overflow-hidden rounded-md border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
               ></textarea>
             </div>
-            <button className="bg-primary font-bold text-white px-2 py-4">
+            <button className="bg-primary px-2 py-4 font-bold text-white">
               সাবমিট
             </button>
           </form>
         </div>
         <div className="flex-1">
           <div className="pb-6">
-            <h1 className="text-2xl flex gap-2 font-bold pb-2">
+            <h1 className="flex gap-2 pb-2 text-2xl font-bold">
               <RiHomeOfficeFill></RiHomeOfficeFill>
               হেড অফিস [Main Campus, Chattogram]
             </h1>
             <p>সালেহ ভিলা(৩য় তলা), বাড়ী: ১৪,</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="shadow shadow-orange-200 p-4 w-full lg:w-56">
-              <h1 className="font-semibold flex gap-2 items-center">
+            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
+              <h1 className="flex items-center gap-2 font-semibold">
                 <FaBlenderPhone></FaBlenderPhone>
                 ফোন নাম্বার
               </h1>
               <p>+৮৮০১৭৩০৭০০৯২০</p>
               <p>+৮৮০১৭৩০৭০০৯২০</p>
             </div>
-            <div className="shadow shadow-orange-200 p-4 w-full lg:w-56">
-              <h1 className="font-semibold flex gap-2 items-center">
+            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
+              <h1 className="flex items-center gap-2 font-semibold">
                 <GoStopwatch></GoStopwatch>
                 অফিস ভিজিটের সময়
               </h1>
               <p>শনিবার – শুক্রবার</p>
               <p>সকাল ৯ টা থেকে রাত ৮ টা</p>
             </div>
-            <div className="shadow shadow-orange-200 p-4 w-full lg:w-56">
-              <h1 className="font-semibold flex gap-2 items-center">
+            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
+              <h1 className="flex items-center gap-2 font-semibold">
                 <BsFillPersonLinesFill></BsFillPersonLinesFill>
                 অনলাইন মাধ্যম
               </h1>
-              <p className="flex gap-2 items-center">
+              <p className="flex items-center gap-2">
                 <FaFacebook> </FaFacebook>ফেসবুক
               </p>
-              <p className="flex gap-2 items-center">
+              <p className="flex items-center gap-2">
                 <FaWhatsapp></FaWhatsapp>হোয়াটস্যাপ
               </p>
             </div>
-            <div className="shadow shadow-orange-200 p-4 w-full lg:w-56">
-              <h1 className="font-semibold  flex gap-2 items-center">
+            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
+              <h1 className="flex items-center gap-2 font-semibold">
                 <MdMarkEmailUnread></MdMarkEmailUnread>
                 ই-মেইল
               </h1>

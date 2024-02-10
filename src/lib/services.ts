@@ -1,5 +1,5 @@
-import { db } from '@/firebase/firebase.config';
-import { TTeacher, type TNotice, TPicture } from '@/types';
+import { db, storage } from "@/firebase/firebase.config";
+import { TPicture, TTeacher, type TNotice } from "@/types";
 import {
   addDoc,
   collection,
@@ -10,12 +10,13 @@ import {
   limit,
   orderBy,
   query,
-} from 'firebase/firestore';
+} from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage";
 
 export const getAllNotices = async () => {
   let notices: TNotice[] = [];
 
-  const q = query(collection(db, 'notices'), orderBy('publishedOn', 'desc'));
+  const q = query(collection(db, "notices"), orderBy("publishedOn", "desc"));
   const querySnapshot = await getDocs(q);
 
   querySnapshot.forEach((doc) => {
@@ -28,7 +29,7 @@ export const getAllNotices = async () => {
 export const getAllTeachers = async () => {
   let teachers: TTeacher[] = [];
 
-  const querySnapshot = await getDocs(collection(db, 'teachers'));
+  const querySnapshot = await getDocs(collection(db, "teachers"));
 
   querySnapshot.forEach((doc) => {
     teachers.push({ id: doc.id, ...doc.data() } as TTeacher);
@@ -41,9 +42,9 @@ export const getLatestNotices = async () => {
   let notices: TNotice[] = [];
 
   const q = query(
-    collection(db, 'notices'),
-    orderBy('publishedOn', 'desc'),
-    limit(4)
+    collection(db, "notices"),
+    orderBy("publishedOn", "desc"),
+    limit(4),
   );
   const querySnapshot = await getDocs(q);
 
@@ -57,9 +58,10 @@ export const getLatestNotices = async () => {
 export const getAllPictures = async () => {
   let gallery: TPicture[] = [];
 
-  const querySnapShot = await getDocs(collection(db, 'gallery'));
+  const q = query(collection(db, "gallery"), orderBy("createdAt", "desc"));
+  const querySnapshot = await getDocs(q);
 
-  querySnapShot.forEach((doc) => {
+  querySnapshot.forEach((doc) => {
     gallery.push({ id: doc.id, ...doc.data() } as TPicture);
   });
 
@@ -67,35 +69,41 @@ export const getAllPictures = async () => {
 };
 
 export const getNoticeById = async (id: string) => {
-  const querySnapshot = await getDoc(doc(db, 'notices', id));
+  const querySnapshot = await getDoc(doc(db, "notices", id));
 
   if (!querySnapshot.exists) {
-    throw new Error('No document found');
+    throw new Error("No document found");
   }
 
   return querySnapshot.data();
 };
 
 export const deleteNoticeById = async (id: string) => {
-  await deleteDoc(doc(db, 'notices', id));
+  await deleteDoc(doc(db, "notices", id));
 };
 
 export const deletePictureById = async (id: string) => {
-  await deleteDoc(doc(db, 'gallery', id));
+  const querySnapshot = await getDoc(doc(db, "gallery", id));
+  const document = querySnapshot.data();
+
+  const docRef = ref(storage, document?.imageUrl);
+  await deleteObject(docRef);
+
+  await deleteDoc(doc(db, "gallery", id));
 };
 
 export const deleteTeacherById = async (id: string) => {
-  await deleteDoc(doc(db, 'teachers', id));
+  await deleteDoc(doc(db, "teachers", id));
 };
 
-export const addNewNotice = async (newNotice: Omit<TNotice, 'id'>) => {
-  await addDoc(collection(db, 'notices'), newNotice);
+export const addNewNotice = async (newNotice: Omit<TNotice, "id">) => {
+  await addDoc(collection(db, "notices"), newNotice);
 };
 
-export const addNewTeacher = async (newTeacher: Omit<TTeacher, 'id'>) => {
-  await addDoc(collection(db, 'teachers'), newTeacher);
+export const addNewTeacher = async (newTeacher: Omit<TTeacher, "id">) => {
+  await addDoc(collection(db, "teachers"), newTeacher);
 };
 
-export const addNewPicture = async (picture: Omit<TPicture, 'id'>) => {
-  await addDoc(collection(db, 'gallery'), picture);
+export const addNewPicture = async (picture: Omit<TPicture, "id">) => {
+  await addDoc(collection(db, "gallery"), picture);
 };

@@ -1,17 +1,20 @@
-import { chairmansMessage } from '@/config';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaQuoteRight } from 'react-icons/fa';
-import { Heading } from './ui/heading';
+import { chairmansMessage } from "@/config";
+import Image from "next/image";
+import Link from "next/link";
+import { Heading } from "./ui/heading";
 
 export function ChairmansMessage() {
   const { name, picture, message, position } = chairmansMessage;
 
   return (
-    <div className="py-10 md:px-8 container flex flex-col gap-8 sm:gap-6 justify-center items-center max-w-5xl text-center sm:items-start bg-background/80 border rounded-md shadow-md">
-      <div className="relative mx-auto min-w-56 md:min-w-[14rem] aspect-square">
+    <div
+      className="container flex max-w-5xl flex-col items-center justify-center gap-8 rounded-md border bg-background/60 py-10 text-center shadow-md sm:items-start sm:gap-6 md:px-8"
+      data-aos="fade-right"
+      data-duration="10"
+    >
+      <div className="relative mx-auto aspect-square min-w-56 md:min-w-[14rem]">
         <Image
-          className="object-cover object-center rounded-full border shadow-lg"
+          className="rounded-full border object-cover object-center shadow-lg"
           src={picture}
           alt="chairman"
           quality={95}
@@ -22,11 +25,12 @@ export function ChairmansMessage() {
         <Heading className="sm:!pb-3 md:text-center">
           চেয়ারম্যান মহোদয়ের বাণী
         </Heading>
-        <p className="px-3 mx-auto leading-relaxed md:px-0 text-foreground/60">
-          {message.slice(0, 400) + '...'}
+        <p className="mx-auto px-3 leading-relaxed text-foreground/60 md:px-0">
+          {message.slice(0, 400) + "..."}
           <Link
             href="/chairmans-message"
-            className="font-medium underline underline-offset-2">
+            className="font-medium underline underline-offset-2"
+          >
             আরো পড়ুন
           </Link>
         </p>
