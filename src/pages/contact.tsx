@@ -30,11 +30,11 @@ const center = {
 const Contact = () => {
   return (
     <section className="ml-4 mt-44 lg:ml-12">
-      <h1 className="text-center text-2xl font-bold pb-8">
+      <h1 className="pb-8 text-center text-4xl font-bold">
         আমাদের সাথে যোগাযোগ
       </h1>
       <div className="flex flex-col gap-14 lg:flex-row">
-        <div className="flex-1">
+        {/* <div className="flex-1">
           <div>
             <MapContainer
               center={[51.505, -0.09]}
@@ -48,6 +48,49 @@ const Contact = () => {
                 <Marker position={[51.505, -0.09]}></Marker>
             </MapContainer>
           </div>
+        </div> */}
+
+        <div className="flex-1">
+          <h1 className="pb-8 text-center text-2xl font-semibold">
+            আমাদের যোগাযোগের ফর্ম
+          </h1>
+          <form className="grid gap-10 border p-8">
+            <div className="flex flex-col gap-2">
+              <label> নাম</label>
+              <input
+                className="rounded-sm border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all "
+                type="text"
+                name="user_name"
+              ></input>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label>মোবাইল নম্বর</label>
+              <input
+                className="focus:border-accent-400  rounded-md border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
+                type="text"
+                name="user_number"
+              ></input>
+            </div>
+            <div className="flex flex-col gap-2">
+              <label>ইমেইল</label>
+              <input
+                className="focus:border-accent-400 rounded-md  border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
+                type="text"
+                name="user_email"
+              ></input>
+            </div>
+            <div className="flex flex-col gap-2">
+              <label>মন্তব্য</label>
+              <textarea
+                name="message"
+                className="focus:border-accent-400 min-h-[8rem] resize-none overflow-hidden rounded-md border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
+              ></textarea>
+            </div>
+            <button className="bg-primary px-2 py-4 font-bold text-white">
+              সাবমিট
+            </button>
+          </form>
         </div>
         <div className="flex-1">
           <div className="pb-6">
@@ -99,41 +142,6 @@ const Contact = () => {
       </div>
 
       {/* contract form  */}
-
-      <div className="mx-auto w-full   p-4 lg:w-[500px]">
-        <h1 className="pb-8 pt-14  text-center text-3xl font-bold text-primary">
-          Our Contract from{" "}
-        </h1>
-        <div>
-          <form className="grid gap-10 border p-8">
-            <input
-              className="rounded-sm border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all "
-              type="text"
-              placeholder=" Name"
-              name="user_name"
-            ></input>
-
-            <input
-              className="focus:border-accent-400  border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
-              type="text"
-              placeholder=" Email"
-              name="user_email"
-            ></input>
-            <textarea
-              name="message"
-              className="focus:border-accent-400 min-h-[8rem] resize-none overflow-hidden border-2 border-gray-500 p-2 outline-none transition-all"
-              type="text"
-              placeholder=" Message"
-            ></textarea>
-            <button className="bg-primary px-2 py-4 font-bold text-white">
-              Send Message
-            </button>
-            <button className="btn bg-accent-400 text-dark-500 hover:text-accent-400 rounded-none">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
     </section>
   );
 };

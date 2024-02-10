@@ -1,7 +1,7 @@
-import { auth } from '@/firebase/firebase.config';
-import { User, onAuthStateChanged } from 'firebase/auth';
-import * as React from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { auth } from "@/firebase/firebase.config";
+import { User, onAuthStateChanged } from "firebase/auth";
+import * as React from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type AuthContextProps = {
   user: User | null;
@@ -46,7 +46,7 @@ export const useAuthContext = () => {
   const context = useContext(AuthContext);
 
   if (!context) {
-    throw new Error('AuthContext not found');
+    throw new Error("AuthContext not found");
   }
 
   return context;
