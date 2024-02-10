@@ -29,7 +29,7 @@ export function Testimonial({
   comment,
 }: TestimonialProps) {
   return (
-    <li className="flex max-w-sm flex-col rounded-md border bg-background/80 p-8 shadow-md">
+    <li className="flex max-w-sm flex-col rounded-md border bg-background/60 p-8 shadow-md">
       <p className="flex-1 pb-4 leading-relaxed text-foreground/60">
         {comment}
       </p>

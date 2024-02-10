@@ -29,7 +29,7 @@ function Technology({ id, Icon, name, description }: TechnologyProps) {
   return (
     <Link
       href={`/technologies/${id}`}
-      className="group flex flex-col items-center justify-center gap-y-2 rounded-md border bg-background/80 p-8 text-center shadow transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-background lg:items-start lg:text-start"
+      className="group flex flex-col items-center justify-center gap-y-2 rounded-md border bg-background/60 p-8 text-center shadow transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-background lg:items-start lg:text-start"
     >
       <Icon className="mb-4 block text-6xl text-primary transition-colors duration-200 group-hover:text-background" />
       <h4 className="text-lg font-medium">{name} টেকনোলজি</h4>

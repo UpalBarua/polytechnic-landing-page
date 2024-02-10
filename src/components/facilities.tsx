@@ -35,7 +35,7 @@ type FacilityProps = (typeof facilities)[number];
 
 export function Facility({ Icon, name, content }: FacilityProps) {
   return (
-    <div className="flex flex-col items-center justify-center gap-6 rounded-md border bg-background/80 p-6 text-center shadow-md md:flex-row md:text-start">
+    <div className="flex flex-col items-center justify-center gap-6 rounded-md border bg-background/60 p-6 text-center shadow-md md:flex-row md:text-start">
       <div className="flex aspect-square w-20 items-center justify-center rounded-full bg-primary text-4xl text-white md:w-28">
         <Icon />
       </div>

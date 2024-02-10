@@ -1,21 +1,22 @@
-import Image from 'next/image';
-import { Heading } from '@/components/ui/heading';
+import Image from "next/image";
+import { Heading } from "@/components/ui/heading";
 
 export default function AboutUsPage() {
   return (
-    <main className="container pb-20 mt-20 space-y-4 max-w-6xl sm:mt-24 lg:mt-32">
+    <main className="container mt-20 max-w-6xl space-y-4 pb-20 sm:mt-24 lg:mt-32">
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Image
           src="/slider1.jpg"
           alt=""
           height={500}
           width={500}
-          className="object-cover object-center h-full w-full rounded-md shadow-md"></Image>
-        <div className="bg-background/80 border rounded-md shadow-md p-6 md:p-8">
+          className="h-full w-full rounded-md object-cover object-center shadow-md"
+        ></Image>
+        <div className="rounded-md border bg-background/60 p-6 shadow-md md:p-8">
           <Heading className="text-start">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </Heading>
-          <p className="text-foreground/60 leading-relaxed">
+          <p className="leading-relaxed text-foreground/60">
             আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে
             ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ
             নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই
@@ -37,27 +38,27 @@ export default function AboutUsPage() {
         </div>
       </section>
       <section className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <div className="bg-background/80 border rounded-md p-6 md:p-8">
+        <div className="rounded-md border bg-background/60 p-6 md:p-8">
           <h3 className="pb-2 text-lg font-medium">আমাদের মিশন</h3>
-          <p className="text-foreground/60 leading-relaxed">
+          <p className="leading-relaxed text-foreground/60">
             উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর
             নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব
             হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র
             ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে।
           </p>
         </div>
-        <div className="bg-background/80 border rounded-md p-6 md:p-8">
+        <div className="rounded-md border bg-background/60 p-6 md:p-8">
           <h3 className="pb-2 text-lg font-medium">আমাদের গোল</h3>
-          <p className="text-foreground/60 leading-relaxed">
+          <p className="leading-relaxed text-foreground/60">
             উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর
             নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব
             হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র
             ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে।
           </p>
         </div>
-        <div className="bg-background/80 border rounded-md p-6 md:p-8">
+        <div className="rounded-md border bg-background/60 p-6 md:p-8">
           <h3 className="pb-2 text-lg font-medium">আমাদের দায়িত্ব</h3>
-          <div className="text-foreground/60 leading-relaxed space-y-1">
+          <div className="space-y-1 leading-relaxed text-foreground/60">
             <p>প্রথমতঃ বিশ্বমানের জ্ঞান এবং দক্ষতার সাথে নিজেদের সজ্জিত করা।</p>
             <p>
               দ্বিতীয়তঃ আমাদের শিক্ষার্থীদের খুব আন্তরিক সেবা প্রদান এবং তাদের
@@ -78,11 +79,11 @@ export default function AboutUsPage() {
             </p>
           </div>
         </div>
-        <div className="bg-background/80 border rounded-md p-6 md:p-8">
+        <div className="rounded-md border bg-background/60 p-6 md:p-8">
           <h3 className="pb-2 text-lg font-medium">
             কেনো আমরা ব্যতিক্রম ও অনন্য
           </h3>
-          <div className="gap-2 text-foreground/60 leading-relaxed grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-2 leading-relaxed text-foreground/60 md:grid-cols-2">
             <p>1. বৃত্তি ও ফ্রি স্টুডেন্টশীপ</p>
             <p>2. চট্টগ্রামে এই প্রথম বিশেষ সুবিধা</p>
             <p>3. উচ্চ শিক্ষা ও চাকুরী</p>

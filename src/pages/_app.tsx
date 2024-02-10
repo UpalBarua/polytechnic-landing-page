@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           {getLayout(<Component {...pageProps} />)}
           <Toaster />
         </AuthContextProvider>
-      </PhotoProvider>
+        </PhotoProvider>
     </React.Fragment>
   );
 }

@@ -85,7 +85,7 @@ export function AuthForm() {
             </FormItem>
           )}
         />
-        <div className="flex justify-end pt-4">
+        <div className="flex pt-4 justify-end">
           <Button type="submit" disabled={isSubmitting} className="w-full">
             {isSubmitting ? (
               <React.Fragment>

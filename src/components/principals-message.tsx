@@ -8,7 +8,7 @@ export function PrincipalsMessage() {
 
   return (
     <div
-      className="container flex max-w-5xl flex-col items-center justify-center gap-8 rounded-md border bg-background/80 py-10 text-center shadow-md sm:items-start sm:gap-6 md:px-8"
+      className="container flex max-w-5xl flex-col items-center justify-center gap-8 rounded-md border bg-background/60 py-10 text-center shadow-md sm:items-start sm:gap-6 md:px-8"
       data-aos="fade-left"
       data-duration="10"
     >

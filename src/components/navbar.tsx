@@ -45,7 +45,7 @@ export function Navbar() {
         </div>
         <MobileNav />
       </div>
-      <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary/90 py-1 text-sm shadow-md lg:flex">
+      <nav className="hidden gap-x-2 bg-primary/90 py-1 text-sm shadow-md w-full items-center justify-center lg:flex">
         {mainNavLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}
