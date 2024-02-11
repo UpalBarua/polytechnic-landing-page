@@ -84,7 +84,7 @@ export const mainNavLinks = [
     subRoutes: [
       { route: "/about-us", label: "আমাদের সম্পর্কে" },
       { route: "/chairman", label: "চেয়ারম্যানের বাণী" },
-      { route: "/principle", label: "অধ্যক্ষের কথা" },
+      { route: "/principal", label: "অধ্যক্ষের কথা" },
       { route: "/administrative-committee", label: "প্রশাসনিক কমিটি" },
 
       { route: "/tuition-fees-and-others", label: "আমাদের লক্ষ্য" },
