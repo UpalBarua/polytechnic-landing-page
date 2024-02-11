@@ -28,7 +28,7 @@ export function ChairmansMessage() {
         <p className="mx-auto px-3 leading-relaxed text-foreground/60 md:px-0">
           {message.slice(0, 400) + "..."}
           <Link
-            href="/chairmans-message"
+            href="/chairman"
             className="font-medium underline underline-offset-2"
           >
             আরো পড়ুন

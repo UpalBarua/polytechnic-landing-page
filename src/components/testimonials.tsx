@@ -11,8 +11,8 @@ export function Testimonials() {
       </Heading>
       <Marquee className="w-screen overflow-hidden">
         <ul className="flex gap-x-4 px-2">
-          {testimonials.map((testimonial) => (
-            <Testimonial key={testimonial.name} {...testimonial} />
+          {testimonials.map((testimonial, i) => (
+            <Testimonial key={testimonial.name + i} {...testimonial} />
           ))}
         </ul>
       </Marquee>

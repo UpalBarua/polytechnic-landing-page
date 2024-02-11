@@ -42,11 +42,11 @@ type HomePageProps = {
 export default function HomePage({ notices, pictures }: HomePageProps) {
   return (
     <>
-      <main className="relative z-10">
+      <main className="relative z-10 space-y-6">
         <section className="container grid max-w-7xl grid-cols-1 pb-6 pt-16 md:grid-cols-12 md:gap-3 lg:pt-28">
           <div
             className="col-span-full flex flex-col space-y-2 md:col-span-8"
-                data-aos="fade-right"
+            data-aos="fade-right"
             data-duration="10"
           >
             <Slider />
