@@ -3,24 +3,26 @@ import Image from "next/image";
 
 function Chairman() {
   return (
-    <main className="container pb-28 mt-44 space-y-4 max-w-3xl ">
+    <main className="container mt-44 max-w-3xl space-y-6 pb-28 ">
       <Image
-        className="object-cover object-center rounded-full border shadow aspect-square"
+        className="aspect-square rounded-full border object-cover object-center shadow"
         src={chairmansMessage.picture}
         alt="chairman"
-        height={180}
-        width={180}
+        height={200}
+        width={200}
         quality={90}
       />
-      <div>
-        <h3 className="text-2xl font-bold">{chairmansMessage.name}</h3>
-        <span className="text-lg font-medium">{chairmansMessage.position}</span>
+      <div className="flex flex-col gap-1">
+        <h3 className="text-2xl font-medium">{chairmansMessage.name}</h3>
+        <span className="text-lg">{chairmansMessage.position}</span>
+        <span className="text-lg">{chairmansMessage.institute}</span>
       </div>
-      <span className="text-lg font-medium">{chairmansMessage.institute}</span>
-      <p className="leading-relaxed text-foreground/80">
+      <p className="leading-relaxed text-foreground/60">
         {chairmansMessage.message}
       </p>
-      <p className="pt-2">{chairmansMessage?.last_message}</p>
+      <p className="pt-2 text-foreground/60">
+        {chairmansMessage?.last_message}
+      </p>
     </main>
   );
 }

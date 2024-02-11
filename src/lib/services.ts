@@ -79,6 +79,12 @@ export const getNoticeById = async (id: string) => {
 };
 
 export const deleteNoticeById = async (id: string) => {
+  const querySnapshot = await getDoc(doc(db, "notices", id));
+  const document = querySnapshot.data();
+
+  const docRef = ref(storage, document?.pdfLink);
+  await deleteObject(docRef);
+
   await deleteDoc(doc(db, "notices", id));
 };
 
@@ -93,6 +99,12 @@ export const deletePictureById = async (id: string) => {
 };
 
 export const deleteTeacherById = async (id: string) => {
+  const querySnapshot = await getDoc(doc(db, "teachers", id));
+  const document = querySnapshot.data();
+
+  const docRef = ref(storage, document?.imgURL);
+  await deleteObject(docRef);
+
   await deleteDoc(doc(db, "teachers", id));
 };
 

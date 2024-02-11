@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Heading } from "./ui/heading";
 
 export function PrincipalsMessage() {
-  const { name, picture, message, position } = principleMessage;
+  const { name, message, position } = principleMessage;
 
   return (
     <div
@@ -15,7 +15,7 @@ export function PrincipalsMessage() {
       <div className="relative mx-auto aspect-square min-w-56 md:min-w-[14rem]">
         <Image
           className="rounded-full border object-cover object-center shadow-lg"
-          src={picture}
+          src={"/"}
           alt="chairman"
           quality={95}
           fill
@@ -26,7 +26,7 @@ export function PrincipalsMessage() {
         <p className="mx-auto px-3 leading-relaxed text-foreground/60 md:px-0">
           {message.slice(0, 400) + "..."}
           <Link
-            href="/chairmans-message"
+            href="/principal"
             className="font-medium underline underline-offset-2"
           >
             আরো পড়ুন

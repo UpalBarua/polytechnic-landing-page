@@ -1,23 +1,23 @@
-import { chairmansMessage } from "@/config";
+import { principleMessage } from "@/config";
 import Image from "next/image";
 
 function Principal() {
   return (
-    <main className="container pb-28 space-y-4 max-w-3xl ">
+    <main className="container mt-44 max-w-3xl space-y-6 pb-28">
       <Image
-        className="object-cover object-center rounded-full border shadow aspect-square"
-        src={chairmansMessage.picture}
+        className="aspect-square rounded-full border object-cover object-center shadow"
+        src={"/"}
         alt="chairman"
-        height={180}
-        width={180}
+        height={200}
+        width={200}
         quality={90}
       />
       <div>
-        <h3 className="text-2xl font-bold">{chairmansMessage.name}</h3>
-        <span className="text-lg font-medium">{chairmansMessage.position}</span>
+        <h3 className="text-2xl font-medium">{principleMessage.name}</h3>
+        <span className="text-lg">{principleMessage.position}</span>
       </div>
-      <p className="leading-relaxed text-foreground/80">
-        {chairmansMessage.message}
+      <p className="leading-relaxed text-foreground/60">
+        {principleMessage.message}
       </p>
     </main>
   );

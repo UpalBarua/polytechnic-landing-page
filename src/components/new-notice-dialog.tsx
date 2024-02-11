@@ -1,11 +1,11 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -13,23 +13,23 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { addNewNotice } from '@/lib/services';
-import { uploadFile } from '@/lib/upload-file';
-import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { CgSpinnerTwo } from 'react-icons/cg';
-import { IoMdAdd } from 'react-icons/io';
-import { toast } from 'sonner';
-import * as z from 'zod';
-import { Textarea } from './ui/textarea';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { addNewNotice } from "@/lib/services";
+import { uploadFiles } from "@/lib/upload-file";
+import { zodResolver } from "@hookform/resolvers/zod";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { CgSpinnerTwo } from "react-icons/cg";
+import { IoMdAdd } from "react-icons/io";
+import { toast } from "sonner";
+import * as z from "zod";
+import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   title: z.string().min(1).max(50),
   description: z.string().max(800),
-  pdfFile: z.instanceof(File),
+  pdfFile: z.any() as z.ZodType<FileList | null>,
 });
 
 export function NewNoticeDialog() {
@@ -38,9 +38,9 @@ export function NewNoticeDialog() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: '',
-      description: '',
-      pdfFile: new File([], ''),
+      title: "",
+      description: "",
+      pdfFile: null,
     },
   });
 
@@ -51,7 +51,8 @@ export function NewNoticeDialog() {
   }: z.infer<typeof formSchema>) => {
     try {
       setIsSubmitting(true);
-      const pdfLink = await uploadFile(pdfFile);
+      if (!pdfFile) return;
+      const [pdfLink] = await uploadFiles(pdfFile);
 
       await addNewNotice({
         title,
@@ -61,10 +62,10 @@ export function NewNoticeDialog() {
       });
 
       form.reset();
-      toast('Notice added successfully');
+      toast("Notice added successfully");
     } catch (error) {
       console.log(error);
-      toast('Notice adding failed');
+      toast("Notice adding failed");
     } finally {
       setIsSubmitting(false);
     }
@@ -124,11 +125,7 @@ export function NewNoticeDialog() {
                     <Input
                       accept=".pdf"
                       type="file"
-                      onChange={(e) =>
-                        field.onChange(
-                          e.target.files ? e.target.files[0] : null
-                        )
-                      }
+                      onChange={(e) => field.onChange(e.target.files || null)}
                     />
                   </FormControl>
                   <FormMessage />
@@ -139,7 +136,7 @@ export function NewNoticeDialog() {
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <React.Fragment>
-                    <CgSpinnerTwo className="text-2xl animate-spin" />
+                    <CgSpinnerTwo className="animate-spin text-2xl" />
                     <span>Please Wait</span>
                   </React.Fragment>
                 ) : (

@@ -20,10 +20,10 @@ export function Navbar() {
       data-aos="fade-down"
       data-duration="10"
     >
-      <div className="container flex max-w-7xl items-center justify-between py-2 shadow-md">
+      <div className="container flex max-w-7xl items-center justify-between py-2 shadow-[0px_50px_25px_-10px_#00000024]">
         <Link href="/" className="flex items-center gap-x-2">
           <Logo />
-          <span className="hidden text-2xl font-medium capitalize italic text-primary sm:inline-block">
+          <span className="hidden text-2xl font-medium capitalize text-primary sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
@@ -45,7 +45,7 @@ export function Navbar() {
         </div>
         <MobileNav />
       </div>
-      <nav className="hidden gap-x-2 bg-primary/90 py-1 text-sm shadow-md w-full items-center justify-center lg:flex">
+      <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary/90 py-1 text-sm shadow-md lg:flex">
         {mainNavLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}
