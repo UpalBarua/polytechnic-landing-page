@@ -1,11 +1,11 @@
-import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { mainNavLinks, type NavLink } from '@/config';
-import Link from 'next/link';
-import * as React from 'react';
-import { useState } from 'react';
-import { RiMenu2Line } from 'react-icons/ri';
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { mainNavLinks, type NavLink } from "@/config";
+import Link from "next/link";
+import * as React from "react";
+import { useState } from "react";
+import { RiMenu2Line } from "react-icons/ri";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -15,7 +15,10 @@ export function MobileNav() {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="p-0 w-auto h-auto text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-background/80 lg:hidden">
+          className="h-auto w-auto p-0 text-base  
+          hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 
+          focus-visible:ring-offset-0 lg:hidden"
+        >
           <RiMenu2Line className="text-2xl" />
           <span className="sr-only">Toggle Menu</span>
         </Button>
@@ -41,7 +44,8 @@ function MobileNavItem({ route, label, subRoutes }: NavLink) {
         <Link
           key={route}
           href={route}
-          className="ps-2 text-foreground/60 hover:text-foreground/80">
+          className="ps-2 text-foreground/60 hover:text-foreground/80"
+        >
           {label}
         </Link>
       ))}
@@ -50,7 +54,8 @@ function MobileNavItem({ route, label, subRoutes }: NavLink) {
     <Link
       key={route}
       href={route}
-      className="text-foreground/60 hover:text-foreground/80">
+      className="text-foreground/60 hover:text-foreground/80"
+    >
       <span>{label}</span>
     </Link>
   );

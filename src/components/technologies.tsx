@@ -4,12 +4,8 @@ import { Heading } from "./ui/heading";
 
 export function Technologies() {
   return (
-    <section
-      className='bg-[url("/technologies-bg.jpg")] bg-cover bg-center'
-      data-aos="fade-up"
-      data-duration="10"
-    >
-      <div className="container space-y-4 py-14 backdrop-brightness-[0.25] md:py-20">
+    <section className='bg-[url("/technologies-bg.jpg")] bg-cover bg-center'>
+      <div className="space-y-4 py-14 backdrop-brightness-[0.25] md:py-20">
         <Heading className="text-background/90 md:text-center">
           টেকনোলজি সমূহ
         </Heading>

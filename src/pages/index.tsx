@@ -44,23 +44,15 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
     <>
       <main className="relative z-10 space-y-6">
         <section className="container grid max-w-7xl grid-cols-1 pb-6 pt-16 md:grid-cols-12 md:gap-3 lg:pt-28">
-          <div
-            className="col-span-full flex flex-col space-y-2 md:col-span-8"
-            data-aos="fade-right"
-            data-duration="10"
-          >
+          <div className="col-span-full flex flex-col space-y-2 md:col-span-8">
             <Slider />
             <LatestUpdate />
           </div>
-          <div
-            className="col-span-full space-y-6 md:col-span-4 md:space-y-4"
-            data-aos="fade-left"
-            data-duration="10"
-          >
+          <div className="col-span-full space-y-6 md:col-span-4 md:space-y-4">
             <RecentNotices notices={notices} />
           </div>
         </section>
-        <section className="container grid grid-cols-1 gap-4 py-6 md:grid-cols-2 md:py-8">
+        <section className="container grid max-w-7xl grid-cols-1 gap-4 py-6 md:grid-cols-2 md:py-8">
           <ChairmansMessage />
           <PrincipalsMessage />
         </section>

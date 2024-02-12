@@ -15,13 +15,9 @@ import { Logo } from "./ui/logo";
 
 export function Navbar() {
   return (
-    <header
-      className="fixed left-0 top-0 z-20 w-full bg-background/95"
-      data-aos="fade-down"
-      data-duration="10"
-    >
+    <header className="fixed left-0 top-0 z-20 w-full bg-background/95">
       <div className="container flex max-w-7xl items-center justify-between py-2 shadow-[0px_50px_25px_-10px_#00000024]">
-        <Link href="/" className="flex items-center gap-x-2">
+        <Link href="/" className="flex items-center gap-x-3">
           <Logo />
           <span className="hidden text-2xl font-medium capitalize text-primary sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট

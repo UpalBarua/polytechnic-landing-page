@@ -12,11 +12,7 @@ type RecentPicturesProps = {
 
 export function RecentPictures({ pictures }: RecentPicturesProps) {
   return (
-    <section
-      className="container max-w-5xl pt-14 lg:pt-16"
-      data-aos="fade-up"
-      data-duration="10"
-    >
+    <section className="container max-w-5xl pt-14 lg:pt-16">
       <Heading className="md:text-center">আমাদের স্মৃতিচারণ মুহূর্ত</Heading>
       <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 md:grid-cols-4">
         {pictures.slice(0, 12).map((picture) => (

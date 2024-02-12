@@ -5,7 +5,7 @@ import { Heading } from "./ui/heading";
 
 export function Testimonials() {
   return (
-    <section className="md:pt-26 pt-14" data-aos="fade-up" data-duration="20">
+    <section className="md:pt-26 pt-14">
       <Heading className="md:text-center">
         আমাদের প্রাক্তন ছাত্র দের মতামত
       </Heading>

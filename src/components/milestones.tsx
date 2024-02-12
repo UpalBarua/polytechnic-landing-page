@@ -6,12 +6,8 @@ type MilestoneProps = (typeof milestones)[number];
 
 export function Milestones() {
   return (
-    <section
-      className="mt-14 bg-[url('/slider0.jpg')] bg-cover bg-center text-background/90 lg:mt-16"
-      data-aos="zoom-up"
-      data-duration="10"
-    >
-      <div className="container flex flex-col items-start justify-center px-4 py-16 backdrop-brightness-[0.25] sm:items-center md:py-28">
+    <section className="mt-14 bg-[url('/slider0.jpg')] bg-cover bg-center text-background/90 lg:mt-16">
+      <div className="flex flex-col items-start justify-center px-4 py-16 backdrop-brightness-[0.25] sm:items-center md:py-28">
         <div className="pb-8 lg:pb-10">
           <Heading className="text-start sm:text-center md:text-center md:text-3xl">
             আমাদের মাইলফলক সমূহ

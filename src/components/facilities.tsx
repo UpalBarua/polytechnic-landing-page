@@ -9,16 +9,12 @@ export function Facilities() {
         আমারা যেসব সুবিধা প্রধান করে থাকি
       </Heading>
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-        <div className="space-y-3" data-aos="fade-right" data-duration="20">
+        <div className="space-y-3">
           {facilities.map((facility) => (
             <Facility key={facility.id} {...facility} />
           ))}
         </div>
-        <div
-          className="relative hidden md:block"
-          data-aos="fade-left"
-          data-duration="10"
-        >
+        <div className="relative hidden md:block">
           <Image
             src="/slider0.jpg"
             alt=""

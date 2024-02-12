@@ -23,10 +23,10 @@ type AppPropsWithLayout = AppProps & {
 };
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
-  React.useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+  // React.useEffect(() => {
+  //   AOS.init();
+  //   AOS.refresh();
+  // }, []);
 
   const getLayout =
     Component.getLayout ?? ((page) => <RootLayout>{page}</RootLayout>);
@@ -38,12 +38,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           font-family: ${notoSansBengali.style.fontFamily};
         }
       `}</style>
-      <PhotoProvider>
-        <AuthContextProvider>
-          {getLayout(<Component {...pageProps} />)}
-          <Toaster />
-        </AuthContextProvider>
-      </PhotoProvider>
+      <AuthContextProvider>
+        {getLayout(<Component {...pageProps} />)}
+        <Toaster />
+      </AuthContextProvider>
     </React.Fragment>
   );
 }

@@ -10,7 +10,8 @@
     --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
-    --primary: 4.3 63% 39.2%;
+    /* --primary: 4.3 63% 39.2%; */
+    --primary: 33.9 82.5% 50%;
     --primary-foreground: 26 83.3% 14.1%;
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
@@ -30,9 +31,10 @@
 @layer base {
   * {
     @apply border-border;
+    /* border: 1px solid lime; */
   }
 
   body {
-    @apply min-h-screen !min-w-full overflow-x-hidden bg-cover bg-top text-foreground/90;
+    @apply min-h-screen !min-w-full  bg-cover bg-top text-foreground/90;
   }
 }
