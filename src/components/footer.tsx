@@ -1,138 +1,55 @@
-"use client";
-import { BsWhatsapp } from "react-icons/bs";
-import { FaFacebook } from "react-icons/fa";
-import { MdAttachEmail } from "react-icons/md";
-import { Logo } from "./ui/logo";
+import { mainNavLinks } from "@/config";
 import Link from "next/link";
+import { Logo } from "./ui/logo";
+import Image from "next/image";
+
+const socialLinks = [
+  {
+    href: "facebook.com",
+    icon: "/icons/facebook.png",
+  },
+  {
+    href: "instagram.com",
+    icon: "/icons/instagram.png",
+  },
+  {
+    href: "whatsapp.com",
+    icon: "/icons/whatsapp.png",
+  },
+] as const;
 
 export function Footer() {
   return (
-    <footer className="relative z-20 mt-24 divide-y bg-background/60 px-8">
-      <div className="container mx-auto flex max-w-7xl flex-col justify-between space-y-8 py-10 lg:flex-row lg:space-y-0">
-        <div className="lg:w-1/3">
-          <div
-            rel="noopener noreferrer"
-            className="flex justify-center space-x-3 lg:justify-start"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full dark:bg-violet-400">
-              <Logo className="" />
-            </div>
-            <Link href="/">
-              <p className="self-center text-2xl font-semibold">
-                সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
-              </p>
-            </Link>
+    <footer className="relative z-20 bg-background py-14">
+      <div className="container grid max-w-7xl grid-cols-1 justify-center gap-12 sm:grid-cols-2 lg:grid-cols-6">
+        <Logo className="hidden h-28 w-28 lg:block" />
+        {mainNavLinks.map(
+          ({ subRoutes, label }) =>
+            subRoutes.length > 0 && (
+              <div key={label} className="flex flex-col gap-y-2">
+                <h3 className="pb-1 font-medium">{label}</h3>
+                {subRoutes.map(({ label, route }) => (
+                  <Link
+                    key={route}
+                    href={route}
+                    className="text-foreground/60 underline-offset-2 hover:text-foreground/80 hover:underline"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            ),
+        )}
+        <div>
+          <h3 className="pb-2 font-medium">যোগাযোগ মাধ্যম</h3>
+          <div className="flex items-center gap-x-4">
+            {socialLinks.map(({ href, icon }) => (
+              <Link href={href} key={href} className="hover:opacity-80">
+                <Image src={icon} alt={href} height={25} width={25} />
+              </Link>
+            ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-x-3 gap-y-8 text-sm sm:grid-cols-4 lg:w-2/3">
-          <div className="space-y-3">
-            <h3 className="trackiv text-[20px]  uppercase dark:text-gray-50">
-              অর্গানাইজেশন
-            </h3>
-
-            <ul className="space-y-1 text-[16px]">
-              <li>
-                <Link
-                  href="about-us"
-                  className="text-[16px]"
-                  rel="noopener noreferrer"
-                >
-                  আমাদের সম্পর্কে
-                </Link>
-              </li>
-              <li>
-                <p rel="noopener noreferrer">মিশন</p>
-              </li>
-              <li>
-                <Link href="principal" rel="noopener noreferrer">
-                  অধ্যক্ষের কথা
-                </Link>
-              </li>
-              <li>
-                <Link href="contact" rel="noopener noreferrer">
-                  যোগাযোগ
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h3 className="tracki text-[20px] uppercase dark:text-gray-50">
-              {" "}
-              যোগাযোগ
-            </h3>
-            <ul className="space-y-1 text-[16px]">
-              <li>
-                <p rel="noopener noreferrer">রুটিন</p>
-              </li>
-              <li>
-                <Link href="notices" rel="noopener noreferrer">
-                  নোটিশ
-                </Link>
-              </li>
-              <li>
-                <Link href="technologies/electrical" rel="noopener noreferrer">
-                  ডিপার্টমেন্ট
-                </Link>
-              </li>
-              <li>
-                <p rel="noopener noreferrer">সার্কুলার</p>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h3 className="text-[20px] uppercase dark:text-gray-50">
-              কমিউনিটি
-            </h3>
-            <ul className="space-y-1 text-[16px]">
-              <li>
-                <Link href="benefits" rel="noopener noreferrer">
-                  সুবিধা
-                </Link>
-              </li>
-              <li>
-                <Link href="gallery" rel="noopener noreferrer">
-                  গ্যালারি
-                </Link>
-              </li>
-              <li>
-                <Link href="teachers" rel="noopener noreferrer">
-                  শিক্ষকমন্ডলী
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <div className="text-[20px] uppercase dark:text-gray-50">
-              সোশ্যাল মিডিয়া
-            </div>
-            <div className="flex justify-start space-x-3">
-              <p
-                rel="noopener noreferrer"
-                title="Facebook"
-                className="flex items-center p-1"
-              >
-                <FaFacebook className="text-[24px] text-[#316FF6]" />
-              </p>
-              <p
-                rel="noopener noreferrer"
-                title="Twitter"
-                className="flex items-center p-1"
-              >
-                <BsWhatsapp className="text-[24px] text-[#2eb361]" />
-              </p>
-              <p
-                rel="noopener noreferrer"
-                title="Instagram"
-                className="flex items-center p-1"
-              >
-                <MdAttachEmail className="text-[24px] text-[#c23535]" />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="py-6 text-center text-sm dark:text-gray-400">
-        @wellup It studio.com
       </div>
     </footer>
   );
