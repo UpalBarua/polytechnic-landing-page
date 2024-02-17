@@ -1,5 +1,5 @@
 import { db, storage } from "@/firebase/firebase.config";
-import { TPicture, TTeacher, type TNotice } from "@/types";
+import { TPicture, TTeacher, type TNotice, TOnlineAdmission } from "@/types";
 import {
   addDoc,
   collection,
@@ -118,4 +118,21 @@ export const addNewTeacher = async (newTeacher: Omit<TTeacher, "id">) => {
 
 export const addNewPicture = async (picture: Omit<TPicture, "id">) => {
   await addDoc(collection(db, "gallery"), picture);
+};
+
+export const addNewOnlineAdmission = async (
+  newOnlineAdmission: Omit<TOnlineAdmission, "id">,
+) => await addDoc(collection(db, "OnlineAdmission"), newOnlineAdmission);
+
+export const getAllOnlineAdmission = async () => {
+  let onlineAdmission: TOnlineAdmission[] = [];
+  const q = query(
+    collection(db, "OnlineAdmission"),
+    orderBy("createdAt", "desc"),
+  );
+  const querySnapshot = await getDocs(q);
+
+  querySnapshot.forEach((doc) => {
+    onlineAdmission.push({ id: doc.id, ...doc.data() } as TOnlineAdmission);
+  });
 };
