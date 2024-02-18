@@ -16,10 +16,12 @@ export function Facilities() {
         </div>
         <div className="relative col-span-7 hidden md:block">
           <Image
-            src="/slider3.jpg"
+            src="/slider0.jpg"
             alt=""
             className="rounded-md object-cover object-center"
             fill
+            sizes="100%"
+            priority
           />
         </div>
       </div>

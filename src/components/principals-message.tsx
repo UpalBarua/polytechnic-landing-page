@@ -14,6 +14,7 @@ export function PrincipalsMessage() {
           src={picture}
           alt="chairman"
           quality={95}
+          sizes="100%"
           fill
         />
       </div>

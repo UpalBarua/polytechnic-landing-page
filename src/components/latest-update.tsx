@@ -6,7 +6,7 @@ type LatestUpdateProps = {
 
 export function LatestUpdate({ latestUpdate }: LatestUpdateProps) {
   return (
-    <Marquee className="hidden rounded bg-primary py-1.5 text-lg text-background/90 shadow lg:block">
+    <Marquee className="rounded bg-primary py-1.5 text-lg text-background/90 shadow-md">
       {latestUpdate.length ? latestUpdate : "কোন সাম্প্রতিক নোটিশ নেই"}
     </Marquee>
   );

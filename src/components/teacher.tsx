@@ -9,7 +9,9 @@ export function Teacher({ imgURL, department, name }: TTeacher) {
           className="aspect-square rounded-md rounded-b-none object-cover object-top"
           src={imgURL}
           alt=""
+          sizes="100%"
           fill
+          priority
         />
       </div>
       <div className="flex flex-col gap-y-1 px-4 py-4">

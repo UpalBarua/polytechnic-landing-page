@@ -60,7 +60,7 @@ export default function GradingSystem() {
             </TableHeader>
             <TableBody>
               {gradePercentage.map(({ grade, percentage }) => (
-                <TableRow key={percentage}>
+                <TableRow key={grade}>
                   <TableCell className="px-4">{grade}</TableCell>
                   <TableCell className="px-4">{percentage}</TableCell>
                 </TableRow>

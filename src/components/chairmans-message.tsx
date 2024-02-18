@@ -14,6 +14,7 @@ export function ChairmansMessage() {
           src={picture}
           alt="chairman"
           quality={95}
+          sizes="100%"
           fill
         />
       </div>
