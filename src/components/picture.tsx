@@ -8,7 +8,7 @@ export function Picture({ imageUrl }: TPicture) {
       <Image
         src={imageUrl}
         alt=""
-        className="aspect-square rounded object-cover object-center"
+        className="aspect-square cursor-pointer rounded-md object-cover object-center"
         height={600}
         width={600}
       />

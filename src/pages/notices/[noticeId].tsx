@@ -1,9 +1,8 @@
-import { RecentNotices } from "@/components/recent-notices";
 import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
 import { getCurrentDateTimestamp } from "@/lib/get-current-date-timestamp";
-import { getAllNotices, getLatestNotices, getNoticeById } from "@/lib/services";
+import { getAllNotices, getNoticeById } from "@/lib/services";
 import { TNotice } from "@/types";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { MdOutlineFileDownload } from "react-icons/md";
@@ -45,7 +44,6 @@ export const getStaticProps = async ({
 }) => {
   try {
     const notice = await getNoticeById(noticeId);
-    // const latestNotices = await getLatestNotices();
 
     return {
       props: notice,
@@ -61,28 +59,25 @@ export const getStaticProps = async ({
   }
 };
 
-type NoticeDetailsProps = {
-  notice: TNotice;
-  latestNotices: TNotice[];
-};
-
 export default function NoticeDetails({
-  notice,
-  latestNotices,
-}: NoticeDetailsProps) {
-  const { pdfLink, publishedOn, title, description } = notice;
-
+  pdfLink,
+  publishedOn,
+  title,
+  description,
+}: TNotice) {
   return (
-    <main className="container grid max-w-6xl grid-cols-1 pt-20 md:grid-cols-12 md:gap-8 md:pt-32">
+    <main className="container grid max-w-6xl pb-20 pt-24 sm:pt-32 lg:pt-40">
       <section className="space-y-4 sm:px-4 md:col-span-8 md:px-6">
         <div className="space-y-2">
-          <Heading className="text-start sm:pb-0 md:pb-0">{title}</Heading>
+          <h2 className="text-start text-2xl font-medium tracking-tight sm:pb-0 md:pb-0 md:text-3xl">
+            {title}
+          </h2>
           <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
             <div className="flex items-center gap-x-2 text-foreground/60">
               <FaRegCalendarAlt className="text-lg" />
               <span>Published on {getCurrentDateTimestamp(publishedOn)}</span>
             </div>
-            <a href={pdfLink} className={buttonVariants()} download>
+            <a href={pdfLink} target="_blank" className={buttonVariants()}>
               <MdOutlineFileDownload className="text-xl" />
               <span>Download</span>
             </a>
@@ -92,14 +87,14 @@ export default function NoticeDetails({
         {description?.length ? (
           <p className="leading-relaxed text-foreground/60">{description}</p>
         ) : null}
-        <div className="flex max-w-full items-start justify-start overflow-y-scroll sm:items-center sm:justify-center sm:overflow-y-hidden">
+        <div
+          className="flex max-w-[100vw] items-start justify-start overflow-y-scroll
+          rounded-md border shadow sm:items-center sm:justify-center sm:overflow-y-hidden"
+        >
           <Document file={pdfLink} className="max-w-max">
             <Page pageNumber={1} renderTextLayer={false} />
           </Document>
         </div>
-      </section>
-      <section className="col-span-4 hidden h-max md:block">
-        <RecentNotices notices={latestNotices} />
       </section>
     </main>
   );

@@ -23,83 +23,143 @@ import { TbBuildingBroadcastTower } from "react-icons/tb";
 
 export const mainNavLinks = [
   {
+    route: "/",
+    label: "হোম",
+    target: "_self",
+    subRoutes: [],
+  },
+  {
     route: "/curriculum",
     label: "পাঠ্যক্রম",
+    target: "_self",
     subRoutes: [
-      { route: "/course-structure", label: "কোর্স অবকাঠামো" },
-      { route: "/routine", label: "রুটিন" },
-      { route: "/syllabus", label: "সিলেবাস" },
-      { route: "/teachers", label: "শিক্ষক মন্ডলী" },
-      { route: "/grading-system", label: "গ্রেডিং সিস্টেম" },
+      { route: "/course-structure", label: "কোর্স অবকাঠামো", target: "_self" },
+      { route: "/routine", label: "রুটিন", target: "_self" },
+      { route: "/syllabus", label: "সিলেবাস", target: "_self" },
+      { route: "/teachers", label: "শিক্ষক মন্ডলী", target: "_self" },
+      { route: "/grading-system", label: "গ্রেডিং সিস্টেম", target: "_self" },
     ],
   },
   {
     route: "/admission-process",
     label: "ভর্তি প্রক্রিয়া",
+    target: "_self",
     subRoutes: [
       {
-        route:
-          "http://btebadmission.gov.bd/website/Link/AdmissionNitimala2023.pdf",
+        route: "",
         label: "সার্কুলার",
+        target: "_blank",
       },
       {
         route:
           "http://btebadmission.gov.bd/website/Link/AdmissionNitimala2023.pdf",
         label: "ভর্তির নীতিমালা",
+        target: "_blank",
       },
 
       {
         route:
           "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/application/applicantRegistration.action",
         label: "অনলাইন এপ্লাই",
+        target: "_blank",
       },
-      { route: "/tuition-fees-and-others", label: "টিউশন ফি ও অন্যান্য" },
-      { route: "/tuition-fees-and-others", label: "স্কলারশিপ" },
+      {
+        route: "/tuition-fees-and-others",
+        label: "টিউশন ফি ও অন্যান্য",
+        target: "_self",
+      },
+      {
+        route: "/scholarships",
+        label: "স্কলারশিপ",
+        target: "_self",
+      },
     ],
   },
   {
     route: "/technologies",
     label: "টেকনোলজি সমূহ",
+    target: "_self",
     subRoutes: [
-      { route: "/technologies/electrical", label: "ইলেকট্রিক্যাল টেকনোলজি" },
-      { route: "/technologies/mechanical", label: " মেকানিক্যাল টেকনোলজি" },
-      { route: "/technologies/computer", label: "   কম্পিউটার টেকনোলজি" },
-      { route: "/technologies/automobile", label: " অটোমোবাইল টেকনোলজি " },
-      { route: "/technologies/civil", label: " সিভিল টেকনোলজি " },
+      {
+        route: "/technologies/electrical",
+        label: "ইলেকট্রিক্যাল টেকনোলজি",
+        target: "_self",
+      },
+      {
+        route: "/technologies/mechanical",
+        label: " মেকানিক্যাল টেকনোলজি",
+        target: "_self",
+      },
+      {
+        route: "/technologies/computer",
+        label: "   কম্পিউটার টেকনোলজি",
+        target: "_self",
+      },
+      {
+        route: "/technologies/automobile",
+        label: " অটোমোবাইল টেকনোলজি ",
+        target: "_self",
+      },
+      {
+        route: "/technologies/civil",
+        label: " সিভিল টেকনোলজি ",
+        target: "_self",
+      },
+      {
+        route: "/technologies/textile",
+        label: "টেক্সটাইল টেকনোলজি ",
+        target: "_self",
+      },
     ],
   },
   {
     route: "/benefits",
     label: "সুবিধা",
     subRoutes: [],
+    target: "_self",
   },
   {
     route: "/gallery",
     label: "গ্যালারি",
     subRoutes: [],
+    target: "_self",
   },
   {
     route: "/our-world",
     label: "আমাদের ভূবন",
+    target: "_self",
     subRoutes: [
-      { route: "/about-us", label: "আমাদের সম্পর্কে" },
-      { route: "/chairman", label: "চেয়ারম্যানের বাণী" },
-      { route: "/principal", label: "অধ্যক্ষের কথা" },
-      { route: "/administrative-committee", label: "প্রশাসনিক কমিটি" },
-
-      { route: "/tuition-fees-and-others", label: "আমাদের লক্ষ্য" },
-      { route: "/tuition-fees-and-others", label: " প্রজেক্ট সমূহ" },
+      { route: "/about-us", label: "আমাদের সম্পর্কে", target: "_self" },
+      { route: "/chairman", label: "চেয়ারম্যানের বাণী", target: "_self" },
+      { route: "/principal", label: "অধ্যক্ষের কথা", target: "_self" },
+      {
+        route: "/administrative-committee",
+        label: "প্রশাসনিক কমিটি",
+        target: "_self",
+      },
+      {
+        route: "/goals",
+        label: "আমাদের লক্ষ্য",
+        target: "_self",
+      },
+      {
+        route: "/projects",
+        label: " প্রজেক্ট সমূহ",
+        target: "_self",
+      },
     ],
   },
   {
     route: "/placement-sell",
     label: "প্লেসমেন্ট সেল",
     subRoutes: [],
+    target: "_self",
   },
   {
     route: "/contact",
     label: "যোগাযোগ",
     subRoutes: [],
+    target: "_self",
   },
 ] as const;
 
@@ -108,18 +168,18 @@ export type NavLink = (typeof mainNavLinks)[number];
 export const adminNavLinks = [
   {
     Icon: PiHouse,
-    href: "/admin/",
+    href: "/",
     label: "Home",
-  },
-  {
-    Icon: PiChalkboardTeacher,
-    href: "/admin/teachers",
-    label: "Teachers",
   },
   {
     Icon: PiBell,
     href: "/admin/noticeboard",
     label: "Notices",
+  },
+  {
+    Icon: PiChalkboardTeacher,
+    href: "/admin/teachers",
+    label: "Teachers",
   },
   {
     Icon: AiOutlinePicture,
@@ -139,13 +199,13 @@ export const chairmansMessage = {
 } as const;
 
 export const principleMessage = {
-  picture: "/chairman.jpeg",
+  picture: "/images/principle.jpg",
   name: "ইঞ্জিনিয়ার মোঃ আজিজুল হক",
   position: "অধ্যক্ষ",
   institute: "বি.এসসি-ইন- টেক্সটাইল ইঞ্জিনিয়ারিং (BUTex) ",
   more_institue: "এম এন্ড টি, পিকিং ইউনিভার্সিটি (চায়না)।",
   message:
-    "লাখো শহীদের রক্তে ভেজা স্বাধীন এদেশ, বাংলাদেশ। পৃথিবীর মানচিত্রে ছোট্ট একটি দেশ, হাজারো ঐতিহ্যে ঘেরা প্রাকৃতিক সৌন্দর্যেভরা। নাতিশীতোষ্ণ জলবায়ু, সম্পদ সীমিত। বিশ্বের সর্বাধিক ঘনবসতিপূর্ণ এদেশ। ৪০% মানুষ দারিদ্র্য সীমার নীচে বসবাস করে এবং প্রায় ৪৫% লোক বেকার। নির্মম বেকারত্বের অভিশাপে ভূগছে এদেশের মানুষ, এদেশের যুব সমাজ। বেকার সে নিজের কাছে অপরাধী, সে পরিবারের দুঃখ, পরিবারের কান্না, দেশের বোঝা। বেকার জীবনের গ্লানি বড় বেদনাদায়ক, বড় দূর্বিসহ। ফলে বাড়ছে অস্থিরতা, সংঘটিত হচ্ছে নানা অপরাধ। দিন দিন মানুষ অসহায় হয়ে পড়ছে। উন্নত দেশ যেমন জাপানে বেকারত্বের হার ৫% , যুক্তরাজ্যে ৭%, যুক্তরাষ্ট্রে ৯% আর বাংলাদেশে বেকারত্বের হার প্রায় ৪৫%। সরকারি চাকুরী সীমিত। ইচ্ছা থাকা সত্ত্বেও, শিক্ষা থাকা সত্ত্বেও, শিক্ষিত যুব সমাজ খুঁজে পাচ্ছেনা কাজ। ফলে জীবনে নেমে এসেছে হতাশা ও ক্ষোভ। জাতির এ ক্রান্তিলগ্নে ও সংকট মুহুর্তে পথহারা ছাত্র সমাজের উজ্জ্বল ভবিষ্যৎ রচনার লক্ষ্যে তথা ভবিষ্যতে কর্মসংস্থান তৈরীর লক্ষ্যে যে প্রতিষ্ঠানটি হাল ধরেছে সেটি হল আর্ন্তজাতিক মান, প্রযুক্তিগত জ্ঞান ও দক্ষতা সম্পন্ন একটি অনন্য প্রতিষ্ঠান সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট চট্টগ্রাম। সর্বাগ্রে একটি কথা স্মরন রাখার মত যে, কখনোই কারিগরি স্বল্প ধারনা নিয়ে দক্ষতা ছাড়া কাজ খুঁজে পাওয়া যায় না। কর্মসংস্থানের ব্যবস্থা। হয়না, বেকার সমস্যা দূরীভূত হবেনা। এজন্য অবশ্যই আপনাকে কারিগরি জ্ঞানে, হাতে-কলমে পূর্ণ দক্ষতা অর্জন করতে হবে। সামণ্ডন নাহার হারুন পলিটেকনিক ইনস্টিটিউট, চট্টগ্রাম হাতে কলমে আপনার সন্তানকে সুদক্ষ করে গড়ে তোলে। সুতরাং নিঃসন্দেহে বলা চলে এ প্রতিষ্ঠানটি আপনার সন্তানের জন্য আধার ঘরের প্রদীপ, বটবৃক্ষের ছায়ার মত। আর দেরী নয়, আর কোন হতাশা নয়, আপনার সন্তানকে সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট, চট্টগ্রাম-এ ভর্তি করিয়ে বেকারত্বের অভিশাপ থেকে মুক্তি দিন। দেশ গড়ার সুযোগ দিন। ",
+    "লাখো শহীদের রক্তে ভেজা স্বাধীন এদেশ, বাংলাদেশ। পৃথিবীর মানচিত্রে ছোট্ট একটি দেশ, হাজারো ঐতিহ্যে ���েরা প্রাকৃতিক সৌন্দর্যেভরা। নাতিশীতোষ্ণ জলবায়ু, সম্পদ সীমিত। বিশ্বের সর্বাধিক ঘনবসতিপূর্ণ এদেশ। ৪০% মানুষ দারিদ্র্য সীমার নীচে বসবাস করে এবং প্রায় ৪৫% লোক বেকার। নির্মম বেকারত্বের অভিশাপে ভূগছে এদেশের মানুষ, এদেশের যুব সমাজ। বেকার সে ���িজের কাছে অপরাধী, সে পরিবারের দুঃখ, পরিবারের কান্না, দেশের বোঝা। বেকার জীবনের গ্ল���নি বড় বেদনাদায়ক, বড় দূর্বিসহ। ফলে বাড়ছে অস্থিরতা, সংঘটিত হচ্ছে নানা অপরাধ। দিন দিন মানুষ অসহায় হয়ে পড়ছে। উন্নত দেশ যেমন জাপানে বেকারত্বের হার ৫% , যুক্তরাজ্যে ৭%, যুক্তরাষ্ট্রে ৯% আর বাংলাদেশে বেকারত্বের হার প্রায় ৪৫%। সরকারি চাকুরী সীমিত। ইচ্ছা থাকা সত্ত্বেও, শিক্ষা থাকা সত্ত্বেও, শিক্ষিত যুব সমাজ খুঁজে পাচ্ছেনা কাজ। ফলে জীবনে নেমে এসেছে হতাশা ও ক্ষোভ। জাতির এ ক্রান্তিলগ্নে ও সংকট মুহুর্তে পথহারা ছাত্র সমাজের উজ্জ্বল ভবিষ্যৎ রচনার লক্ষ্যে তথা ভবিষ্যতে কর্মসংস্থান তৈরীর লক্ষ্যে যে প্রতিষ্ঠানটি হাল ধরেছে সেটি হল আর্ন্তজাতিক মান, প্রযুক্তিগত জ্ঞান ও দক্ষতা সম্পন্ন একটি অনন্য প্রতিষ্ঠান সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট চট্টগ্রাম। সর্বাগ্রে একটি কথা স্মরন রাখার মত যে, কখনোই কারিগরি স্বল্প ধারনা নিয়ে দক্ষতা ছাড়া কাজ খুঁজে পাওয়া যায় না। কর্মসংস্থানের ব্যবস্থা। হয়না, বেকার সমস্যা দূরীভূত হবেনা। এজন্য অবশ্যই আপনাকে কারিগরি জ্ঞানে, হাতে-কলমে পূর্ণ দক্ষতা অর্জন করতে হবে। সামণ্ডন নাহার হারুন পলিটেকনিক ইনস্টিটিউট, চট্টগ্রাম হাতে কলমে আপনার সন্তানকে সুদক্ষ করে গড়ে তোলে। সুতরাং নিঃসন্দেহে বলা চলে এ প্রতিষ্ঠানটি আপনার সন্তানের জন্য আধার ঘরের প্রদীপ, বটবৃক্ষের ছায়ার মত। আর দেরী নয়, আর কোন হতাশা নয়, আপনার সন্তানকে সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট, চট্টগ্রাম-এ ভর্তি করিয়ে বেকারত্বের অভিশাপ থেকে মুক্তি দিন। দেশ গড়ার সুযোগ দিন। ",
   last_message: "জয়বাংলা বাংলাদেশ চিরজীবী হোক।",
 } as const;
 
@@ -166,6 +226,7 @@ export const technologies = [
       picture:
         "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    courseFees: "৯,৭০০/-",
     deptOverView: {
       "টোটাল স্টুডেন্ট": 183,
       "টোটাল টিচার": 6,
@@ -272,6 +333,7 @@ export const technologies = [
       picture:
         "'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',",
     },
+    courseFees: "৯,৮০০/-",
     deptOverView: {
       "টোটাল স্টুডেন্ট": 183,
       "টোটাল টিচার": 6,
@@ -366,7 +428,7 @@ export const technologies = [
     id: "computer",
     name: "কম্পিউটার",
     description:
-      "আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে।বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে।বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে কোনও কোর্স সফলভাবে সম্পন্ন করার পরে, শিক্ষার্থীদের জন্য নিয়োগ সহায়তাও সরবরাহ করা হয়। কোর্সগুলি ইলেক্ট্রনিক্স এবং টেলিযোগাযোগ প্রকৌশল বিষয়ে দক্ষতার সুযোগ করে দেয়। এই বিস্তৃত প্রশিক্ষণ কোর্সের সাহায্যে শিক্ষার্থীরা বিভিন্ন প্রকৌশল চাকরিতে দক্ষ হতে পারে বা শিল্পের জন্য তাদের নিজস্ব ব্যবসা শুরু করতে পারে।",
+      "আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের ���েছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে।বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে।বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে কোনও কোর্স সফলভাবে সম্পন্ন করার পরে, শিক্ষার্থীদের জন্য নিয়োগ সহায়তাও সরবরাহ করা হয়। কোর্সগুলি ইলেক্ট্রনিক্স এবং টেলিযোগাযোগ প্রকৌশল বিষয়ে দক্ষতার সুযোগ করে দেয়। এই বিস্তৃত প্রশিক্ষণ কোর্সের সাহায্যে শিক্ষার্থীরা বিভিন্ন প্রকৌশল চাকরিতে দক্ষ হতে পারে বা শিল্পের জন্য তাদের নিজস্ব ব্যবসা শুরু করতে পারে।",
     images: [
       "https://images.unsplash.com/photo-1594182878770-c05ece34b1f2?q=80&w=1500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1581092795442-d153057d8e0d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -378,6 +440,7 @@ export const technologies = [
       picture:
         "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    courseFees: "৯,৬০০/-",
     deptOverView: {
       "টোটাল স্টুডেন্ট": 183,
       "টোটাল টিচার": 6,
@@ -484,6 +547,7 @@ export const technologies = [
       picture:
         "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    courseFees: "৯,৮০০/-",
     deptOverView: {
       "টোটাল স্টুডেন্ট": 183,
       "টোটাল টিচার": 6,
@@ -583,13 +647,14 @@ export const technologies = [
       "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?q=80&w=1492&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     description:
-      "আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত্র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে। বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে। বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে",
+      "আধুনিক সভ্যসমাজে বিজ্��ানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত��র ইলেকট্রনিক্সই পারে নিজের কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ সকল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযোগ রয়েছে। বর্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে। বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে",
     Icon: MdLocationCity,
     cheifInstructor: {
       name: "হাবিব আহমেদ",
       picture:
         "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    courseFees: "৯,৭০০/-",
     deptOverView: {
       "টোটাল স্টুডেন্ট": 183,
       "টোটাল টিচার": 6,
@@ -696,6 +761,7 @@ export const technologies = [
       picture:
         "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    courseFees: "১০,০০০/-",
     deptOverView: {
       "টোটাল স্টুডেন্ট": 183,
       "টোটাল টিচার": 6,

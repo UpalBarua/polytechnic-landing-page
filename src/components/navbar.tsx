@@ -9,25 +9,22 @@ import { mainNavLinks, type NavLink } from "@/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
-import { MdOutlineEmail, MdOutlineLocalPhone } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
 import { MobileNav } from "./mobile-nav";
 import { Logo } from "./ui/logo";
 
 export function Navbar() {
   return (
-    <header
-      className="fixed left-0 top-0 z-20 w-full bg-background/95"
-      data-aos="fade-down"
-      data-duration="10"
-    >
-      <div className="container flex max-w-7xl items-center justify-between py-2 shadow-[0px_50px_25px_-10px_#00000024]">
-        <Link href="/" className="flex items-center gap-x-2">
-          <Logo />
+    <header className="fixed left-0 top-0 z-20 w-full border-b bg-background/95 backdrop-blur-md shadow-lg">
+      <div className="container flex max-w-7xl items-center justify-between py-2 ">
+        <Link href="/" className="flex items-center gap-x-3">
+          <Logo className="h-11 w-11 lg:h-14 lg:w-14" />
           <span className="hidden text-2xl font-medium capitalize text-primary sm:inline-block">
             সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
           </span>
         </Link>
-        <div className="hidden items-center gap-x-8 md:flex">
+        <div className="hidden items-center gap-x-8 pe-2 lg:flex">
           <div className="flex items-center gap-x-2.5">
             <MdOutlineEmail className="text-3xl text-foreground/80" />
             <div className="flex flex-col">
@@ -36,7 +33,7 @@ export function Navbar() {
             </div>
           </div>
           <div className="flex items-center gap-x-2.5">
-            <MdOutlineLocalPhone className="text-3xl text-foreground/80" />
+            <FiPhone className="text-3xl text-foreground/80" />
             <div className="flex flex-col">
               <span className="text-xs">Call Us</span>
               <span className="text-sm font-medium">01234567890</span>
@@ -45,7 +42,7 @@ export function Navbar() {
         </div>
         <MobileNav />
       </div>
-      <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary/90 py-1 text-sm shadow-md lg:flex">
+      <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary py-1 text-sm shadow-md lg:flex">
         {mainNavLinks.map((link) => (
           <NavItem key={link.route} {...link} />
         ))}
@@ -54,7 +51,7 @@ export function Navbar() {
   );
 }
 
-function NavItem({ route, label, subRoutes }: NavLink) {
+function NavItem({ route, label, subRoutes, target }: NavLink) {
   return subRoutes.length > 0 ? (
     <DropdownMenu key={route} modal={false}>
       <DropdownMenuTrigger asChild>
@@ -68,10 +65,14 @@ function NavItem({ route, label, subRoutes }: NavLink) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-background/95">
-        {subRoutes.map(({ route, label }) => (
-          <DropdownMenuItem key={route} className="p-1 focus:bg-primary/20">
+        {subRoutes.map(({ route, label, target }) => (
+          <DropdownMenuItem
+            key={route}
+            className="p-1 hover:cursor-pointer focus:bg-primary/20"
+          >
             <Link
               href={route}
+              target={target}
               className={buttonVariants({
                 variant: "link",
                 size: "sm",
@@ -89,6 +90,7 @@ function NavItem({ route, label, subRoutes }: NavLink) {
   ) : (
     <Link
       href={route}
+      target={target}
       className={buttonVariants({
         variant: "link",
         size: "sm",

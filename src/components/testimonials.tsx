@@ -5,11 +5,11 @@ import { Heading } from "./ui/heading";
 
 export function Testimonials() {
   return (
-    <section className="md:pt-26 pt-14" data-aos="fade-up" data-duration="20">
-      <Heading className="md:text-center">
-        আমাদের প্রাক্তন ছাত্র দের মতামত
+    <section className="">
+      <Heading className="px-4 md:text-center">
+        অভিভাবক ও প্রাক্তনদের মতামত
       </Heading>
-      <Marquee className="w-screen overflow-hidden">
+      <Marquee className="w-screen overflow-hidden py-2">
         <ul className="flex gap-x-4 px-2">
           {testimonials.map((testimonial, i) => (
             <Testimonial key={testimonial.name + i} {...testimonial} />
