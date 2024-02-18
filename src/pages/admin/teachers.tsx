@@ -1,12 +1,12 @@
-import { Teacher } from '@/components/teacher';
-import { Button } from '@/components/ui/button';
-import { Heading } from '@/components/ui/heading';
-import { AdminLayout } from '@/layouts/admin-layout';
-import { deleteTeacherById, getAllTeachers } from '@/lib/services';
-import { TTeacher } from '@/types';
-import { GoTrash } from 'react-icons/go';
-import { toast } from 'sonner';
-import { NewTeacherDialog } from '@/components/new-teacher-dialog';
+import { Teacher } from "@/components/teacher";
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
+import { AdminLayout } from "@/layouts/admin-layout";
+import { deleteTeacherById, getAllTeachers } from "@/lib/services";
+import { TTeacher } from "@/types";
+import { GoTrash } from "react-icons/go";
+import { toast } from "sonner";
+import { NewTeacherDialog } from "@/components/new-teacher-dialog";
 
 export const getServerSideProps = async () => {
   try {
@@ -35,11 +35,11 @@ type AdminTeachersProps = {
 export default function AdminTeachers({ teachers }: AdminTeachersProps) {
   return (
     <main className="max-w-4xl">
-      <div className="flex justify-between items-center py-8">
+      <div className="flex items-center justify-between py-8">
         <Heading className="!pb-0">Teachers</Heading>
         <NewTeacherDialog />
       </div>
-      <div className="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 py-2 min-[500px]:grid-cols-2 md:grid-cols-3">
         {teachers.map((teacher) => (
           <AdminTeacher key={teacher.id} {...teacher} />
         ))}
@@ -51,10 +51,10 @@ export default function AdminTeachers({ teachers }: AdminTeachersProps) {
 const handleDeleteTeacher = async (id: string) => {
   try {
     await deleteTeacherById(id);
-    toast('Teacher deleted successfully');
+    toast("Teacher deleted successfully");
   } catch (error) {
     console.log(error);
-    toast('Failed to delete teacher');
+    toast("Failed to delete teacher");
   }
 };
 
@@ -65,8 +65,9 @@ function AdminTeacher({ id, ...props }: TTeacher) {
       <Button
         size="sm"
         variant="destructive"
-        className="absolute top-0 right-0 gap-x-2 m-2"
-        onClick={() => handleDeleteTeacher(id)}>
+        className="absolute right-0 top-0 m-2 gap-x-2"
+        onClick={() => handleDeleteTeacher(id)}
+      >
         <GoTrash className="text-base" />
         <span>Delete</span>
       </Button>

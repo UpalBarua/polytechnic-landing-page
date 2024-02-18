@@ -8,8 +8,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { gradePercentage, gradingSystem } from "@/config";
-import * as React from "react";
 import Head from "next/head";
+import * as React from "react";
 
 export default function GradingSystem() {
   return (
