@@ -4,12 +4,14 @@ import { PhotoView } from "react-photo-view";
 
 export function Picture({ imageUrl }: TPicture) {
   return (
-    <Image
-      src={imageUrl}
-      alt=""
-      className="aspect-square rounded object-cover object-center"
-      height={600}
-      width={600}
-    />
+    <PhotoView src={imageUrl}>
+      <Image
+        src={imageUrl}
+        alt=""
+        className="aspect-square cursor-pointer rounded-md object-cover object-center"
+        height={600}
+        width={600}
+      />
+    </PhotoView>
   );
 }

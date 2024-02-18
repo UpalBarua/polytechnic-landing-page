@@ -4,9 +4,9 @@ import Image from "next/image";
 export function Teacher({ imgURL, department, name }: TTeacher) {
   return (
     <div className="rounded-md border bg-background/60 shadow-md">
-      <div className="relative h-52">
+      <div className="relative h-[22rem]">
         <Image
-          className="aspect-square rounded-md rounded-b-none object-cover object-center"
+          className="aspect-square rounded-md rounded-b-none object-cover object-top"
           src={imgURL}
           alt=""
           fill

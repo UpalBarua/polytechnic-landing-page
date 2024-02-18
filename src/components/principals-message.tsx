@@ -4,14 +4,14 @@ import Link from "next/link";
 import { Heading } from "./ui/heading";
 
 export function PrincipalsMessage() {
-  const { name, message, position } = principleMessage;
+  const { name, message, position, picture } = principleMessage;
 
   return (
-    <div className="container flex max-w-5xl flex-col items-center justify-center gap-8 rounded-md border bg-background/60 py-10 text-center shadow-md sm:items-start sm:gap-6 md:px-8">
+    <div className="container flex max-w-5xl flex-col items-center justify-center gap-8 rounded-md border bg-background/60 py-10 text-center shadow-md sm:items-start sm:gap-10 md:px-8">
       <div className="relative mx-auto aspect-square min-w-56 md:min-w-[14rem]">
         <Image
           className="rounded-full border object-cover object-center shadow-lg"
-          src={"/"}
+          src={picture}
           alt="chairman"
           quality={95}
           fill
@@ -23,7 +23,7 @@ export function PrincipalsMessage() {
           {message.slice(0, 400) + "..."}
           <Link
             href="/principal"
-            className="font-medium underline underline-offset-2"
+            className="font-medium text-primary underline-offset-2 hover:underline"
           >
             আরো পড়ুন
           </Link>

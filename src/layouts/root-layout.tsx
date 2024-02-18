@@ -1,23 +1,19 @@
-import * as React from "react";
-import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import AOS from "aos";
+import { Navbar } from "@/components/navbar";
+import * as React from "react";
 
 type RootLayoutProps = {
   children: React.ReactNode;
 };
 
 export function RootLayout({ children }: RootLayoutProps) {
-  // React.useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
-
   return (
     <React.Fragment>
-      <Navbar />
-      {children}
-      <Footer />
+      <div className="flex h-screen flex-col justify-between">
+        <Navbar />
+        {children}
+        <Footer />
+      </div>
     </React.Fragment>
   );
 }

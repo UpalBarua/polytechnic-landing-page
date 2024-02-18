@@ -20,7 +20,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative z-20 bg-background py-14">
+    <footer className="z-10 mt-auto bg-background py-16 shadow-lg">
       <div className="container grid max-w-7xl grid-cols-1 justify-center gap-12 sm:grid-cols-2 lg:grid-cols-6">
         <Logo className="hidden h-28 w-28 lg:block" />
         {mainNavLinks.map(
