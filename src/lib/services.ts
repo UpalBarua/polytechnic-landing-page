@@ -75,6 +75,7 @@ export const getNoticeById = async (id: string) => {
     throw new Error("No document found");
   }
 
+  console.log(querySnapshot.data());
   return querySnapshot.data();
 };
 

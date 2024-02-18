@@ -34,13 +34,9 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 
   return (
     <div className="container flex-1 items-start md:grid md:grid-cols-[180px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-10">
-      <aside className="fixed top-0 z-30 -ml-2 hidden h-screen w-full shrink-0 bg-background/60 md:sticky md:block">
-        <ScrollArea className="h-full py-6 pr-6 lg:py-8">
-          <nav
-            className={cn(
-              "flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1",
-            )}
-          >
+      <aside className="fixed top-0 z-30 -ml-2 hidden h-screen w-full shrink-0 border-r bg-background/60 md:sticky md:block">
+        <ScrollArea className="h-full py-6 pl-2 pr-6 lg:py-8">
+          <nav className={cn("flex-col space-y-2")}>
             {adminNavLinks.map((navLink) => (
               <NavLink key={navLink.label} {...navLink} />
             ))}
@@ -64,9 +60,9 @@ function NavLink({ Icon, href, label }: NavLinkProps) {
       className={cn(
         buttonVariants({ variant: "ghost" }),
         pathname === href
-          ? "bg-muted hover:bg-muted"
+          ? "bg-foreground/10 hover:bg-muted"
           : "hover:bg-transparent hover:underline",
-        "justify-start",
+        "justify-start focus-visible:ring-0",
       )}
     >
       <Icon className="text-lg" />

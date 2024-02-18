@@ -61,6 +61,14 @@ export function NewNoticeDialog() {
         publishedOn: Date.now(),
       });
 
+      // TODO remove it
+      console.log({
+        title,
+        description,
+        pdfLink,
+        publishedOn: Date.now(),
+      });
+
       form.reset();
       toast("Notice added successfully");
     } catch (error) {

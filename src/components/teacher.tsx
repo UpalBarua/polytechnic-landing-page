@@ -4,12 +4,14 @@ import Image from "next/image";
 export function Teacher({ imgURL, department, name }: TTeacher) {
   return (
     <div className="rounded-md border bg-background/60 shadow-md">
-      <div className="relative h-52">
+      <div className="relative h-[22rem]">
         <Image
-          className="aspect-square rounded-md rounded-b-none object-cover object-center"
+          className="aspect-square rounded-md rounded-b-none object-cover object-top"
           src={imgURL}
           alt=""
+          sizes="100%"
           fill
+          priority
         />
       </div>
       <div className="flex flex-col gap-y-1 px-4 py-4">

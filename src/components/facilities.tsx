@@ -4,26 +4,24 @@ import { Heading } from "./ui/heading";
 
 export function Facilities() {
   return (
-    <section className="container max-w-5xl pt-14 lg:pt-20">
-      <Heading className="md:text-center">
+    <section className="container max-w-6xl">
+      <Heading className="px-2 md:text-center">
         আমারা যেসব সুবিধা প্রধান করে থাকি
       </Heading>
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-        <div className="space-y-3" data-aos="fade-right" data-duration="20">
+      <div className="grid grid-cols-1 gap-4 py-2 md:grid-cols-12">
+        <div className="col-span-full grid grid-cols-1 gap-4 min-[500px]:grid-cols-2 md:col-span-5 md:grid-cols-1">
           {facilities.map((facility) => (
             <Facility key={facility.id} {...facility} />
           ))}
         </div>
-        <div
-          className="relative hidden md:block"
-          data-aos="fade-left"
-          data-duration="10"
-        >
+        <div className="relative col-span-7 hidden md:block">
           <Image
             src="/slider0.jpg"
             alt=""
             className="rounded-md object-cover object-center"
             fill
+            sizes="100%"
+            priority
           />
         </div>
       </div>
@@ -39,7 +37,7 @@ export function Facility({ Icon, name, content }: FacilityProps) {
       <div className="flex aspect-square w-20 items-center justify-center rounded-full bg-primary text-4xl text-white md:w-28">
         <Icon />
       </div>
-      <div className="space-y-1">
+      <div className="space-y-2">
         <h3 className="text-lg font-medium">{name}</h3>
         <p className="text-foreground/60">{content}</p>
       </div>
