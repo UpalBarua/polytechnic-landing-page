@@ -48,7 +48,7 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
       <Head>
         <title>SNHPI - Home</title>
       </Head>
-      <main className="relative z-10 space-y-16 md:space-y-24 lg:space-y-28">
+      <main className="space-y-16 md:space-y-24 lg:space-y-28">
         <section className="container grid max-w-7xl grid-cols-1 gap-y-4 pt-[4.25rem] md:pt-20 lg:grid-cols-12 lg:gap-x-4 lg:pt-32">
           <div className="col-span-full flex flex-col space-y-2.5 lg:col-span-8">
             <Slider />
@@ -68,7 +68,6 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
         <Testimonials />
         <RecentPictures pictures={pictures} />
       </main>
-      <div className="fixed inset-0 z-0 h-full w-full bg-[url('/bg-gradient.png')] bg-cover bg-center opacity-40" />
     </React.Fragment>
   );
 }

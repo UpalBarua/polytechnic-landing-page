@@ -1,27 +1,14 @@
-import { mainNavLinks } from "@/config";
+import { campusInfo, mainNavLinks } from "@/config";
+import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "./ui/logo";
-import Image from "next/image";
-
-const socialLinks = [
-  {
-    href: "facebook.com",
-    icon: "/icons/facebook.png",
-  },
-  {
-    href: "instagram.com",
-    icon: "/icons/instagram.png",
-  },
-  {
-    href: "whatsapp.com",
-    icon: "/icons/whatsapp.png",
-  },
-] as const;
 
 export function Footer() {
+  const { socialLinks } = campusInfo;
+
   return (
-    <footer className="z-10 mt-auto bg-background py-16 shadow-lg">
-      <div className="container grid max-w-7xl grid-cols-1 justify-center gap-12 sm:grid-cols-2 lg:grid-cols-6">
+    <footer className="z-10 mt-auto bg-background  shadow-lg">
+      <div className="container grid max-w-7xl grid-cols-1 justify-center gap-12 py-16 sm:grid-cols-2 lg:grid-cols-6">
         <Logo className="hidden h-28 w-28 lg:block" />
         {mainNavLinks.map(
           ({ subRoutes, label }) =>
@@ -43,14 +30,20 @@ export function Footer() {
         <div>
           <h3 className="pb-2 font-medium">যোগাযোগ মাধ্যম</h3>
           <div className="flex items-center gap-x-4">
-            {socialLinks.map(({ href, icon }) => (
-              <Link href={href} key={href} className="hover:opacity-80">
-                <Image src={icon} alt={href} height={25} width={25} />
+            {socialLinks.map(({ link, icon }) => (
+              <Link href={link} key={link} className="hover:opacity-80">
+                <Image src={icon} alt={link} height={25} width={25} />
               </Link>
             ))}
           </div>
         </div>
       </div>
+      <Link
+        href="/"
+        className="block bg-primary py-1 text-center text-sm font-medium text-background"
+      >
+        Wellup Tech Lab
+      </Link>
     </footer>
   );
 }

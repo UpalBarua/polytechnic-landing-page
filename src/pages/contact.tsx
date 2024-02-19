@@ -1,149 +1,77 @@
+import { Heading } from "@/components/ui/heading";
+import { campusInfo } from "@/config";
+import Head from "next/head";
 import Image from "next/image";
-import React, { useCallback, useState } from "react";
-import { RiHomeOfficeFill } from "react-icons/ri";
-import { FaBlenderPhone } from "react-icons/fa";
-import { GoStopwatch } from "react-icons/go";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { MdMarkEmailUnread } from "react-icons/md";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  Libraries,
-} from "@react-google-maps/api";
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import Link from "next/link";
+import * as React from "react";
+import { ContactForm } from "./contact-form";
 
-const libraries: Libraries = ["places"];
+export default function Contact() {
+  const { address, contactNumbers, socialLinks, emails } = campusInfo;
 
-const mapContainerStyle = {
-  width: "100vw",
-  height: "100vh",
-};
-
-const center = {
-  lat: -3.745,
-  lng: -38.523,
-};
-
-const Contact = () => {
   return (
-    <section className="ml-4 mt-44 lg:ml-12">
-      <h1 className="pb-8 text-center text-4xl font-bold">
-        আমাদের সাথে যোগাযোগ
-      </h1>
-      <div className="flex flex-col gap-14 lg:flex-row">
-        {/* <div className="flex-1">
-          <div>
-            <MapContainer
-              center={[51.505, -0.09]}
-              zoom={13}
-              scrollWheelZoom={false}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    <React.Fragment>
+      <Head>
+        <title>SNHPI - Contact Us</title>
+      </Head>
+      <main className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-40">
+        <Heading className="!text-center">আমাদের সাথে যোগাযোগ</Heading>
+        <div className="grid grid-cols-1 items-start gap-10 min-[500px]:grid-cols-2 min-[500px]:gap-4">
+          <ContactForm />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="relative col-span-full hidden h-[12.25rem] sm:block">
+              <Image
+                src="/images/slider1.jpg"
+                alt="contact page picture"
+                className="rounded-md border object-cover  object-center shadow-md"
+                sizes="100%"
+                fill
+                priority
               />
-                <Marker position={[51.505, -0.09]}></Marker>
-            </MapContainer>
-          </div>
-        </div> */}
-
-        <div className="flex-1">
-          <h1 className="pb-8 text-center text-2xl font-semibold">
-            আমাদের যোগাযোগের ফর্ম
-          </h1>
-          <form className="grid gap-10 border p-8">
-            <div className="flex flex-col gap-2">
-              <label> নাম</label>
-              <input
-                className="rounded-sm border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all "
-                type="text"
-                name="user_name"
-              ></input>
             </div>
-
-            <div className="flex flex-col gap-2">
-              <label>মোবাইল নম্বর</label>
-              <input
-                className="focus:border-accent-400  rounded-md border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
-                type="text"
-                name="user_number"
-              ></input>
+            <div className="space-y-2 rounded-md border bg-background/60 p-5 shadow-md">
+              <h3 className="text-xl font-medium">প্রধান ক্যাম্পাস</h3>
+              <p className="leading-relaxed text-foreground/60">{address}</p>
             </div>
-            <div className="flex flex-col gap-2">
-              <label>ইমেইল</label>
-              <input
-                className="focus:border-accent-400 rounded-md  border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
-                type="text"
-                name="user_email"
-              ></input>
+            <div className="space-y-2 rounded-md border bg-background/60 p-5 shadow-md">
+              <h3 className="text-xl font-medium">ফোন নাম্বার</h3>
+              <div className="space-y-1">
+                {contactNumbers.map((number, i) => (
+                  <p
+                    key={number + i}
+                    className="leading-relaxed text-foreground/60"
+                  >
+                    +880 {number}
+                  </p>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <label>মন্তব্য</label>
-              <textarea
-                name="message"
-                className="focus:border-accent-400 min-h-[8rem] resize-none overflow-hidden rounded-md border-2 border-gray-500 bg-orange-50 p-2 outline-none transition-all"
-              ></textarea>
+            <div className="space-y-2 rounded-md border bg-background/60 p-5 shadow-md">
+              <h3 className="text-xl font-medium">অনলাইন মাধ্যম</h3>
+              <div className="flex items-center gap-x-4 pt-1">
+                {socialLinks.map(({ link, icon }) => (
+                  <Link href={link} key={link} className="hover:opacity-80">
+                    <Image src={icon} alt={link} height={30} width={30} />
+                  </Link>
+                ))}
+              </div>
             </div>
-            <button className="bg-primary px-2 py-4 font-bold text-white">
-              সাবমিট
-            </button>
-          </form>
-        </div>
-        <div className="flex-1">
-          <div className="pb-6">
-            <h1 className="flex gap-2 pb-2 text-2xl font-bold">
-              <RiHomeOfficeFill></RiHomeOfficeFill>
-              হেড অফিস [Main Campus, Chattogram]
-            </h1>
-            <p>সালেহ ভিলা(৩য় তলা), বাড়ী: ১৪,</p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
-              <h1 className="flex items-center gap-2 font-semibold">
-                <FaBlenderPhone></FaBlenderPhone>
-                ফোন নাম্বার
-              </h1>
-              <p>+৮৮০১৭৩০৭০০৯২০</p>
-              <p>+৮৮০১৭৩০৭০০৯২০</p>
-            </div>
-            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
-              <h1 className="flex items-center gap-2 font-semibold">
-                <GoStopwatch></GoStopwatch>
-                অফিস ভিজিটের সময়
-              </h1>
-              <p>শনিবার – শুক্রবার</p>
-              <p>সকাল ৯ টা থেকে রাত ৮ টা</p>
-            </div>
-            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
-              <h1 className="flex items-center gap-2 font-semibold">
-                <BsFillPersonLinesFill></BsFillPersonLinesFill>
-                অনলাইন মাধ্যম
-              </h1>
-              <p className="flex items-center gap-2">
-                <FaFacebook> </FaFacebook>ফেসবুক
-              </p>
-              <p className="flex items-center gap-2">
-                <FaWhatsapp></FaWhatsapp>হোয়াটস্যাপ
-              </p>
-            </div>
-            <div className="w-full p-4 shadow shadow-orange-200 lg:w-56">
-              <h1 className="flex items-center gap-2 font-semibold">
-                <MdMarkEmailUnread></MdMarkEmailUnread>
-                ই-মেইল
-              </h1>
-              <p>info.wellupbd@gmail.com</p>
-              <p>info@mywellup.com</p>
+            <div className="space-y-2 rounded-md border bg-background/60 p-5 shadow-md">
+              <h3 className="text-xl font-medium">ই-মেইল</h3>
+              <div className="space-y-1">
+                {emails.map((email, i) => (
+                  <p
+                    key={email + i}
+                    className="leading-relaxed text-foreground/60"
+                  >
+                    {email}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* contract form  */}
-    </section>
+      </main>
+    </React.Fragment>
   );
-};
-
-export default Contact;
+}
