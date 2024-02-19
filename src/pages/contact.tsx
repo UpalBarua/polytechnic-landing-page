@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
-import { ContactForm } from "./contact-form";
+import { ContactForm } from "@/components/contact-form";
 
 export default function Contact() {
   const { address, contactNumbers, socialLinks, emails } = campusInfo;
