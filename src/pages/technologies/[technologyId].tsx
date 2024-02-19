@@ -71,7 +71,7 @@ export default function Technology({
           className="object-hover absolute right-0 top-0 h-[18rem] w-full object-cover brightness-50 md:h-[24rem]"
         />
         <section className="relative z-10 grid grid-cols-1 gap-4 pt-12 sm:grid-cols-12 ">
-          <div className="rounded-md border bg-background shadow-md sm:col-span-8">
+          <div className="rounded-md border bg-background/60 shadow-md sm:col-span-8">
             <div className="rounded-tl-md rounded-tr-md bg-primary px-6 py-4 text-background">
               <h2 className="mx-auto text-2xl font-medium tracking-tight md:text-3xl">
                 {name} টেকনোলজি
@@ -84,7 +84,7 @@ export default function Technology({
             </div>
           </div>
           <div className="space-y-4 sm:col-span-4">
-            <div className="rounded-md border bg-background shadow-md">
+            <div className="rounded-md border bg-background/60 shadow-md">
               <div className="rounded-tl-md rounded-tr-md bg-primary px-6 py-4 text-background">
                 <h2 className="mx-auto text-2xl font-medium tracking-tight md:text-3xl">
                   ডিপার্টমেন্ট ওভারভিউ
@@ -104,7 +104,7 @@ export default function Technology({
                 ))}
               </ul>
             </div>
-            <div className="rounded-md border bg-background shadow-md">
+            <div className="rounded-md border bg-background/60 shadow-md">
               <div className="rounded-tl-md rounded-tr-md bg-primary px-6 py-4 text-background">
                 <h2 className="mx-auto text-2xl font-medium tracking-tight md:text-3xl">
                   কোর্স ওভারভিউ
@@ -131,7 +131,7 @@ export default function Technology({
           <div className="grid grid-cols-1 justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {Object.keys(courseOutline).map((key) => (
               <div
-                className="rounded-md border bg-background/95 p-6 shadow-md"
+                className="rounded-md border bg-background/60 p-6 shadow-md"
                 key={key}
               >
                 <h2 className="pb-2 font-medium">{key}</h2>

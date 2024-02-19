@@ -1129,3 +1129,27 @@ export const testimonials = [
       "আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস সাথে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি। ",
   },
 ] as const;
+
+export const campusInfo = {
+  name: "সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট",
+  address: "সালেহ ভিলা(৩য় তলা), বাড়ী: ১৪, সালেহ ভিলা(৩য় তলা), বাড়ী: ১৪",
+  emails: ["snhpi@gmail.com", "snhpi@hotmail.com"],
+  contactNumbers: ["1234567890", "1234567890"],
+  socialLinks: [
+    {
+      platform: "Facebook",
+      link: "facebook.com",
+      icon: "/icons/facebook.png",
+    },
+    {
+      platform: "Instagram",
+      link: "instagram.com",
+      icon: "/icons/instagram.png",
+    },
+    {
+      platform: "WhatsApp",
+      link: "whatsapp.com",
+      icon: "/icons/whatsapp.png",
+    },
+  ],
+} as const;

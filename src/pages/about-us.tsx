@@ -12,16 +12,16 @@ export default function AboutUsPage() {
       <main className="container mt-20 max-w-6xl space-y-4 pb-20 sm:mt-24 lg:mt-32">
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <Image
-            src="/slider1.jpg"
+            src="/images/slider1.jpg"
             alt=""
             height={500}
             width={500}
             className="h-full w-full rounded-md object-cover object-center shadow-md"
           ></Image>
           <div className="rounded-md border bg-background/60 p-6 shadow-md md:p-8">
-            <Heading className="text-start">
+            <h2 className="pb-4 text-2xl font-medium tracking-tight">
               সামশুন নাহার হারুন পলিটেকনিক ইনস্টিটিউট
-            </Heading>
+            </h2>
             <p className="leading-relaxed text-foreground/60">
               আধুনিক সভ্যসমাজে বিজ্ঞানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে
               ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার

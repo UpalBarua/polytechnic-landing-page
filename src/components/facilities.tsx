@@ -16,7 +16,7 @@ export function Facilities() {
         </div>
         <div className="relative col-span-7 hidden md:block">
           <Image
-            src="/slider0.jpg"
+            src="/images/slider0.jpg"
             alt=""
             className="rounded-md object-cover object-center"
             fill
