@@ -1,10 +1,7 @@
-import * as React from "react";
-import Head from "next/head";
 import { ChairmansMessage } from "@/components/chairmans-message";
 import { Facilities } from "@/components/facilities";
 import { LatestUpdate } from "@/components/latest-update";
 import { Milestones } from "@/components/milestones";
-
 import { PrincipalsMessage } from "@/components/principals-message";
 import { RecentNotices } from "@/components/recent-notices";
 import { RecentPictures } from "@/components/recent-pictures";
@@ -12,7 +9,10 @@ import { Slider } from "@/components/slider";
 import { Technologies } from "@/components/technologies";
 import { Testimonials } from "@/components/testimonials";
 import { getAllPictures, getLatestNotices } from "@/lib/services";
+import { cn } from "@/lib/utils";
 import { TNotice, TPicture } from "@/types";
+import Head from "next/head";
+import * as React from "react";
 
 export const getStaticProps = async () => {
   try {
@@ -49,7 +49,11 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
         <title>SNHPI - Home</title>
       </Head>
       <main className="space-y-16 md:space-y-24 lg:space-y-28">
-        <section className="container grid max-w-7xl grid-cols-1 gap-y-4 pt-[4.25rem] md:pt-20 lg:grid-cols-12 lg:gap-x-4 lg:pt-32">
+        <section
+          className={cn(
+            "container grid max-w-7xl grid-cols-1 gap-y-4 pt-[4.25rem] md:pt-20 lg:grid-cols-12 lg:gap-x-4 lg:pt-32",
+          )}
+        >
           <div className="col-span-full flex flex-col space-y-2.5 lg:col-span-8">
             <Slider />
             <LatestUpdate latestUpdate={notices[0]?.title} />
@@ -58,7 +62,11 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
             <RecentNotices notices={notices} />
           </div>
         </section>
-        <section className="container grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2">
+        <section
+          className={cn(
+            "container grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2",
+          )}
+        >
           <ChairmansMessage />
           <PrincipalsMessage />
         </section>

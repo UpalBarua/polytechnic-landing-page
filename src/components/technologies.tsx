@@ -1,21 +1,33 @@
 import { technologies } from "@/config";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { InView } from "react-intersection-observer";
 import { Heading } from "./ui/heading";
 
 export function Technologies() {
   return (
-    <section className='bg-[url("/technologies-bg.jpg")] bg-cover bg-center'>
-      <div className="space-y-4 py-16 backdrop-brightness-[0.25] md:py-24">
-        <Heading className="text-background/90 md:text-center">
-          টেকনোলজি সমূহ
-        </Heading>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-2 min-[500px]:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 lg:px-0">
-          {technologies.map((technology) => (
-            <Technology key={technology.id} {...technology} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <InView>
+      {({ ref, inView }) => (
+        <section
+          ref={ref}
+          className={cn(
+            'bg-[url("/technologies-bg.jpg")] bg-cover bg-center transition-opacity duration-700',
+            inView ? "opacity-1" : "opacity-0",
+          )}
+        >
+          <div className="space-y-4 py-16 backdrop-brightness-[0.25] md:py-24">
+            <Heading className="text-background/90 md:text-center">
+              টেকনোলজি সমূহ
+            </Heading>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-2 min-[500px]:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 lg:px-0">
+              {technologies.map((technology) => (
+                <Technology key={technology.id} {...technology} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </InView>
   );
 }
 

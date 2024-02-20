@@ -13,45 +13,56 @@ import { FiPhone } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { MobileNav } from "./mobile-nav";
 import { Logo } from "./ui/logo";
+import { InView } from "react-intersection-observer";
 
 export function Navbar() {
   const { name, emails, contactNumbers } = campusInfo;
 
   return (
-    <header className="fixed left-0 top-0 z-20 w-full border-b bg-background/95 shadow-lg backdrop-blur-md">
-      <div className="container flex max-w-7xl items-center justify-between py-2 ">
-        <Link href="/" className="flex items-center gap-x-3">
-          <Logo className="h-11 w-11 lg:h-14 lg:w-14" />
-          <span className="hidden text-2xl font-medium capitalize text-primary sm:inline-block">
-            {name}
-          </span>
-        </Link>
-        <div className="hidden items-center gap-x-8 pe-2 lg:flex">
-          <div className="flex items-center gap-x-2.5">
-            <MdOutlineEmail className="text-3xl text-foreground/80" />
-            <div className="flex flex-col">
-              <span className="text-xs">Email Us</span>
-              <span className="text-sm font-medium">{emails[0]}</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-x-2.5">
-            <FiPhone className="text-3xl text-foreground/80" />
-            <div className="flex flex-col">
-              <span className="text-xs">Call Us</span>
-              <span className="text-sm font-medium">
-                +880{contactNumbers[0]}
+    <InView triggerOnce>
+      {({ inView, ref }) => (
+        <header
+          ref={ref}
+          className={cn(
+            "fixed left-0 top-0 z-20 w-full border-b bg-background/95 shadow-lg backdrop-blur-md transition-transform duration-500",
+            inView ? "opacity-1 translate-y-0" : "-translate-y-full opacity-0",
+          )}
+        >
+          <div className="container flex max-w-7xl items-center justify-between py-2 ">
+            <Link href="/" className="flex items-center gap-x-3">
+              <Logo className="h-11 w-11 lg:h-14 lg:w-14" />
+              <span className="hidden text-2xl font-medium capitalize text-primary sm:inline-block">
+                {name}
               </span>
+            </Link>
+            <div className="hidden items-center gap-x-8 pe-2 lg:flex">
+              <div className="flex items-center gap-x-2.5">
+                <MdOutlineEmail className="text-3xl text-foreground/80" />
+                <div className="flex flex-col">
+                  <span className="text-xs">Email Us</span>
+                  <span className="text-sm font-medium">{emails[0]}</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-x-2.5">
+                <FiPhone className="text-3xl text-foreground/80" />
+                <div className="flex flex-col">
+                  <span className="text-xs">Call Us</span>
+                  <span className="text-sm font-medium">
+                    +880{contactNumbers[0]}
+                  </span>
+                </div>
+              </div>
             </div>
+            <MobileNav />
           </div>
-        </div>
-        <MobileNav />
-      </div>
-      <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary py-1 text-sm shadow-md lg:flex">
-        {mainNavLinks.map((link) => (
-          <NavItem key={link.route} {...link} />
-        ))}
-      </nav>
-    </header>
+          <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary py-1 text-sm shadow-md lg:flex">
+            {mainNavLinks.map((link) => (
+              <NavItem key={link.route} {...link} />
+            ))}
+          </nav>
+        </header>
+      )}
+    </InView>
   );
 }
 

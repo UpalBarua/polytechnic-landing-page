@@ -1,5 +1,7 @@
 import { facilities } from "@/config";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { InView } from "react-intersection-observer";
 import { Heading } from "./ui/heading";
 
 export function Facilities() {
@@ -9,21 +11,41 @@ export function Facilities() {
         আমারা যেসব সুবিধা প্রধান করে থাকি
       </Heading>
       <div className="grid grid-cols-1 gap-4 py-2 md:grid-cols-12">
-        <div className="col-span-full grid grid-cols-1 gap-4 min-[500px]:grid-cols-2 md:col-span-5 md:grid-cols-1">
-          {facilities.map((facility) => (
-            <Facility key={facility.id} {...facility} />
-          ))}
-        </div>
-        <div className="relative col-span-7 hidden md:block">
-          <Image
-            src="/images/slider0.jpg"
-            alt=""
-            className="rounded-md object-cover object-center"
-            fill
-            sizes="100%"
-            priority
-          />
-        </div>
+        <InView>
+          {({ ref, inView }) => (
+            <div
+              ref={ref}
+              className={cn(
+                "col-span-full grid grid-cols-1 gap-4 transition-transform duration-700 min-[500px]:grid-cols-2 md:col-span-5 md:grid-cols-1",
+                inView ? "translate-x-0" : "-translate-x-full",
+              )}
+            >
+              {facilities.map((facility) => (
+                <Facility key={facility.id} {...facility} />
+              ))}
+            </div>
+          )}
+        </InView>
+        <InView>
+          {({ ref, inView }) => (
+            <div
+              ref={ref}
+              className={cn(
+                "relative col-span-7 hidden transition-transform duration-700 md:block",
+                inView ? "trnaslate-x-0" : "translate-x-full",
+              )}
+            >
+              <Image
+                src="/images/slider0.jpg"
+                alt=""
+                className="rounded-md object-cover object-center"
+                fill
+                sizes="100%"
+                priority
+              />
+            </div>
+          )}
+        </InView>
       </div>
     </section>
   );
