@@ -34,6 +34,6 @@
   }
 
   body {
-    @apply min-h-screen !min-w-full  bg-cover bg-top text-foreground/90;
+    @apply min-h-screen !min-w-full overflow-x-hidden  bg-cover bg-top text-foreground/90;
   }
 }

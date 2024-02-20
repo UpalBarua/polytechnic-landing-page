@@ -1,7 +1,7 @@
 import { principleMessage } from "@/config";
+import Head from "next/head";
 import Image from "next/image";
 import * as React from "react";
-import Head from "next/head";
 
 function Principal() {
   const { name, position, message, picture } = principleMessage;
