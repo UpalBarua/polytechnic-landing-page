@@ -21,9 +21,9 @@ export default function Contact() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="relative col-span-full hidden h-[12.25rem] sm:block">
               <Image
-                src="/images/slider1.jpg"
+                src="/images/address-map.png"
                 alt="contact page picture"
-                className="rounded-md border object-cover  object-center shadow-md"
+                className="rounded-md border object-cover object-center shadow-md"
                 sizes="100%"
                 fill
                 priority
@@ -41,7 +41,7 @@ export default function Contact() {
                     key={number + i}
                     className="leading-relaxed text-foreground/60"
                   >
-                    +880 {number}
+                    {number}
                   </p>
                 ))}
               </div>

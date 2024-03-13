@@ -1,7 +1,6 @@
 import { ChairmansMessage } from "@/components/chairmans-message";
 import { Facilities } from "@/components/facilities";
 import { LatestUpdate } from "@/components/latest-update";
-import { Milestones } from "@/components/milestones";
 import { PrincipalsMessage } from "@/components/principals-message";
 import { RecentNotices } from "@/components/recent-notices";
 import { RecentPictures } from "@/components/recent-pictures";
@@ -72,7 +71,6 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
         </section>
         <Technologies />
         <Facilities />
-        <Milestones />
         <Testimonials />
         <RecentPictures pictures={pictures} />
       </main>

@@ -1,34 +1,22 @@
 import { testimonials } from "@/config";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { InView } from "react-intersection-observer";
 import { Heading } from "./ui/heading";
 
 export function Testimonials() {
   return (
-    <InView>
-      {({ ref, inView }) => (
-        <section
-          ref={ref}
-          className={cn(
-            "transition-opacity duration-700",
-            inView ? "opacity-1" : "opacity-0",
-          )}
-        >
-          <Heading className="px-4 md:text-center">
-            অভিভাবক ও প্রাক্তনদের মতামত
-          </Heading>
-          <Marquee className="w-screen overflow-hidden py-2">
-            <ul className="flex gap-x-4 px-2">
-              {testimonials.map((testimonial, i) => (
-                <Testimonial key={testimonial.name + i} {...testimonial} />
-              ))}
-            </ul>
-          </Marquee>
-        </section>
-      )}
-    </InView>
+    <section className="transition-opacity duration-700">
+      <Heading className="px-4 md:text-center">
+        অভিভাবক ও প্রাক্তনদের মতামত
+      </Heading>
+      <Marquee className="w-screen overflow-hidden py-2">
+        <ul className="flex gap-x-4 px-2">
+          {testimonials.map((testimonial, i) => (
+            <Testimonial key={testimonial.name + i} {...testimonial} />
+          ))}
+        </ul>
+      </Marquee>
+    </section>
   );
 }
 
