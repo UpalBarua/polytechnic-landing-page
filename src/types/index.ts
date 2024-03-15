@@ -10,7 +10,8 @@ export type TTeacher = {
   id: string;
   name: string;
   imgURL: string;
-  position: string;
+  position?: string;
+  department?: string;
 };
 
 export type TPicture = {
