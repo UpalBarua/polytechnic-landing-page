@@ -14,7 +14,7 @@ export default function Contact() {
       <Head>
         <title>SNHPI - Contact Us</title>
       </Head>
-      <main className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-40">
+      <main className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-56">
         <Heading className="!text-center">আমাদের সাথে যোগাযোগ</Heading>
         <div className="grid grid-cols-1 items-start gap-10 min-[500px]:grid-cols-2 min-[500px]:gap-4">
           <ContactForm />

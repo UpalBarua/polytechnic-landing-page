@@ -1,7 +1,6 @@
-import * as React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Heading } from "@/components/ui/heading";
+import * as React from "react";
 
 export default function AboutUsPage() {
   return (
@@ -9,7 +8,7 @@ export default function AboutUsPage() {
       <Head>
         <title>SNHPI - About Us</title>
       </Head>
-      <main className="container mt-20 max-w-6xl space-y-4 pb-20 sm:mt-24 lg:mt-32">
+      <main className="container mt-20 max-w-6xl space-y-4 pb-20 sm:mt-24 lg:mt-56">
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <Image
             src="/images/slider1.jpg"

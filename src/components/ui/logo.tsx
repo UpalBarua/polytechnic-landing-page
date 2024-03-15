@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import * as React from 'react';
-import { cn } from '@/lib/utils';
+import Image from "next/image";
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
 type LogoProps = {
   className?: string;
@@ -9,7 +9,7 @@ type LogoProps = {
 export function Logo({ className }: LogoProps) {
   return (
     <Image
-      src="/logo.png"
+      src="/images/logo.png"
       alt="snhpi logo"
       height={50}
       width={50}

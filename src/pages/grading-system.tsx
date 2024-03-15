@@ -17,7 +17,7 @@ export default function GradingSystem() {
       <Head>
         <title>SNHPI - Grading System</title>
       </Head>
-      <section className="container mt-24 max-w-4xl pb-20 sm:mt-32 lg:mt-40">
+      <section className="container mt-24 max-w-4xl pb-20 sm:mt-32 lg:mt-56">
         <Heading className="!pb-4 md:text-center">গ্রেডিং সিস্টেম</Heading>
         <p className="px-4 pb-6 text-center leading-relaxed text-foreground/60 sm:px-14 md:px-36 md:pb-8 lg:mx-auto">
           প্রতি সেমিস্টারে একজন শিক্ষার্থী প্রাপ্ত নম্বরের ভিত্তিতে লেটার গ্রেড

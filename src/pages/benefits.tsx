@@ -3,7 +3,7 @@ import { facilities } from "@/config";
 
 export default function benefits() {
   return (
-    <section className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-40">
+    <section className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-56">
       <Heading className="!text-center">আমাদের সুবিধা সমূহ</Heading>
       <div className="grid grid-cols-1 gap-4 min-[500px]:grid-cols-2 lg:grid-cols-3">
         {facilities.map(({ id, name, content, Icon }) => (

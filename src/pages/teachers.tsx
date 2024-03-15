@@ -30,7 +30,7 @@ export default function Teachers() {
       <Head>
         <title>SNHPI - Teachers</title>
       </Head>
-      <section className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-40">
+      <section className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-56">
         {Object.keys(teachers).map((key) => (
           <div key={key} className="pb-10 md:pb-24">
             <Heading className="md:text-center">{key}</Heading>

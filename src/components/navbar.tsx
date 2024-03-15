@@ -6,8 +6,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { campusInfo, mainNavLinks, type NavLink } from "@/config";
+import { getLatestNotices } from "@/lib/services";
 import { cn } from "@/lib/utils";
+import { TNotice } from "@/types";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
@@ -16,11 +20,21 @@ import { Logo } from "./ui/logo";
 
 export function Navbar() {
   const { name, emails, contactNumbers } = campusInfo;
+  const [latestNotices, setLatestNotices] = useState<TNotice[]>([]);
+
+  useEffect(() => {
+    const fetchLatestNotices = async () => {
+      const fetchedNotices = await getLatestNotices();
+      setLatestNotices(fetchedNotices);
+    };
+
+    fetchLatestNotices();
+  }, []);
 
   return (
     <header
       className="fixed left-0 top-0 z-20 w-full border-b bg-background/95
-      shadow-lg backdrop-blur-md transition-transform duration-500"
+      shadow-md backdrop-blur-md transition-transform duration-500"
     >
       <div className="container flex max-w-7xl items-center justify-between py-2 ">
         <Link href="/" className="flex items-center gap-x-3">
@@ -62,6 +76,17 @@ export function Navbar() {
           <NavItem key={link.route + i} {...link} />
         ))}
       </nav>
+      <div className="hidden w-full items-center justify-center gap-x-2 py-2 shadow-md lg:flex">
+        <Marquee className="max-w-7xl">
+          {latestNotices.length
+            ? latestNotices.map(({ id, title }) => (
+              <p className="pr-4" key={id}>
+                {title}
+              </p>
+            ))
+            : "কোন সাম্প্রতিক নোটিশ নেই"}
+        </Marquee>
+      </div>
     </header>
   );
 }
