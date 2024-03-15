@@ -9,15 +9,28 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import * as z from "zod";
 
 const contactFormSchema = z.object({
-  name: z.string().min(1).max(50),
-  phone: z.string(),
+  name: z
+    .string()
+    .min(1, { message: "Name is required" })
+    .max(50, { message: "Name can not be more than 50 characters" }),
+  phone: z
+    .string()
+    .min(11, { message: "Invalid phone number" })
+    .max(11, { message: "Invalid phone number" }),
   email: z.string().email(),
-  comment: z.string().min(1).max(500),
+  comment: z
+    .string()
+    .min(1, {
+      message: "Message is required",
+    })
+    .max(500, { message: "Message can not be more than 50 characters" }),
 });
 
 type ContactForm = z.infer<typeof contactFormSchema>;
@@ -33,8 +46,23 @@ export function ContactForm() {
     },
   });
 
-  const onSubmit = async (data: ContactForm) => {
-    console.log(data);
+  const onSubmit = async (formData: ContactForm) => {
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY as string,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
+      )
+      .then(
+        () => {
+          form.reset();
+          toast.success("Messsage sent to snhpi");
+        },
+        () => {
+          toast.error("Something went wrong");
+        },
+      );
   };
 
   return (

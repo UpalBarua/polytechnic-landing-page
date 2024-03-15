@@ -14,16 +14,16 @@ export default function Contact() {
       <Head>
         <title>SNHPI - Contact Us</title>
       </Head>
-      <main className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-40">
+      <main className="container mt-24 max-w-5xl pb-20 sm:mt-32 lg:mt-56">
         <Heading className="!text-center">আমাদের সাথে যোগাযোগ</Heading>
         <div className="grid grid-cols-1 items-start gap-10 min-[500px]:grid-cols-2 min-[500px]:gap-4">
           <ContactForm />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="relative col-span-full hidden h-[12.25rem] sm:block">
               <Image
-                src="/images/slider1.jpg"
+                src="/images/address-map.png"
                 alt="contact page picture"
-                className="rounded-md border object-cover  object-center shadow-md"
+                className="rounded-md border object-cover object-center shadow-md"
                 sizes="100%"
                 fill
                 priority
@@ -41,7 +41,7 @@ export default function Contact() {
                     key={number + i}
                     className="leading-relaxed text-foreground/60"
                   >
-                    +880 {number}
+                    {number}
                   </p>
                 ))}
               </div>

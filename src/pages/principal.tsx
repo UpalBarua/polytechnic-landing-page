@@ -11,7 +11,7 @@ function Principal() {
       <Head>
         <title>SNHPI - Principal</title>
       </Head>
-      <main className="container mt-44 max-w-3xl space-y-6 pb-28">
+      <main className="container mt-56 max-w-3xl space-y-6 pb-28">
         <Image
           className="aspect-square rounded-full border object-cover object-center shadow"
           src={picture}

@@ -9,7 +9,7 @@ function Chairman() {
       <Head>
         <title>SNHPI - Chairman</title>
       </Head>
-      <main className="container mt-24 max-w-3xl space-y-6 pb-28 md:mt-32 lg:mt-40">
+      <main className="container mt-24 max-w-3xl space-y-6 pb-28 md:mt-32 lg:mt-56">
         <Image
           className="aspect-square rounded-full border object-cover object-center shadow"
           src={chairmansMessage.picture}
