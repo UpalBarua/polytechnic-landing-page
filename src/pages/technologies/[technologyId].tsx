@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Heading } from "@/components/ui/heading";
 import {
   Table,
@@ -9,10 +8,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { technologies } from "@/config";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import * as React from "react";
 import { FaBookReader, FaChevronRight } from "react-icons/fa";
-import Head from "next/head";
 
 export function getStaticPaths() {
   const paths = technologies.map(({ id }) => ({
@@ -52,7 +52,6 @@ export default function Technology({
     images,
     deptOverView,
     courseOutline,
-    courseOverView,
     courseFees,
   },
 }: TechnologyProps) {
@@ -111,17 +110,49 @@ export default function Technology({
                 </h2>
               </div>
               <div className="space-y-3 px-6 py-4">
-                {Object.keys(courseOverView).map((key) => (
-                  <Link
-                    href={courseOverView[key as keyof typeof courseOverView]}
-                    key={key}
-                    className="flex items-center justify-between text-foreground/60 
+                <a
+                  href="https://bteb.gov.bd/site/page/6723ed9b-94d5-41a9-80cf-54a3594a171e"
+                  target="_blank"
+                  className="flex items-center justify-between text-foreground/60 
                   underline-offset-2 hover:text-foreground/90 hover:underline"
-                  >
-                    <span>{key}</span>
-                    <FaChevronRight />
-                  </Link>
-                ))}
+                >
+                  <span>কোর্স অবকাঠামো</span>
+                  <FaChevronRight />
+                </a>
+                <a
+                  href="https://bteb.gov.bd/site/page/6723ed9b-94d5-41a9-80cf-54a3594a171e"
+                  target="_blank"
+                  className="flex items-center justify-between text-foreground/60 
+                  underline-offset-2 hover:text-foreground/90 hover:underline"
+                >
+                  <span>সিলেবাস</span>
+                  <FaChevronRight />
+                </a>
+                <a
+                  href="#tutionFee"
+                  className="flex items-center justify-between text-foreground/60 
+                  underline-offset-2 hover:text-foreground/90 hover:underline"
+                >
+                  <span>টিউশন ফি</span>
+                  <FaChevronRight />
+                </a>
+                <a
+                  href="https://drive.google.com/"
+                  target="_blank"
+                  className="flex items-center justify-between text-foreground/60 
+                  underline-offset-2 hover:text-foreground/90 hover:underline"
+                >
+                  <span>রুটিন</span>
+                  <FaChevronRight />
+                </a>
+                <Link
+                  href="/notices"
+                  className="flex items-center justify-between text-foreground/60 
+                  underline-offset-2 hover:text-foreground/90 hover:underline"
+                >
+                  <span>নোটিশ</span>
+                  <FaChevronRight />
+                </Link>
               </div>
             </div>
           </div>
@@ -149,7 +180,7 @@ export default function Technology({
             ))}
           </div>
         </section>
-        <section>
+        <section id="tutionFee" className="scroll-m-[10rem]">
           <Heading className="md:text-center">কোর্স ফি</Heading>
           <div className="rounded-md border shadow-md">
             <Table className="rounded-md bg-background/60 text-base text-foreground/60">

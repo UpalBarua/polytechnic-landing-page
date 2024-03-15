@@ -14,7 +14,7 @@ export function RootLayout({ children }: RootLayoutProps) {
         {children}
         <Footer />
       </div>
-      <div className="fixed inset-0 h-full w-full bg-[url('/images/bg-gradient.png')] bg-cover bg-center opacity-30" />
+      <div className="fixed inset-0 h-full w-full bg-[url('/images/bg-gradient.png')] bg-cover bg-center opacity-25" />
     </React.Fragment>
   );
 }

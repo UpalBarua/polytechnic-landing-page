@@ -31,9 +31,14 @@ export function Footer() {
           <h3 className="pb-2 font-medium">যোগাযোগ মাধ্যম</h3>
           <div className="flex items-center gap-x-4">
             {socialLinks.map(({ link, icon }) => (
-              <Link href={link} key={link} className="hover:opacity-80">
+              <a
+                href={link}
+                key={link}
+                target="_blank"
+                className="hover:opacity-80"
+              >
                 <Image src={icon} alt={link} height={25} width={25} />
-              </Link>
+              </a>
             ))}
           </div>
         </div>

@@ -18,7 +18,10 @@ export function Navbar() {
   const { name, emails, contactNumbers } = campusInfo;
 
   return (
-    <header className="fixed left-0 top-0 z-20 w-full border-b bg-background/95 shadow-lg backdrop-blur-md transition-transform duration-500">
+    <header
+      className="fixed left-0 top-0 z-20 w-full border-b bg-background/95
+      shadow-lg backdrop-blur-md transition-transform duration-500"
+    >
       <div className="container flex max-w-7xl items-center justify-between py-2 ">
         <Link href="/" className="flex items-center gap-x-3">
           <Logo className="h-11 w-11 lg:h-14 lg:w-14" />
@@ -27,26 +30,36 @@ export function Navbar() {
           </span>
         </Link>
         <div className="hidden items-center gap-x-8 pe-2 lg:flex">
-          <div className="flex items-center gap-x-2.5">
+          <a
+            className="group flex items-center gap-x-2.5"
+            href={"mailto:" + emails[0]}
+          >
             <MdOutlineEmail className="text-3xl text-foreground/80" />
             <div className="flex flex-col">
               <span className="text-xs">Email Us</span>
-              <span className="text-sm font-medium">{emails[0]}</span>
+              <span className="text-sm font-medium underline-offset-2 group-hover:underline">
+                {emails[0]}
+              </span>
             </div>
-          </div>
-          <div className="flex items-center gap-x-2.5">
+          </a>
+          <a
+            className="group flex items-center gap-x-2.5"
+            href={"tel:" + contactNumbers[0]}
+          >
             <FiPhone className="text-3xl text-foreground/80" />
             <div className="flex flex-col">
               <span className="text-xs">Call Us</span>
-              <span className="text-sm font-medium">{contactNumbers[0]}</span>
+              <span className="text-sm font-medium underline-offset-2 group-hover:underline">
+                {contactNumbers[0]}
+              </span>
             </div>
-          </div>
+          </a>
         </div>
         <MobileNav />
       </div>
       <nav className="hidden w-full items-center justify-center gap-x-2 bg-primary py-1 text-sm shadow-md lg:flex">
-        {mainNavLinks.map((link) => (
-          <NavItem key={link.route} {...link} />
+        {mainNavLinks.map((link, i) => (
+          <NavItem key={link.route + i} {...link} />
         ))}
       </nav>
     </header>
