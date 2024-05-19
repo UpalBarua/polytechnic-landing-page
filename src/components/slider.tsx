@@ -37,7 +37,7 @@ export function Slider() {
             </CarouselItem>
           ))}
       </CarouselContent>
-      <div className="pointer-events-none absolute inset-0 flex h-full w-full items-center justify-center rounded-md bg-gradient-to-t from-foreground/95 to-foreground/50 text-background md:items-end md:justify-start">
+      <div className="pointer-events-none absolute inset-0 flex h-full w-full items-center justify-center rounded-md bg-gradient-to-t from-foreground/90 to-foreground/25 text-background md:items-end md:justify-start">
         <div className="flex flex-col items-center justify-center gap-y-3 p-6 text-center md:items-start md:justify-start md:p-10">
           <Logo className="mb-4 h-24 w-24 rounded-full bg-background p-1" />
           <h2 className="text-2xl font-medium capitalize text-primary md:text-3xl lg:text-4xl">

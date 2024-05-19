@@ -20,7 +20,7 @@ export function PrincipalsMessage() {
       </div>
       <div>
         <Heading className="sm:!pb-3 md:text-center">অধ্যক্ষের বাণী</Heading>
-        <p className="mx-auto px-3 leading-relaxed text-foreground/60 md:px-0">
+        <p className="mx-auto px-3 leading-relaxed text-foreground/60 md:px-0 text-justify">
           {message.slice(0, 400) + "..."}
           <Link
             href="/principal"

@@ -22,7 +22,7 @@ export function ChairmansMessage() {
         <Heading className="sm:!pb-3 md:text-center">
           চেয়ারম্যান মহোদয়ের বাণী
         </Heading>
-        <p className="mx-auto px-3 leading-relaxed text-foreground/60 md:px-0">
+        <p className="mx-auto px-3 leading-relaxed text-foreground/60 text-justify md:px-0">
           {message.slice(0, 400) + "..."}
           <Link
             href="/chairman"
