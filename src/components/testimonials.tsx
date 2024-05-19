@@ -2,10 +2,17 @@ import { testimonials } from "@/config";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { Heading } from "./ui/heading";
+import { m } from "framer-motion";
 
 export function Testimonials() {
   return (
-    <section className="transition-opacity duration-700">
+    <m.section
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.5 }}
+      className="transition-opacity duration-700"
+    >
       <Heading className="px-4 md:text-center">
         অভিভাবক ও প্রাক্তনদের মতামত
       </Heading>
@@ -16,7 +23,7 @@ export function Testimonials() {
           ))}
         </ul>
       </Marquee>
-    </section>
+    </m.section>
   );
 }
 

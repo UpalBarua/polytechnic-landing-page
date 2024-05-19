@@ -2,12 +2,19 @@ import { campusInfo, mainNavLinks } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "./ui/logo";
+import { m } from "framer-motion";
 
 export function Footer() {
   const { socialLinks } = campusInfo;
 
   return (
-    <footer className="z-10 mt-auto bg-background  shadow-lg transition-transform duration-700">
+    <m.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.5 }}
+      className="z-10 mt-auto bg-background  shadow-lg transition-transform duration-700"
+    >
       <div className="container grid max-w-7xl grid-cols-1 justify-center gap-12 py-16 sm:grid-cols-2 lg:grid-cols-6">
         <Logo className="hidden h-28 w-28 lg:block" />
         {mainNavLinks.map(
@@ -49,6 +56,6 @@ export function Footer() {
       >
         Wellup Tech Lab
       </Link>
-    </footer>
+    </m.footer>
   );
 }

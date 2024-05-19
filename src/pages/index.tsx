@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { TNotice, TPicture } from "@/types";
 import Head from "next/head";
 import * as React from "react";
+import { m } from "framer-motion";
 
 export const getStaticProps = async () => {
   try {
@@ -52,13 +53,22 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
             "container grid max-w-7xl grid-cols-1 gap-y-4 lg:grid-cols-12 lg:gap-x-4",
           )}
         >
-          <div className="col-span-full flex flex-col space-y-2.5 lg:col-span-8">
+          <m.div
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.125 }}
+            className="col-span-full flex flex-col space-y-2.5 lg:col-span-8"
+          >
             <Slider />
-            {/* <LatestUpdate latestUpdate={notices[0]?.title} /> */}
-          </div>
-          <div className="col-span-full space-y-6 md:col-span-4 lg:space-y-4">
+          </m.div>
+          <m.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="col-span-full space-y-6 md:col-span-4 lg:space-y-4"
+          >
             <RecentNotices notices={notices} />
-          </div>
+          </m.div>
         </section>
         <section
           className={cn(
@@ -72,14 +82,20 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
         <Facilities />
         <Testimonials />
         <RecentPictures pictures={pictures} />
-        <section className="container max-w-6xl pb-16 md:pb-32">
+        <m.section
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="container max-w-6xl pb-16 md:pb-32"
+        >
           <video
             src="/video.mp4"
             controls
             className="w-full rounded-md border shadow-md"
             preload="none"
           ></video>
-        </section>
+        </m.section>
       </main>
     </React.Fragment>
   );

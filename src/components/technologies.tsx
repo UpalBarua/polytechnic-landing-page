@@ -1,10 +1,17 @@
 import { technologies } from "@/config";
+import { m } from "framer-motion";
 import Link from "next/link";
 import { Heading } from "./ui/heading";
 
 export function Technologies() {
   return (
-    <section className='bg-[url("/images/technologies-bg.jpg")] bg-cover bg-center transition-opacity duration-700'>
+    <m.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.75 }}
+      className='bg-[url("/images/technologies-bg.jpg")] bg-cover bg-center transition-opacity duration-700'
+    >
       <div className="space-y-4 py-16 backdrop-brightness-[0.25] md:py-24">
         <Heading className="text-background/90 md:text-center">
           টেকনোলজি সমূহ
@@ -15,7 +22,7 @@ export function Technologies() {
           ))}
         </div>
       </div>
-    </section>
+    </m.section>
   );
 }
 

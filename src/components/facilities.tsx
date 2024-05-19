@@ -1,6 +1,7 @@
 import { facilities } from "@/config";
 import Image from "next/image";
 import { Heading } from "./ui/heading";
+import { m } from "framer-motion";
 
 export function Facilities() {
   return (
@@ -9,12 +10,24 @@ export function Facilities() {
         আমারা যেসব সুবিধা প্রধান করে থাকি
       </Heading>
       <div className="grid grid-cols-1 gap-4 py-2 md:grid-cols-12">
-        <div className="col-span-full grid grid-cols-1 gap-4 transition-transform duration-700 min-[500px]:grid-cols-2 md:col-span-5 md:grid-cols-1">
+        <m.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-full grid grid-cols-1 gap-4 transition-transform duration-700 min-[500px]:grid-cols-2 md:col-span-5 md:grid-cols-1"
+        >
           {facilities.map((facility) => (
             <Facility key={facility.id} {...facility} />
           ))}
-        </div>
-        <div className="relative col-span-7 hidden transition-transform duration-700 md:block">
+        </m.div>
+        <m.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="relative col-span-7 hidden transition-transform duration-700 md:block"
+        >
           <Image
             src="/images/slider0.jpg"
             alt=""
@@ -23,7 +36,7 @@ export function Facilities() {
             sizes="100%"
             priority
           />
-        </div>
+        </m.div>
       </div>
     </section>
   );
