@@ -2,12 +2,19 @@ import { chairmansMessage } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
 import { Heading } from "./ui/heading";
+import { m } from "framer-motion";
 
 export function ChairmansMessage() {
   const { name, picture, message, position } = chairmansMessage;
 
   return (
-    <div className="container flex max-w-5xl flex-col items-center justify-center gap-8 rounded-md border bg-background/60 py-10 text-center shadow-md transition-transform duration-700 sm:items-start sm:gap-10 md:px-8">
+    <m.div
+      initial={{ x: -100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.5 }}
+      className="container flex max-w-5xl flex-col items-center justify-center gap-8 rounded-md border bg-background/60 py-10 text-center shadow-md transition-transform duration-700 sm:items-start sm:gap-10 md:px-8"
+    >
       <div className="relative mx-auto aspect-square min-w-56 md:min-w-[14rem]">
         <Image
           className="rounded-full border object-cover object-center shadow-lg"
@@ -22,7 +29,7 @@ export function ChairmansMessage() {
         <Heading className="sm:!pb-3 md:text-center">
           চেয়ারম্যান মহোদয়ের বাণী
         </Heading>
-        <p className="mx-auto px-3 leading-relaxed text-foreground/60 text-justify md:px-0">
+        <p className="mx-auto px-3 text-justify leading-relaxed text-foreground/60 md:px-0">
           {message.slice(0, 400) + "..."}
           <Link
             href="/chairman"
@@ -36,6 +43,6 @@ export function ChairmansMessage() {
           <span className="text-foreground/60">{position}</span>
         </div>
       </div>
-    </div>
+    </m.div>
   );
 }

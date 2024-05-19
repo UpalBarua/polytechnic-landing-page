@@ -664,7 +664,7 @@ export const technologies = [
       "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?q=80&w=1492&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     description:
-      "আধুনিক সভ্যসমাজে বিজ্��ানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত��র ইলেকট্রনিক্সই পারে ���িজে�� কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ স��ল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযো��� রয়ে��ে�� ���র্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে। বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে",
+      "আধুনিক সভ্যসমাজে বিজ্��ানের প্রত্যেকটি আবিস্কারের পেছনে রয়েছে ইলেকট্রনিক্সের অবদান। এছাড়া স্বাস্থ্য সংক্রান- বিষয়ে সকল প্রকার রোগ নির্ণয়ের ক্ষেত্রে ইলেকট্রনিক্সের বিকল্প কিছু হতে পারে না। কাজেই এই দ্রুত উন্নয়শীল সমাজে Electronics Engineering একটি গুরুত্বপূর্ণ শাখা হিসেবে অবস্থান করছে। মানুষের দৈনন্দিন জীবন প্রণালী ও বেঁচে থাকার মাধ্যম হিসাবে Electronics প্রতি নিয়তই নিজেকে হাজির করছে নতুন ভাবে। উন্নত জীবন যাপনের জন্য মানুষ প্রতিটি মুহুর্তেই Electronics এর উপর নির্ভর করে চলছে। এক কথায় এই বিশাল পৃথিবীকে হাতের মুঠোয় আনা সম্ভব হয়েছে একমাত্র Electronics এর জন্য। খুব কম পরিসরে একমাত��র ইলেকট্রনিক্��ই পারে ���িজে�� কর্মসংস্থান নিজেই সৃষ্টি করতে। যেমন: IPS, UPS, VOLT STABILIZER, TV REMOTE, VCD, DVD, POWER SUPPLY ইত্যাদি ফ্যাক্টরী তৈরী করতে পারে। বাংলাদেশে সরকারী ও বেসরকারী TV Station, Railway Station, BTCL এ স��ল প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে অসংখ্য চাকুরীর সুযো��� রয়ে��ে�� ���র্তমানে বাংলাদেশে Mobile Sector এর ব্যাপক অগ্রগতি সাধিত হয়েছে। যার ফলে Electronics এর Diploma Engineer দের নতুন নতুন কাজের সুযোগ সৃষ্টি হয়েছে। বাংলাদেশে বেতার, আবহাওয়া অধিদপ্তর, রাডার ষ্টেশন ইত্যাদি প্রতিষ্ঠানে উপ-সহকারী প্রকৌশলী পদে চাকুরীর সুযোগ রয়েছে।যে",
     Icon: MdLocationCity,
     cheifInstructor: {
       name: "হাবিব আহমেদ",
@@ -1070,7 +1070,7 @@ export const testimonials = [
     identity: "প্রাক্তন ছাত্র",
     image: "/chairman.jpg",
     comment:
-      "আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস স��থে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।",
+      "আমার উচ্চশিক্ষা স্বপ্নে এ প্রতিষ্ঠানের ভূমিকা অপরিসীম।  মনোমধ্যকার ক্লাস �����থে শিক্ষকদের অক্লান্ত পরিশ্রমে একটি দারুণ ফলাফল অর্জন করেছি।",
   },
   {
     name: "আশিক মাহমুদ",
@@ -1222,14 +1222,7 @@ export const administrativeCommittee = [
     id: "3klaj2sdehj5WrPZlKQG",
     position: "Principal",
     name: "Shoibal Kumar Barua",
-    imgURL: "/images/principle.jpg",
-  },
-  {
-    id: "3JuNyNuNehj5WrPZlKQG",
-    position: "Senior Accountant",
-    name: "Sirajul Islam",
-    imgURL:
-      "https://firebasestorage.googleapis.com/v0/b/snhpi-website.appspot.com/o/Sirajul%20Islam.jpg-db35fbf6-53a0-4125-a1a6-1baacff23920?alt=media&token=d5a6db57-26f2-4271-b214-57e537eb9e36",
+    imgURL: "/images/principal.jpeg",
   },
   {
     id: "pqgPzqj20iZPVim2W3WA",
@@ -1237,5 +1230,12 @@ export const administrativeCommittee = [
     name: "Engr. Mitun Das",
     imgURL:
       "https://firebasestorage.googleapis.com/v0/b/snhpi-website.appspot.com/o/Engr.Mitun%20Das%20(Coordinator).jpg-1b16cb55-4818-4cd4-aeba-9cd5101ffe27?alt=media&token=8c68eb26-8dfd-4e2b-842a-160b6f6fce48",
+  },
+  {
+    id: "3JuNyNuNehj5WrPZlKQG",
+    position: "Senior Accountant",
+    name: "Sirajul Islam",
+    imgURL:
+      "https://firebasestorage.googleapis.com/v0/b/snhpi-website.appspot.com/o/Sirajul%20Islam.jpg-db35fbf6-53a0-4125-a1a6-1baacff23920?alt=media&token=d5a6db57-26f2-4271-b214-57e537eb9e36",
   },
 ] as const;

@@ -17,6 +17,7 @@ import { FiPhone } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { MobileNav } from "./mobile-nav";
 import { Logo } from "./ui/logo";
+import { m } from "framer-motion";
 
 export function Navbar() {
   const { name, emails, contactNumbers } = campusInfo;
@@ -32,11 +33,14 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
+    <m.header
+      initial={{ y: -90, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
       className="fixed left-0 top-0 z-20 w-full border-b bg-background/95
       shadow-md backdrop-blur-md transition-transform duration-500"
     >
-      <div className="container flex max-w-7xl items-center justify-between py-2 ">
+      <div className="container flex max-w-7xl items-center justify-between py-2">
         <Link href="/" className="flex items-center gap-x-3">
           <Logo className="h-11 w-11 lg:h-14 lg:w-14" />
           <span className="hidden text-2xl font-bold capitalize text-primary sm:inline-block">
@@ -80,14 +84,14 @@ export function Navbar() {
         <Marquee className="max-w-7xl">
           {latestNotices.length
             ? latestNotices.map(({ id, title }) => (
-              <p className="pr-4" key={id}>
-                {title}
-              </p>
-            ))
+                <p className="pr-4" key={id}>
+                  {title}
+                </p>
+              ))
             : "কোন সাম্প্রতিক নোটিশ নেই"}
         </Marquee>
       </div>
-    </header>
+    </m.header>
   );
 }
 
