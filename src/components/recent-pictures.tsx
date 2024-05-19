@@ -14,7 +14,7 @@ export function RecentPictures({ pictures }: RecentPicturesProps) {
     <section className="container max-w-6xl  transition-opacity duration-700">
       <Heading className="md:text-center">আমাদের স্মৃতিচারণ মুহূর্ত</Heading>
       <div className="grid grid-cols-1 gap-2 py-2 min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {pictures.slice(0, 12).map((picture) => (
+        {pictures.slice(0, 8).map((picture) => (
           <Picture key={picture.id} {...picture} />
         ))}
       </div>

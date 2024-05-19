@@ -77,7 +77,8 @@ export default function HomePage({ notices, pictures }: HomePageProps) {
             src="/video.mp4"
             controls
             className="w-full rounded-md border shadow-md"
-          />
+            preload="none"
+          ></video>
         </section>
       </main>
     </React.Fragment>
